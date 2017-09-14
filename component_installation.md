@@ -30,6 +30,33 @@ title: Overview of Component Installation
 
 ### Installation options
 
+**Default Installation**
+
+To install SONATA Service Platform v3.0 you only need to follow the steps described above taking into account that the configuration will be the following:
+
+-   Ansible target: -&gt; Localhost
+-   The public IP is the IP in the ipv4 interface card. It is used to access the GUI, BSS and the Gatekeeper API
+
+**Custom Installation**
+
+For custom installation, a configuration file is available in the folder: \`group\_vars/sp/vault.yml\`
+
+This file is encrypted. To open it, the password should be located \`~/.ssh/.vault\_pass\`. The default password is \`sonata\`.
+
+To edit the encrypted file you can use the following command: \`ansible-vault edit group\_vars/sp/vault.yml\`
+
+```
+# VARs for MONITOR pgSQL database
+upassword: sonata
+urootpw: 1234
+dbname: monitoring
+dbuser: monitoringuser
+# VARs for GATEKEEPER pgSQL database
+gtk_db_name: gatekeeper
+gtk_db_user: sonatatest
+gtk_db_pass: sonata
+```
+
 ### Installation instructions
 
 ### Installation Videos
