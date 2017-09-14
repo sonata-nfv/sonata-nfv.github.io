@@ -55,7 +55,52 @@ dbuser: monitoringuser
 gtk_db_name: gatekeeper
 gtk_db_user: sonatatest
 gtk_db_pass: sonata
+# VARs for GATEKEEPER USER MGMT
+gtk_keycloak_user: admin
+gtk_keycloak_pass: admin
+# VARs for IA
+ia_repo_user: sonatatest
+ia_repo_pass: sonata
+#VARs for Monitoring
+mon_db_name: monitoring
+mon_db_user: monitoringuser
+mon_db_pass: sonata
 ```
+
+To change the default configuration of installation, the following file can be edited: `roles/sp/defaults/main.yml`
+
+```
+---
+######################
+# defaults file for sp
+######################
+nbofvms: 1
+pop: alabs
+proj: demo
+distro: xenial
+plat: sp
+########################
+# Docker network segment
+########################
+# Docker network name
+docker_network_name: son-sp
+#############################################
+# SONATA 5G NFV SP specific version variables
+#############################################
+# SONATA SP Version. This installer was created to deploy version 2.1
+sp_ver: 3.0
+# SONATA SP Hostname. Default Public IP address
+plat_hostname: "Template:Public ip"
+# SONATA SP Domain Name. Default Public IP address
+domain_name: "Template:Public ip"
+# SONATA SP fqdn. Default Public IP address
+fqdn: "Template:Public ip"
+# SONATA SP User created by son-install
+sp_user: sonata
+sp_pass: "$1$SRc2ws2Z$rSdCC/UKiatagNdfsTVuf0"
+```
+
+
 
 ### Installation instructions
 
