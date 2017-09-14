@@ -104,6 +104,22 @@ sp_pass: "$1$SRc2ws2Z$rSdCC/UKiatagNdfsTVuf0"
 
 ### Installation instructions
 
+-   On a clean Ubuntu 16.04 installation
+
+```
+sudo apt-get install -y software-properties-common
+sudo apt-add-repository -y ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install -y ansible
+sudo apt-get install -y git
+git clone https://github.com/sonata-nfv/son-install.git
+cd son-install
+echo sonata | tee ~/.ssh/.vault_pass
+ansible-playbook utils/deploy/sp.yml -e "target=localhost public_ip=<your_ip4_address>" -v
+```
+  
+  
+
 ### Installation Videos
 
 ## SDK
