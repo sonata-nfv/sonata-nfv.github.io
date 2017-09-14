@@ -11,6 +11,23 @@ title: Overview of Component Installation
 
 ### Pre-requisites
 
+**Hardware:**
+
+-   Minimal size requirements
+    -   Memory 4GB RAM
+    -   CPU 1vCPU
+    -   Disk 25GB
+-   Recommended size requirements
+    -   Memory 8GB
+    -   CPU 4vCPU
+    -   Disk 80GB
+
+**Software:**
+
+-   Ansible 2.3.0+
+-   Git
+-   Docker CE 17.06
+
 ### Installation options
 
 ### Installation instructions
