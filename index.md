@@ -8,7 +8,7 @@ layout: default
 # Foreword 
 
 ## Purpose of this tutorial 
-The purpose of this tutorial is provide the reader with a general view about SONATA in the easiest and quickest way possible.
+The purpose of this tutorial is to provide the reader with a general view about SONATA in the easiest and quickest way possible.
 Here you will find a brief explanation about what SONATA is, how to install it, how to use it and how to get technical support if required.
 This tutorial doesn´t pretend to be an extend document where to find all the information related to SONATA, but an "umbrella" document that will guide you to more extensive documentation if required.
 
@@ -89,15 +89,39 @@ The service development kit (SDK) consists of the following main modules:
 
 This is version 3.0 of the SONATA platform, the fifth release of the code. The main enhancements since the last release, v2.1, are:
 
-* improved customizability/programmability of the MANO framework
-* support for VNF chaining
-* added location-awareness for placement decisions
-* improvements for multi-PoP environments
-* improved user, role and group management
-* improved access control
-* support for licence management
-* improved installation process
-* many additional features, bug fixes, performance improvements
+This is version 3.0 of the SONATA platform, the fifth release of the code. The main enhancements since the last release, v2.1, are:
+
+-   SP:
+    -   improved customizability/programmability of the MANO framework
+    -   improved user, role and group management
+    -   improved access control
+    -   added package validation and signature verification
+    -   added package, service and function ownership (to connect with licence management)
+    -   added location-awareness for placement decisions in service instantiation
+    -   added KPIs to most operations
+    -   added synch (through a Web Socket) and asynch (through JSON) monitoring data requests
+    -   added service instance termination
+    -   added rate limit control to all operations
+    -   support for service licence management
+-   SDK:
+    -   Integrated authentication support in son-access (part of son-cli). This allows to authenticate users before they connect to the/a service platform
+    -   Support for package signatures in son-package (part of son-cli). This enables a/the service platform to validate that service/function packages are actually originating from trusted developers
+    -   Graphical User Interface (son-editor) for the creation of network services and associated service and network function descriptors.
+    -   Improved integration with GitHub. This enables easy reuse of existing service and function descriptors directly from GitHub repositories.
+    -   Inclusion of advanced service validation functionality including graphical debugging tool (son-validate).
+    -   The emulator (son-emu) now supports OpenStack-like API endpoints to allow carrier-grade MANO stacks (SONATA, OSM) to control the emulated VIMs
+    -   The emulator (son-emu) has added a prototype implementation of OpenStack Neutron's SFC chaining API to the emulator
+    -   The emulator (son-emu) is now compatible with 802.1Q Standard 5.3.1 in using the fixed VLAN-tag range for internal chaining system
+    -   The emulator (son-emu) now supports experimenting with different placement topologies as well as evaluating different scaling options.
+    -   The profiling tool now supports two profiling modes: i) active mode in order to generate a range of service and resource configurations which can be deployed and for which metrics can be collected, and ii) passive mode which enables to gather metrics directly in the emulator
+    -   The monitoring component (son-monitor) enables to receive streamed monitoring data from the SONATA service platform through Websockets
+    -   The monitoring component (son-monitor) supports host overload detection functionality from VNFs.
+    -   The monitoring component (son-monitor) supports external service access points for traffic generation and reception.
+    -   Reusable Service and Function Specific Management templates have been added for monitoring, scaling and placement. These can be easily adapted by developers in order to implement custom logic.
+-   General ones:
+    -   improvements for multi-PoP environments
+    -   improved installation process
+    -   many additional features, bug fixes, performance improvements
 
 
 
