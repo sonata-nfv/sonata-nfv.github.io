@@ -7,6 +7,18 @@ title: Overview of Component Installation
 
 ## General instructions and main steps
 
+The SONATA system consists of the Service Platform for deploying and orchestrating services and the Service Development Kit to create deployable service packages. For running services, the Service Platform uses the capabilities of a VIM (virtual infrastructure manager), specifically OpenStack. In order to use the Service Platform, you therefore need to have access to a running OpenStack installation.
+
+In general, the main steps to install a working SONATA system are as follows:
+
+1.  Install the Service Platform (see 4.2).
+2.  Install the Service Development Kit (see 4.3).
+3.  Install the Emulator for testing purposes (see 4.4).
+4.  Install OpenStack (or get access to an existing installation).
+5.  Connect the Service Platform to OpenStack (see 5.5.2).
+
+Afterwards, you are ready to create your own services (or acquire existing ones), and deploy them with your Service Platform. This is described in section 5.
+
 ## Service Platform installation
 
 ### Pre-requisites
