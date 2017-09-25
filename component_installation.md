@@ -42,13 +42,6 @@ Afterwards, you are ready to create your own services (or acquire existing ones)
 
 ### Installation options
 
-**Default Installation**
-
-To install SONATA Service Platform v3.0 you only need to follow the steps described above taking into account that the configuration will be the following:
-
--   Ansible target: -&gt; Localhost
--   The public IP is the IP in the ipv4 interface card. It is used to access the GUI, BSS and the Gatekeeper API
-
 **Custom Installation**
 
 For custom installation, a configuration file is available in the folder: \`group\_vars/sp/vault.yml\`
