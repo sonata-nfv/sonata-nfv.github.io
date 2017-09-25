@@ -119,7 +119,35 @@ function_specific_managers:
   [here]: https://github.com/sonata-nfv/son-mano-framework/tree/master/son-mano-specificmanager/son-mano-specific-manager-registry/test/test_descriptors
 
 
+## Upload VNF to glance
 
+This step can be useful in order not to wait until Infrastructure abstraction downloads the image from the external link. You can upload it to glance before instantiating the NS. The instantiation will be really fast.
+
+You can upload the image following this link [Openstack Manage images]
+
+Notice that the VNF image name has to be composed by: <vnf_vendor>\_<vnf_name>\_<vnf_version>\_<virtual_deployment_units_id> You can find this information in the nsd, specifically in the network\_functions section:
+
+```
+ - vnf_id: "vtc_vnf"
+   vnf_vendor: "eu.sonata-nfv"
+   vnf_name: "vtc-vnf"
+   vnf_version: "0.1"
+```
+
+And in the vnfd in the virtual\_deployment\_units section:
+
+```
+ - id: "1"
+```
+
+The final name in glance will be:
+
+-   eu.sonata-nfv\_vtc-vnf\_0.1\_1
+
+The VNF is accessible here: [VTC VNF]
+
+  [Openstack Manage images]: https://docs.openstack.org/horizon/latest/user/manage-images.html
+  [VTC VNF]: http://files.sonata-nfv.eu/public/eu.sonata-nfv_vtc-vnf_0.1_1.qcow2
 
 
 
