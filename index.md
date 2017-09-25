@@ -12,7 +12,7 @@ The purpose of this tutorial is provide the reader with a general view about SON
 Here you will find a brief explanation about what SONATA is, how to install it, how to use it and how to get technical support if required.
 This tutorial doesn´t pretend to be an extend document where to find all the information related to SONATA, but an "umbrella" document that will guide you to more extensive documentation if required.
 
-## Dcoument structure 
+## Document structure 
 
 This quick guide is organized in the following manner:
 * Section 1 (this section) is an introduction to the guide. 
