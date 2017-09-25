@@ -155,6 +155,10 @@ The VNF is accessible here: [VTC VNF]
 
 To deploy and test a network service on the emulation platform you can use the son-cli tools just like you would do when pushing a service to the service platform. You can find an example service package and a detailed description of the workflow [online]. The main steps are as follows:
 
+-   Preparation: Clone the example to your machine:
+    -   `svn export https://github.com/sonata-nfv/son-tutorials/trunk/upb-containernet-emulator-summerschool-demo demo`
+-   Preparation: Initialize the workspace
+    -   `son-workspace --init`
 -   Step 1: Start the emulator
     -   `sudo python ~/demo/topologies/son-emu_example3.py`
 -   Step 2: Create a SONATA service package using son-cli
