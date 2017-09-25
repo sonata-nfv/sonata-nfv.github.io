@@ -117,7 +117,7 @@ sp_pass: "$1$SRc2ws2Z$rSdCC/UKiatagNdfsTVuf0"
 
 ### Installation instructions
 
--   On a clean Ubuntu 16.04 installation
+-   On a clean Ubuntu 16.04 installation, the following commands install and configure the service platform.
 
 ```
 sudo apt-get install -y software-properties-common
@@ -134,6 +134,8 @@ ansible-playbook utils/deploy/sp.yml -e "target=localhost public_ip=<your_ip4_ad
   
 
 ### Installation Videos
+
+[https://asciinema.org/a/44MwPYliuOxxYBFkkm7M8eqM4 Sonata SP v3.0 installation video]
 
 ## SDK
 
