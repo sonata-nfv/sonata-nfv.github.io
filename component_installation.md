@@ -156,6 +156,8 @@ son-cli can be installed via the OS package distribution system or using setupto
 
 ### Installation instructions
 
+Depending on the Linux distribution (Ubuntu or CentOS) you are using, the following commands install and configure the service development kit.
+
 **Ubuntu Trusty (14.04) and Xenial (16.04)**
 
 1. Add the GPG key
