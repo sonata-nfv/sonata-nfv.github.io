@@ -57,8 +57,9 @@ This file is encrypted. To open it, the password should be located `~/.ssh/.vaul
 
 To edit the encrypted file you can use the following command: `ansible-vault edit group_vars/sp/vault.yml`. The default configuration file is as follows:
 
+1.  VARs for MONITOR pgSQL database
+
 ```
-# VARs for MONITOR pgSQL database
 upassword: sonata
 urootpw: 1234
 dbname: monitoring
