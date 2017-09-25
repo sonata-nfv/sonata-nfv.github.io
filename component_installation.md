@@ -42,13 +42,20 @@ Afterwards, you are ready to create your own services (or acquire existing ones)
 
 ### Installation options
 
+**Default Installation**
+
+To install SONATA Service Platform v3.0 you only need to follow the steps described above taking into account that the configuration will be the following:
+
+-   Ansible target: -&gt; Localhost
+-   The public IP is the IP in the ipv4 interface card. It is used to access the GUI, BSS and the Gatekeeper API
+
 **Custom Installation**
 
-For custom installation, a configuration file is available in the folder: \`group\_vars/sp/vault.yml\`
+For custom installation, a configuration file is available in the folder: `group\_vars/sp/vault.yml`
 
-This file is encrypted. To open it, the password should be located \`~/.ssh/.vault\_pass\`. The default password is \`sonata\`.
+This file is encrypted. To open it, the password should be located `~/.ssh/.vault_pass`. The default password is `sonata`.
 
-To edit the encrypted file you can use the following command: \`ansible-vault edit group\_vars/sp/vault.yml\`
+To edit the encrypted file you can use the following command: `ansible-vault edit group_vars/sp/vault.yml`. The default configuration file is as follows:
 
 ```
 # VARs for MONITOR pgSQL database
