@@ -2,6 +2,10 @@
 
 ## General workflow
 
+Using the SONATA System is quite straight forward, you only need to follow the main steps shown in the general workflow figure bellow and explained in detail the following sections. 
+
+ - Process workflow figure: [How_to_use_sonata.pptx](figures/How_to_use_sonata.pptx)
+
 ## Creating a network service with the SDK
 
 The recommended workflow when developing a SONATA network service consists on using the CLI tools to create a workspace, create a project to hold the descriptors of the service, validate the components and finally, create a bundled service package. The required steps are as follows:
@@ -45,6 +49,79 @@ son-access push --upload service_package.son
 ```
 
 These are the most basic steps to develop a network service, however additional features may be used and configuration procedures may take place, when required. For instance, to compose a NSDs and VNFDs, the son-editor GUI may be used. Likewise, the son-validator GUI can also be used to trigger validations and visualize the resulting errors, the service network topology, the forwarding graphs, etc. Regarding configuration procedures, before step 6 takes place (onboard a network service to the service platform) the service platform URL and user credentials must be configured in the workspace. To learn more about the additional features and configuration requirements please consult the wiki \[documentation\](https://github.com/sonata-nfv/son-cli/wiki) of son-cli repository.
+
+
+
+
+## Creating a Function Service Manager
+
+To develop a new FSM or SSM the following steps needs to be taken:
+
+1. Download the FSM/SSM template from son-sm repository, [here]
+
+-   Since the son-sm repository contains a submodule directory, you need to use the following command for cloning it: git clone --recursive \[repository URL\]
+
+2. Configure the template. [Here] you can find some FSM examples and [here][1] some examples for SSM.
+
+First thing to configure is the the name of the FSM/SSM. In order to provide meaningful names for FSMs/SSMs and also avoid FSMs/SSMs name collision in Service Platform, A naming pattern is defined in SM template that contains the following fields:
+
+For SSMs, the name includes:
+
+-   son, \[`specific_manger_type`\],\[ `service_name`\],\[ `specific_manager_name`\], \[ `id_number`\]
+    -   Example: `sonssmservice1placement1`
+
+Fro FSMs, the name includes:
+
+-   son, \[ `specific_manger_type`\],\[ `service_name`\],\[`function_name`\],\[`specific_manager_name`\], \[`id_number`\]
+    -   Example: `sonfsmservice1firewallplacement1`
+
+In the following you can find a short description of the mentioned above fields:
+
+| Fields                  | Description                                                                              | Required for | Provided by |
+|-------------------------|------------------------------------------------------------------------------------------|--------------|-------------|
+| `specific_manager_type` | the FSM/SSM type which could be either fsm or ssm.                                       | FSMs/SSMs    | Developer   |
+| `service_name`          | the name of the service that the FSM/SSM belongs to                                      | FSMs/SSMs    | Developer   |
+| `function_name`         | the name of the VNF that the fsm belongs to                                              | FSMs         | Developer   |
+| `specific_manager_name` | the actual fsm/ssm name (e.g., placement, scaling)                                       | FSMs/SSMs    | Developer   |
+| `id_number`             | an id number to differentiate FSMs/SSMs developed for the same purpose)                  | FSMs/SSMs    | Developer   |
+| `version`               | version of the FSM/SSM                                                                   | FSMs/SSMs    | Developer   |
+| `description`           | the FSM/SSM description                                                                  | FSMs/SSMs    | Developer   |
+| `uuid`                  | the FSM/SSM unique identifier                                                            | FSMs/SSMs    | SMR         |
+| `sfuuid`                | the unique identifier of service/VNF that the FSM/SSM belongs to                         | FSMs/SSMs    | FLM/SLM     |
+| `update_version`        | needs the be populated by`true` if the FSM/SSM is an updated version of existing FSM/SSM | FSMs/SSMs    | Developer   |
+
+Once you are done with filling these fields you can start developing the actual function of your SSM/FSM by overwriting the on\_registration\_ok function of the template.
+
+  [here]: https://github.com/sonata-nfv/son-sm/tree/master/son-sm-template
+  [Here]: https://github.com/sonata-nfv/son-sm/tree/master/son-fsm-examples
+  [1]: https://github.com/sonata-nfv/son-sm/tree/master/son-ssm-examples
+
+
+3. Put your SSM/FSM in a docker container and push it to your own docker hub. [Here] you can create your own docker hub account to push your FSMs/SSMs there.
+
+4. Put the SSM's id and URL in the NSD and the FSM's id and URL in the VNFD
+
+-   A very important point here is that the SSM/FSM id that is going to be embedded in the descriptors should be the same as the id generated by the SSM/FSM template because this id will be used by SMR to instantiation, update and terminate the FSMs/FSMs. The following shows an example of an FSM id and URL embedded in the VNFD; you can find more examples [here].
+
+```yaml
+
+function_specific_managers:
+  - id: "sonfsmservice1firewallplacement1"
+    description: "placement FSM for firrewall"
+    image: "hadik3r/sonfsmservice1firewallplacement1"
+
+  - id: "sonfsmservice1firewallscaling1"
+    description: "scaling FSM for firrewall"
+    image: "hadik3r/sonfsmservice1firewallscaling1"
+```
+
+  [Here]: https://hub.docker.com/
+  [here]: https://github.com/sonata-nfv/son-mano-framework/tree/master/son-mano-specificmanager/son-mano-specific-manager-registry/test/test_descriptors
+
+
+
+
+
 
 ## Testing a network service with the EMULATOR
 
