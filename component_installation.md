@@ -100,8 +100,8 @@ docker_network_name: son-sp
 #############################################
 # SONATA 5G NFV SP specific version variables
 #############################################
-# SONATA SP Version. This installer was created to deploy version 2.1
-sp_ver: 3.0
+# SONATA SP Version. This installer was created to deploy version 3.1
+sp_ver: 3.1
 # SONATA SP Hostname. Default Public IP address
 plat_hostname: "Template:Public ip"
 # SONATA SP Domain Name. Default Public IP address
@@ -127,6 +127,7 @@ sudo apt-get install -y ansible
 sudo apt-get install -y git
 git clone https://github.com/sonata-nfv/son-install.git
 cd son-install
+git checkout v3.1
 echo sonata | tee ~/.ssh/.vault_pass
 ansible-playbook utils/deploy/sp.yml -e "target=localhost public_ip=<your_ip4_address>" -v
 ```
