@@ -24,13 +24,13 @@ This quick guide is organized in the following manner:
 * Section 6 describes the support process provide by 5GTANGO Team.
 * Section 7 is a consolidation of all the acronyms used in this document.
 
-# Brief SONATA introduction
+# Brief 5GTANGO introduction
 
 5GTANGO is an agile service development and orchestration framework for 5G virtualized networks. It provides a programming model and a development tool chain for virtualized services, fully integrated with a DevOps-enabled service platform and orchestration system. 5GTANGO therefore targets both the flexible programmability of software networks as well as the optimization of their deployments. Its modular design makes the SONATA service platform effortlessly customizable to meet the needs of different service providers.
 
-*** What is SONATA ? ***
+*** What is 5GTANGO ? ***
 
-SONATA provides a platform for supporting the lifecycle of virtualized networking services. In particular, network function chaining and orchestration are the target domains of SONATA.
+5GTANGO provides a platform for supporting the lifecycle of virtualized networking services. In particular, network function chaining and orchestration are the target domains of SONATA.
 
 *** Who is it for ? ***
 
@@ -50,7 +50,7 @@ The 5GTANGOplatform consists of a number of software modules which together prov
 
 ### Service Platform
 
-SONATA's Service Platform (SP) is where:
+5GTANGO's Service Platform (SP) is where:
 
 * users are created, authenticated and authorized;
 * packages, containing (network) services and (virtual network) functions descriptions, are on-boarded, validated and stored in the catalogue. A service or a function can bring with it a specific manager, which may change the default behaviour the SP has for specific aspect of that service's or function's lifecycle (e.g., placement, scaling, etc.);
@@ -90,6 +90,13 @@ The Validation and Verification (VnV) platform consist of the following modules:
 * ***[Gatekeeper](https://github.com/sonata-nfv/tng-gtk-vnv)
 * ***[Lifecycle Manager](https://github.com/sonata-nfv/tng-vnv-lcm)
 * ***[Test Execution Engine](https://github.com/sonata-nfv/tng-vnv-tee)
+
+
+## About the latest major release v4.0
+
+* Added the Slice Manager to the SP
+* Added the integration with the VnV Platform
+* New Integration tests between components
 
 
 ## About the latest minor release v3.1
@@ -144,4 +151,3 @@ This is version 3.0 of the SONATA platform, the fifth release of the code. The m
 # [Component Installation](/component_installation)
 
 # [Administration and User guide](/start_using)
-
