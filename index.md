@@ -2,31 +2,31 @@
 layout: default
 ---
 
-![](http://sonata-nfv.eu/sites/sonata-nfv.eu/themes/zen/sonatina/images/sonata_logo.svg)
+<p align="center"><img src="https://github.com/sonata-nfv/tng-api-gtw/wiki/images/sonata-5gtango-logo-500px.png" /></p>
 
 # Foreword
 
 ## Purpose of this tutorial
 
-The purpose of this tutorial is to provide the reader with a general view about SONATA in the easiest and quickest way possible.
-Here you will find a brief explanation about what SONATA is, how to install it, how to use it and how to get technical support if required.
-This tutorial doesn´t pretend to be an extend document where to find all the information related to SONATA, but an "umbrella" document that will guide you to more extensive documentation if required.
+The purpose of this tutorial is to provide the reader with a general view about 5GTANGO platform in the easiest and quickest way possible.
+Here you will find a brief explanation about what 5GTANGO is, how to install it, how to use it and how to get technical support if required.
+This tutorial doesn´t pretend to be an extend document where to find all the information related to 5GTANGO, but an "umbrella" document that will guide you to more extensive documentation if required.
 
 ## Document structure
 
 This quick guide is organized in the following manner:
 
 * Section 1 (this section) is an introduction to the guide.
-* Section 2 provides general presentation about SONATA: what SONATA is and for whom, its general architecture, and a brief description of its main modules, the Service Platform (SP) and the Service Development Kit(SDK).
-* Section 3 gives information about the current SONATA software release.
-* Section 4 explains the installation process for each of the SONATA components that can be installed and used individually. These are the SP, the SDK and the Emulator that, although part of the SDK, has its own autonomy.
-* In section 5, we describe briefly how to use SONATA once installed, from the creation of a service, how to test it using the emulator, to its deployment with the Service Platform . 
-* Section 6 describes the support process provide by SONATA Team.
+* Section 2 provides general presentation about 5GTANGO: what 5GTANGO is and for whom, its general architecture, and a brief description of its main modules, the Service Platform (SP) and the Service Development Kit(SDK) and the Validation and Verification(VnV).
+* Section 3 gives information about the current 5GTANGO software release.
+* Section 4 explains the installation process for each of the 5GTANGO components that can be installed and used individually. These are the VnV, the SP, the SDK and the Emulator that, although part of the SDK, has its own autonomy.
+* In section 5, we describe briefly how to use 5GTANGO once installed, from the creation of a service, how to test it using the emulator, to its deployment with the Service Platform . 
+* Section 6 describes the support process provide by 5GTANGO Team.
 * Section 7 is a consolidation of all the acronyms used in this document.
 
 # Brief SONATA introduction
 
-SONATA is an agile service development and orchestration framework for 5G virtualized networks. It provides a programming model and a development tool chain for virtualized services, fully integrated with a DevOps-enabled service platform and orchestration system. SONATA therefore targets both the flexible programmability of software networks as well as the optimization of their deployments. Its modular design makes the SONATA service platform effortlessly customizable to meet the needs of different service providers.
+5GTANGO is an agile service development and orchestration framework for 5G virtualized networks. It provides a programming model and a development tool chain for virtualized services, fully integrated with a DevOps-enabled service platform and orchestration system. 5GTANGO therefore targets both the flexible programmability of software networks as well as the optimization of their deployments. Its modular design makes the SONATA service platform effortlessly customizable to meet the needs of different service providers.
 
 *** What is SONATA ? ***
 
@@ -34,19 +34,19 @@ SONATA provides a platform for supporting the lifecycle of virtualized networkin
 
 *** Who is it for ? ***
 
-The SONATA platform supports two main stakeholders in telecommunications service creation: service developers and service operators. SONATA's Network Service Development Kit (SDK) facilitates network service development for service developers. Such services are then deployed and run on SONATA's Service Platform. Through its extensive customization capabilities, the service platform allows communication service providers to adapt service provisioning to their specific environment and needs. SONATA enables a DevOps workflow between the SDK tools and the service platform, which allows developers and operators to closely collaborate in providing an outstanding experience to customers.
+The 5GTANGO platform supports two main stakeholders in telecommunications service creation: service developers and service operators. 5GTANGO's Network Service Development Kit (SDK) facilitates network service development for service developers. Such services are then deployed and run on 5GTANGO's Service Platform. Through its extensive customization capabilities, the service platform allows communication service providers to adapt service provisioning to their specific environment and needs. 5GTANGO enables a DevOps workflow between the SDK tools and the service platform, which allows developers and operators to closely collaborate in providing an outstanding experience to customers. Also you have available the VnV for testing purposes.
 
 ## General architecture
 
-The main architectural components of the SONATA platform are shown in the figure below. In line with the support of service developers and service operators, SONATA distinguishes the two main components SDK and service platform. Services developed and deployed by this system run on top of the underlying infrastructure accessible to the SONATA system via Virtual Infrastructure Managers (VIMs), abstracting from the actual hardware and software.
+The main architectural components of the 5GTANGO platform are shown in the figure below. In line with the support of service developers and service operators, SONATA distinguishes the two main components SDK and service platform. Services developed and deployed by this system run on top of the underlying infrastructure accessible to the SONATA system via Virtual Infrastructure Managers (VIMs), abstracting from the actual hardware and software.
 
 ![](http://sonata-nfv.github.io/son-tutorials/figures/Sonatamaincomponents.png)
 
 Each of the two main components can be divided into a number of subcomponents, realized in a micro-service-based approach. Detailed information on the architecture and its components can be found in [http://sonata-nfv.eu/sites/default/files/sonata/public/content-files/pages/SONATA_D2.2_Architecture_and_Design.pdf deliverable D2.2].
 
-## SONATA 3.0 modules
+## 5GTANGO modules
 
-The SONATA platform consists of a number of software modules which together provide the required functionality for network service creation, deployment, and management. Most modules can be attributed directly to either the service platform or to the service development (SDK), according to their use. Some modules are cross-cutting and are used in both major components.
+The 5GTANGOplatform consists of a number of software modules which together provide the required functionality for network service creation, deployment, and management. Most modules can be attributed directly to either the service platform or to the service development (SDK), according to their use. Some modules are cross-cutting and are used in both major components.
 
 ### Service Platform
 
@@ -82,6 +82,15 @@ The service development kit (SDK) consists of the following main modules:
 * ***[Editor](https://github.com/sonata-nfv/son-editor)***: SONATA's web-based editor for service and function descriptors. The [Editor frontend](https://github.com/sonata-nfv/son-editor-frontend) and [Editor backend](https://github.com/sonata-nfv/son-editor-backend) are the frontend and backend of SONATA's web-based service and function descriptor editor.
 * ***[Emulator](https://github.com/sonata-nfv/son-emu)***: emulation platform to support network service developers in locally prototyping and testing complete network service chains in realistic end-to-end multi-PoP scenarios
 * ***[Analyzer](https://github.com/sonata-nfv/son-analyze)***: analysis framework to study a service's behaviour
+
+###
+
+The Validation and Verification (VnV) platform consist of the following modules:
+
+* ***[Gatekeeper](https://github.com/sonata-nfv/tng-gtk-vnv)
+* ***[Lifecycle Manager](https://github.com/sonata-nfv/tng-vnv-lcm)
+* ***[Test Execution Engine](https://github.com/sonata-nfv/tng-vnv-tee)
+
 
 ## About the latest minor release v3.1
 
@@ -135,3 +144,4 @@ This is version 3.0 of the SONATA platform, the fifth release of the code. The m
 # [Component Installation](/component_installation)
 
 # [Administration and User guide](/start_using)
+
