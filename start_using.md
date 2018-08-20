@@ -1,15 +1,15 @@
-# Start using SONATA
+# Start using 5GTANGO
 
 ## General workflow
 
-Using the SONATA System is quite straight forward, you only need to follow the main steps shown in the general workflow figure bellow and explained in detail the following sections. 
+Using the 5GTANGO System is quite straight forward, you only need to follow the main steps shown in the general workflow figure bellow and explained in detail the following sections. 
 
  - Process workflow figure: [How_to_use_sonata.pptx](figures/How_to_use_sonata.pptx)
  
 
 ## Creating a network service with the SDK
 
-The recommended workflow when developing a SONATA network service consists on using the CLI tools to create a workspace, create a project to hold the descriptors of the service, validate the components and finally, create a bundled service package. The required steps are as follows:
+The recommended workflow when developing a 5GTANGO network service consists on using the CLI tools to create a workspace, create a project to hold the descriptors of the service, validate the components and finally, create a bundled service package. The required steps are as follows:
 
 -   Step 1: Create Workspace
 
