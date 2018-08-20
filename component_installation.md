@@ -11,14 +11,13 @@ The SONATA system consists of the Service Platform for deploying and orchestrati
 
 In general, the main steps to install a working SONATA system are as follows:
 
-1.  Install the Service Platform (see 4.2).
-2.  Install the Service Development Kit (see 4.3).
-3.  Install the VnV
-3.  Install the Emulator for testing purposes (see 4.4).
-4.  Install OpenStack (or get access to an existing installation).
-5.  Connect the Service Platform to OpenStack (see 5.5.2).
+1.  Install the Service Platform
+2.  Install the VnV
+3.  Install the Service Development Kit
+5.  Install the Emulator for testing purposes
+5.  Install OpenStack (or get access to an existing installation).
+6.  Connect the Service Platform to OpenStack
 
-Afterwards, you are ready to create your own services (or acquire existing ones), and deploy them with your Service Platform. This is described in section 5.
 
 ## Service Platform and VnV installation
 
@@ -89,8 +88,13 @@ Password is: `sonata`
 After these steps, the installation is finished.
  
  
-
-
+###
+###
+###
+###
+###
+###
+###
 
  
  
