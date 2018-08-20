@@ -26,10 +26,11 @@ tng-project -p path/to/project --add file1    # adds file1 to the project.yml
 tng-project -p path/to/project --add file1 --type text/plain  # adds file1 with explicit MIME type
 tng-project -p path/to/project --remove file1 # removes file1 from the project.yml
 tng-project -p path/to/project --status       # shows project overview/status
-```
+````
 
 NOTE: Since the structure of projects and descriptors changed from SONATA (v3.1) to 5GTANGO (v4.0), tng-project also provides a command to automatically translate old to new projects. For more information see the corresponding wiki page.
 
+```
 tng-project -p path/to/old-project --translate   # translates the project to the new structure
 ````
 
