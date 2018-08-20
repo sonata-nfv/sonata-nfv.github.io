@@ -87,9 +87,9 @@ The service development kit (SDK) consists of the following main modules:
 
 The Validation and Verification (VnV) platform consist of the following modules:
 
-* ***[Gatekeeper](https://github.com/sonata-nfv/tng-gtk-vnv)
-* ***[Lifecycle Manager](https://github.com/sonata-nfv/tng-vnv-lcm)
-* ***[Test Execution Engine](https://github.com/sonata-nfv/tng-vnv-tee)
+* ***[Gatekeeper](https://github.com/sonata-nfv/tng-gtk-vnv)***: This is the 5GTANGO Gatekeeper Verification and Validation platform specific components repository, which closely follows its SP Platform counterpart.
+* ***[Lifecycle Manager](https://github.com/sonata-nfv/tng-vnv-lcm)***: This is a 5GTANGO component to coordinate the verification and validation activities of 5G Network Services.
+* ***[Test Execution Engine](https://github.com/sonata-nfv/tng-vnv-tee)***: This is a 5GTANGO component to execute the test suites for 5G Network Services.
 
 
 ## About the latest major release v4.0
