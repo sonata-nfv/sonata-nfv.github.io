@@ -40,7 +40,7 @@ The 5GTANGO platform supports two main stakeholders in telecommunications servic
 
 The main architectural components of the 5GTANGO platform are shown in the figure below. In line with the support of service developers and service operators, SONATA distinguishes the two main components SDK and service platform. Services developed and deployed by this system run on top of the underlying infrastructure accessible to the SONATA system via Virtual Infrastructure Managers (VIMs), abstracting from the actual hardware and software.
 
-![](https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/5GTANGOmaincomponents.png)
+![](https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/5GTANGOmaincomponents.png?raw=true)
 
 Each of the two main components can be divided into a number of subcomponents, realized in a micro-service-based approach. Detailed information on the architecture and its components can be found in [http://sonata-nfv.eu/sites/default/files/sonata/public/content-files/pages/SONATA_D2.2_Architecture_and_Design.pdf deliverable D2.2].
 
