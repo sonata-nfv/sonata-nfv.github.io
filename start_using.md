@@ -15,7 +15,6 @@ The recommended workflow when developing a 5GTANGO network service consists on u
 
 ```
 tng-workspace
-````
 tng-workspace --workspace path/to/workspace
 ````
 
