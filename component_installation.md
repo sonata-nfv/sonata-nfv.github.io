@@ -7,9 +7,9 @@ title: Overview of Component Installation
 
 ## General instructions and main steps
 
-The SONATA system consists of the Service Platform for deploying and orchestrating services and the Service Development Kit to create deployable service packages. For running services, the Service Platform uses the capabilities of a VIM (virtual infrastructure manager), specifically OpenStack. In order to use the Service Platform, you therefore need to have access to a running OpenStack installation.
+The 5GTANGO system consists of the Service Platform for deploying and orchestrating services and the Service Development Kit to create deployable service packages. For running services, the Service Platform uses the capabilities of a VIM (virtual infrastructure manager), specifically OpenStack. In order to use the Service Platform, you therefore need to have access to a running OpenStack installation.
 
-In general, the main steps to install a working SONATA system are as follows:
+In general, the main steps to install a working 5GTANGO system are as follows:
 
 1.  Install the Service Platform
 2.  Install the VnV
@@ -85,7 +85,7 @@ cd tng-devops
 
 Password is: `sonata`
 
-After these steps, the installation is finished.
+After these steps, the installation of SP and VnV are finished are finished.
  
  
 ###
