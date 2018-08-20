@@ -13,125 +13,89 @@ In general, the main steps to install a working SONATA system are as follows:
 
 1.  Install the Service Platform (see 4.2).
 2.  Install the Service Development Kit (see 4.3).
+3.  Install the VnV
 3.  Install the Emulator for testing purposes (see 4.4).
 4.  Install OpenStack (or get access to an existing installation).
 5.  Connect the Service Platform to OpenStack (see 5.5.2).
 
 Afterwards, you are ready to create your own services (or acquire existing ones), and deploy them with your Service Platform. This is described in section 5.
 
-## Service Platform installation
+## Service Platform and VnV installation
 
-### Pre-requisites
+## Recomended specs for the virtual machines
+SP VM
+* Cpu: 4 cores
+* Ram: 8 GB
+* Hdd: 80 GB
 
-**Hardware:**
+VnV VM
+* Cpu: 1 cores
+* Ram: 4 GB
+* Hdd: 60 GB
 
--   Minimal size requirements
-    -   Memory 4GB RAM
-    -   CPU 1vCPU
-    -   Disk 25GB
--   Recommended size requirements
-    -   Memory 8GB
-    -   CPU 4vCPU
-    -   Disk 80GB
-
-**Software:**
-
--   Ansible 2.3.0+
--   Git
--   Docker CE 17.06
-
-### Installation options
-
-**Default Installation**
-
-To install SONATA Service Platform v3.0 you only need to follow the steps described above taking into account that the configuration will be the following:
-
--   Ansible target: -&gt; Localhost
--   The public IP is the IP in the ipv4 interface card. It is used to access the GUI, BSS and the Gatekeeper API
-
-**Custom Installation**
-
-For custom installation, a configuration file is available in the folder: `group\_vars/sp/vault.yml`
-
-This file is encrypted. To open it, the password should be located `~/.ssh/.vault_pass`. The default password is `sonata`.
-
-To edit the encrypted file you can use the following command: `ansible-vault edit group_vars/sp/vault.yml`. The default configuration file is as follows:
-
-1.  VARs for MONITOR pgSQL database
-
-```
-upassword: sonata
-urootpw: 1234
-dbname: monitoring
-dbuser: monitoringuser
-# VARs for GATEKEEPER pgSQL database
-gtk_db_name: gatekeeper
-gtk_db_user: sonatatest
-gtk_db_pass: sonata
-# VARs for GATEKEEPER USER MGMT
-gtk_keycloak_user: admin
-gtk_keycloak_pass: admin
-# VARs for IA
-ia_repo_user: sonatatest
-ia_repo_pass: sonata
-#VARs for Monitoring
-mon_db_name: monitoring
-mon_db_user: monitoringuser
-mon_db_pass: sonata
+## Create tango user
+```bash
+sudo adduser tango
+sudo usermod -a -G sudo tango
 ```
 
-To change the default configuration of installation, the following file can be edited: `roles/sp/defaults/main.yml`
-
-```
----
-######################
-# defaults file for sp
-######################
-nbofvms: 1
-pop: alabs
-proj: demo
-distro: xenial
-plat: sp
-########################
-# Docker network segment
-########################
-# Docker network name
-docker_network_name: son-sp
-#############################################
-# SONATA 5G NFV SP specific version variables
-#############################################
-# SONATA SP Version. This installer was created to deploy version 3.1
-sp_ver: 3.1
-# SONATA SP Hostname. Default Public IP address
-plat_hostname: "Template:Public ip"
-# SONATA SP Domain Name. Default Public IP address
-domain_name: "Template:Public ip"
-# SONATA SP fqdn. Default Public IP address
-fqdn: "Template:Public ip"
-# SONATA SP User created by son-install
-sp_user: sonata
-sp_pass: "$1$SRc2ws2Z$rSdCC/UKiatagNdfsTVuf0"
-```
-
-
-
-### Installation instructions
-
--   On a clean Ubuntu 16.04 installation, the following commands install and configure the service platform.
-
-```
+## Packages installation
+```bash
 sudo apt-get install -y software-properties-common
 sudo apt-add-repository -y ppa:ansible/ansible
 sudo apt-get update
 sudo apt-get install -y ansible
 sudo apt-get install -y git
-git clone https://github.com/sonata-nfv/son-install.git
-cd son-install
-git checkout v3.1
-echo sonata | tee ~/.ssh/.vault_pass
-ansible-playbook utils/deploy/sp.yml -e "target=localhost public_ip=<your_ip4_address>" -v
+sudo apt-get install python3
+sudo apt install python3-pip
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10 
+sudo pip3 install docker
 ```
-  
+
+## Docker-ce
+```bash
+sudo apt-get update
+sudo apt-get install \
+  apt-transport-https \
+  ca-certificates \
+  curl \
+  software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get update
+sudo apt-get install docker-ce
+```
+
+## Create docker network
+```bash
+sudo docker network create tango	
+```
+
+## Repository cloning
+```bash
+git clone https://github.com/sonata-nfv/tng-devops.git
+cd tng-devops
+```
+## Execute installation
+* For SP: `sudo ansible-playbook roles/sp.yml -i environments -e target=localhost --ask-vault-pass`
+* For VnV: `sudo ansible-playbook roles/vnv.yml -i environments -e target=localhost --ask-vault-pass`
+
+Password is: `sonata`
+
+After these steps, the installation is finished.
+ 
+ 
+
+
+
+ 
+ 
+ 
+ 
   
 
 ### Installation Videos
