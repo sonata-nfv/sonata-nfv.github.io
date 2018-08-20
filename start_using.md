@@ -5,6 +5,7 @@
 Using the SONATA System is quite straight forward, you only need to follow the main steps shown in the general workflow figure bellow and explained in detail the following sections. 
 
  - Process workflow figure: [How_to_use_sonata.pptx](figures/How_to_use_sonata.pptx)
+ 
 
 ## Creating a network service with the SDK
 
@@ -13,40 +14,45 @@ The recommended workflow when developing a SONATA network service consists on us
 -   Step 1: Create Workspace
 
 ```
-son-workspace --init
+tng-workspace
+````
+tng-workspace --workspace path/to/workspace
 ````
 
 -   Step 2: Create Project
 
 ```
-son-workspace --project project_dir
+tng-project -p path/to/project                # creates a new project at the specified path
+tng-project -p path/to/project --add file1    # adds file1 to the project.yml
+tng-project -p path/to/project --add file1 --type text/plain  # adds file1 with explicit MIME type
+tng-project -p path/to/project --remove file1 # removes file1 from the project.yml
+tng-project -p path/to/project --status       # shows project overview/status
 ```
+
+NOTE: Since the structure of projects and descriptors changed from SONATA (v3.1) to 5GTANGO (v4.0), tng-project also provides a command to automatically translate old to new projects. For more information see the corresponding wiki page.
+````
+tng-project -p path/to/old-project --translate   # translates the project to the new structure
+````
+
 
 After this step, a sample Network Service Descriptor (NSD) and several Virtual Network Function Descriptors (VNFDs) are available at `<project_dir/sources>` directory.
 
--   Step 3: Edit NSD and VNFDs to compose the service
+-   Step 3: Validate and create the packages .tgo
 
-Use a text editor of choice to edit the descriptors.
-
--   Step 4: Validate the syntax, integrity and topology of the project
+The tng-sdk-package will create the .tgo package file after validating the structure of the descriptors.
 
 ```
-son-validate --project project_dir
+tng-pkg -p misc/5gtango_ns_project_example1		# package a 5GTANGO SDK project
+```
+tng-pkg -u misc/5gtango-ns-package-example.tgo		# unpack a 5GTANGO package to a local 5GTANGO SDK project
 ```
 
--   Step 5: Create a SONATA service package
 
-```
-son-package --project project_dir -n service_package
-```
+After this step, if everything is correct, a package file named `5gtango_ns_project_example1.tgo` will be created.
 
-After this step, if everything is correct, a package file named `service_package.son` will be created.
 
--   Step 6: Onboard the package into the SONATA Service Platform or Emulator
+-   Step 4: Onboard the package into the 5GTANGO Service Platform or Emulator
 
-```
-son-access push --upload service_package.son
-```
 
 These are the most basic steps to develop a network service, however additional features may be used and configuration procedures may take place, when required. For instance, to compose a NSDs and VNFDs, the son-editor GUI may be used. Likewise, the son-validator GUI can also be used to trigger validations and visualize the resulting errors, the service network topology, the forwarding graphs, etc. Regarding configuration procedures, before step 6 takes place (onboard a network service to the service platform) the service platform URL and user credentials must be configured in the workspace. To learn more about the additional features and configuration requirements please consult the wiki \[documentation\](https://github.com/sonata-nfv/son-cli/wiki) of son-cli repository.
 
