@@ -63,6 +63,9 @@ To support all these features, we have designed a modular and very flexible arch
 
 ![](http://sonata-nfv.github.io/son-tutorials/figures/Implementation_architecture.png)
 
+
+### Service Platform
+
 The main modules of the SP are the following:
 
 * ***[Gatekeeper](https://github.com/sonata-nfv/son-gkeeper):*** controls and enforces whoever (and whatever) wants to interact with the SP and guarantees the quality of the submitted packages, by validating them against a schema (syntactically), the topology of the described service and it's integrity;
@@ -83,7 +86,7 @@ The service development kit (SDK) consists of the following main modules:
 * ***[Emulator](https://github.com/sonata-nfv/son-emu)***: emulation platform to support network service developers in locally prototyping and testing complete network service chains in realistic end-to-end multi-PoP scenarios
 * ***[Analyzer](https://github.com/sonata-nfv/son-analyze)***: analysis framework to study a service's behaviour
 
-###
+### VnV
 
 The Validation and Verification (VnV) platform consist of the following modules:
 
