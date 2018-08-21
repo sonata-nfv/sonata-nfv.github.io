@@ -321,20 +321,29 @@ With this last step concluded successfully, the service remains ready to be inst
 
 <p align="center"><img src="images/vnv.jpg" /></p> 
 
+In the VnV you can see the Services, the Functions and the tests stored in the catalog.
+
 ### Service Platform 
 
 <p align="center"><img src="images/sp.jpg" /></p>
+
+In the SP you can configure the Services, the Functions and the Network Slices
+
+Also here you can create and configure the policies and SLAs, as we can see in the images below:
+
+<p align="center"><img src="images/policies.jpg" /></p>
+<p align="center"><img src="images/slas.jpg" /></p>
+
 
 ### Service Management 
 
 <p align="center"><img src="images/sm.jpg" /></p>
 
+Here is where you can work with your Network Services. You can deploy, check the status and terminate them.
 
 
 
-
-
-### Instance a Network Service 
+### Instantiating a Network Service 
 
 -   Step 1: Login and verify that the selected section is “Available Network Services” inside the Service Management.
 
