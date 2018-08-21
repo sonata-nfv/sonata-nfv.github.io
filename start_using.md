@@ -343,10 +343,14 @@ Here is where you can work with your Network Services. You can deploy, check the
 
 
 
-### Instantiating a Network Service 
+### Instantiating and terminating a Network Service 
 
--   Step 1: Login and verify that the selected section is “Available Network Services” inside the Service Management.
+-   Step 1: Login and verify that the selected section is “Available Network Services” inside the Service Management. Here you can see the green play button. After pressing it the instantiation process will begin.
 
 <p align="center"><img src="images/instantiate.jpg" /></p>
 
-Here you can see the green play button. After pressing it the instantiation process will begin.
+
+
+-   Step 2: In the section is “Network Services Instances” inside the Service Management. Here you can see the red stop button. After pressing it the terminate process will begin.
+
+<p align="center"><img src="images/terminate.jpg" /></p>
