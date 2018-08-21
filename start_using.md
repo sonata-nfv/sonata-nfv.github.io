@@ -1,20 +1,21 @@
-# Start using 5GTANGO
+# Start using SONATA
 
 ## General workflow
 
-Using the 5GTANGO System is quite straight forward, you only need to follow the main steps shown in the general workflow figure bellow and explained in detail the following sections. 
+Using the SONATA System is quite straight forward, you only need to follow the main steps shown in the general workflow figure bellow and explained in detail the following sections. 
 
  - Process workflow figure: [How_to_use_sonata.pptx](figures/How_to_use_sonata.pptx)
  
 
 ## Creating a network service with the SDK
 
-The recommended workflow when developing a 5GTANGO network service consists on using the CLI tools to create a workspace, create a project to hold the descriptors of the service, validate the components and finally, create a bundled service package. The required steps are as follows:
+The recommended workflow when developing a SONATA network service consists on using the CLI tools to create a workspace, create a project to hold the descriptors of the service, validate the components and finally, create a bundled service package. The required steps are as follows:
 
 -   Step 1: Create Workspace
 
 ```
 tng-workspace
+````
 tng-workspace --workspace path/to/workspace
 ````
 
@@ -26,11 +27,10 @@ tng-project -p path/to/project --add file1    # adds file1 to the project.yml
 tng-project -p path/to/project --add file1 --type text/plain  # adds file1 with explicit MIME type
 tng-project -p path/to/project --remove file1 # removes file1 from the project.yml
 tng-project -p path/to/project --status       # shows project overview/status
-````
+```
 
 NOTE: Since the structure of projects and descriptors changed from SONATA (v3.1) to 5GTANGO (v4.0), tng-project also provides a command to automatically translate old to new projects. For more information see the corresponding wiki page.
-
-```
+````
 tng-project -p path/to/old-project --translate   # translates the project to the new structure
 ````
 
@@ -43,9 +43,9 @@ The tng-sdk-package will create the .tgo package file after validating the struc
 
 ```
 tng-pkg -p misc/5gtango_ns_project_example1		# package a 5GTANGO SDK project
-
+```
 tng-pkg -u misc/5gtango-ns-package-example.tgo		# unpack a 5GTANGO package to a local 5GTANGO SDK project
-````
+```
 
 
 After this step, if everything is correct, a package file named `5gtango_ns_project_example1.tgo` will be created.
@@ -295,41 +295,20 @@ Further information can be found [in the `son-analyze` wiki pages].
 
 ## Deploying a service with the SERVICE PLATFORM
 
-### Login to SONATA Service Platform
+### Login to 5GTANGO Service Platform
 
 -   Step 1: Fill the login form with your username and password and press the “Login” button:
 
-![Login1.png](figures/Login1.png)
+<p align="center"><img src="images/login.jpg" /></p>
 
 -   Step 2: After the authorization check you will be redirected to GUI's main dashboard:
 
-![Login2.png](figures/Login2.png)
+<p align="center"><img src="images/dashboard.jpg" /></p>
 
-### Add a new VIM/WIM
-
--   Step 1: Select “WIM/VIM Settings” from the main menu.
-
-![AddWIM_VIM.png](figures/AddWIM_VIM.png)
-
--   Step 2: Select “Add WIM” button.
-
-![AddWIM2.png](figures/AddWIM2.png)
-
--   Step 3: Fill all the fields of the “New WIM” form and press “Save”.
-
-![AddWIM3.png](figures/AddWIM3.png)
-
--   Step 4: Select “Add VIM” button.
-
-![AddVIM1.png](figures/AddVIM1.png)
-
--   Step 5: Fill all the fields of the “New VIM” form and press “Save”.
-
-![AddVIM3.png](figures/AddVIM3.png)
 
 ### Package on boarding
 
-Package on-boarding in SONATA consists of a sequence of steps, performed before the package is stored in the platform's Catalogues. These steps guarantee that only valid packages are made available to the platform owner's customers. That sequence of steps are the following:
+Package on-boarding in 5GTANGO consists of a sequence of steps, performed before the package is stored in the platform's Catalogues. These steps guarantee that only valid packages are made available to the platform owner's customers. That sequence of steps are the following:
 
 1.  **Authenticate the developer submitting the package:** the openness demanded for the 5G era of Service Platforms do not necessarily imply anonymity. Knowing who its users are support not only security but also some still unforeseen and arbitrarily complex business models between the different stakeholders;
 2.  **Authorize the developer submitting the package:** with the expected network-based relationships between all the stakeholders, access and usage restrictions can naturally be needed, which demands a flexible but strong authorization set of mechanisms to be in place;
@@ -338,94 +317,27 @@ Package on-boarding in SONATA consists of a sequence of steps, performed before 
 
 With this last step concluded successfully, the service remains ready to be instantiated by any customer of the SP owner (see the following sub-section).
 
+### VnV
 
+<p align="center"><img src="images/vnv.jpg" /></p> 
 
-### Login to SONATA Service Platform BSS
+### Service Platform 
 
--   Step 1: Fill the login form with your username and password and press the “Login” button:
+<p align="center"><img src="images/sp.jpg" /></p>
 
-![BSSUserLogin.png](figures/BSSUserLogin.png)
+### Service Management 
 
--   Step 2: After the authorization check you will be redirected to BSS's Available Network Services section:
-
-![BSSServiceInstantiationStep0.png](figures/BSSServiceInstantiationStep0.png)
-
-
-
-### Instance a hello-world Network Service from BSS
-
--   Step 1: Login and verify that the selected section is “Available Network Services”.
-
-```
-(In order to proceed with the network service instantiation, it's necessary the service catalogue contains at least one service)
-```
-
-![BSSServiceInstantiationStep0.png](figures/BSSServiceInstantiationStep0.png)
-
--   Step 2: Select the “Instantiate” button.
-
-![BssServiceInstantiationStep1.png](figures/BssServiceInstantiationStep1.png)
-
--   Step 3: Ingress and Egress fields can be filled to configure the network service at the infrastructure level (optional). Confirm the instantiation request pressing the “Yes” button.
-
-![BssServiceInstantiationStep2.png](figures/BssServiceInstantiationStep2.png)
-
--   Step 4: A message with the request id is displayed.
-
-![BssServiceInstantiationStep3.png](figures/BssServiceInstantiationStep3.png)
-
--   Step 5: Check that the request is listed in the “Requests” section.
-
-![BssRequests.png](figures/BssRequests.png)
+<p align="center"><img src="images/sm.jpg" /></p>
 
 
 
-### Monitoring a function
 
-#### Install monitoring Probe
 
-The easiest way to deploy monitoring probe is as Docker container but it can be installed also as a service.
 
--   Step 1: Build container
+### Instance a Network Service 
 
-```
-git clone https://github.com/sonata-nfv/son-monitor-probe.git
-cd son-monitor-probe
-sudo docker build -f vm_mon/Dockerfile -t son-vm-probe .
-```
+-   Step 1: Login and verify that the selected section is “Available Network Services” inside the Service Management.
 
-Alternately, you can pull the latest image from Sonata's repository in Docker Hub
+<p align="center"><img src="images/instantiate.jpg" /></p>
 
-```
-sudo docker pull sonatanfv/son-monitor-probe:latest
-```
-
--   Step 2: Run probe
-
-```
-sudo docker run -d --name son-vm-probe -e NODE_NAME=VNF_1 -e PROM_SRV=http://<service_platform_ip>:9091/metrics --net="host" --privileged=true  -v /proc:/myhost/proc -v /:/rootfs:ro son-vm-probe
-```
-
-More details about installation alternatives can be found in [GitHub wiki].
-
-#### Retrieve monitoring data from GUI
-
-GUI provides monitoring data related to the components comprising the Sonata service platform and also the deployed VNFs. This information is organized in two views (named 'Service platform' and 'VNFs' ) under the Monitoring menu. Developers can access to monitoring data that are related with the VNFs of their NS using GUI.
-
--   Step 1: Login in GUI
-
-see [Login](#login-to-sonata-service-platform)
-
--   Step 2: Select “Monitoring-&gt;VNFs” from the menu.
-
-![Vnf_mon_view.png](figures/Vnf_mon_view.png)
-
--   Step 3: Select one of the deployed VNFs in order to view charts of the monitoring data.
-
-![Vnf_cpu.png](figures/Vnf_cpu.png)
-
-![Vnf_ram.png](figures/Vnf_ram.png)
-
-  [`https://github.com/sonata-nfv/son-monitor-probe.git`]: https://github.com/sonata-nfv/son-monitor-probe.git
-  [`http://`]: http://
-  [GitHub wiki]: https://github.com/sonata-nfv/son-monitor-probe/wiki/VNF-monitoring
+Here you can see the green play button. After pressing it the instantiation process will begin.
