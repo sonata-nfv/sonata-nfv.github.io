@@ -135,6 +135,8 @@ Usage:
 tng-sdk-project -h
 ```
 
+User manual and documentation: [GitHub repository and wiki](https://github.com/sonata-nfv/tng-sdk-project.git)
+
 ### tng-sdk-img
 (Askhat)
 
@@ -157,6 +159,8 @@ Usage:
 tng-sdk-validate -h
 ```
 
+User manual and documentation: [GitHub repository and wiki](https://github.com/sonata-nfv/tng-sdk-validation)
+
 ### tng-sdk-package
 
 Single command installation:
@@ -171,8 +175,9 @@ Usage:
 tng-sdk-package -h
 ```
 
+User manual and documentation: [GitHub repository and wiki](https://github.com/sonata-nfv/tng-sdk-package)
+
 ### vim-emu (former son-emu)
-(Manuel (upadte))
 
 This emulation platform was created to support network service developers to locally prototype and test their network services in realistic end-to-end multi-PoP scenarios. It allows the execution of real network functions, packaged as Docker containers, in emulated network topologies running locally on the developer's machine. The emulation platform also offers OpenStack-like APIs for each emulated PoP so that it can integrate with MANO solutions, like OSM. The core of the emulation platform is based on [Containernet](https://containernet.github.io).
 
