@@ -118,14 +118,25 @@ The CLI tools have the following pre-requisites:
 -   virtualenv
 
 ### tng-sdk-descriptorgen
+(Strefan)
 
 ### tng-sdk-project
+(Stefan/Manuel)
+
+### tng-sdk-img
+(Askhat)
+
+### tng-sdk-sm
+(Thomas)
 
 ### tng-sdk-validate
+(Anton? Dani?)
 
 ### tng-sdk-package
+(Manuel)
 
 ### vim-emu
+(Manuel (upadte))
 
 SONATA's [emulation platform](https://github.com/sonata-nfv/son-emu) was created to support network service developers to locally prototype and test complete network service chains in realistic end-to-end multi-PoP scenarios. It allows the execution of real network functions, packaged as Docker containers, in emulated network topologies running locally on the network service developer's machine. The emulation platform is based on [Containernet](https://github.com/containernet/containernet).
 
