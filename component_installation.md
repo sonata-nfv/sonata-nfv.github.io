@@ -116,80 +116,20 @@ The CLI tools have the following pre-requisites:
 
 -   python 3 (3.4 used for most of the development)
 -   virtualenv
--   docker (used by son-monitor)
--   docker-compose (used by son-monitor)
 
-### Installation options
+### tng-sdk-descriptorgen
 
-son-cli can be installed via the OS package distribution system or using setuptools. We currently provide repositories for Ubuntu Trusty (14.04), Ubuntu Xenial (16.04) and CentOS 7. For the remaining OS's please use python's setuptools.
+### tng-sdk-project
 
-### Installation instructions
+### tng-sdk-validate
 
-Depending on the Linux distribution (Ubuntu or CentOS) you are using, the following commands install and configure the service development kit.
+### tng-sdk-package
 
-**Ubuntu Trusty (14.04) and Xenial (16.04)**
-
-1. Add the GPG key
-
-```bash
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8EC0731023C1F15B
-```
-
-2. Add a source entry for the repository
-
-   2.1. Ubuntu Trusty (14.04)
-
-   ```bash
-   echo "deb http://repo.sonata-nfv.eu ubuntu-trusty main" | sudo tee -a /etc/apt/sources.list
-   ```
-   2.2. Ubuntu Xenial (16.04)
-
-   ```bash
-   echo "deb http://repo.sonata-nfv.eu ubuntu-xenial main" | sudo tee -a /etc/apt/sources.list
-   ```
-
-3. Update and install
-
-```bash
-sudo apt-get update
-sudo apt-get install sonata-cli
-```
-
-**CentOS 7**
-
-- Step 1: Install EPEL
-
- ```bash
- yum install epel-release
- ```
-
-- Step 2: Create a repository entry file in `/etc/yum.repo.d/sonata.repo` with the following content:
-
- ```text
- [sonata-repo]
- name=SONATA Repository
- baseurl=http://rpmrepo.sonata-nfv.eu/repo/
- enabled=1
- gpgcheck=0
- ```
-
-- Step 3: Install
-
- ```
- yum install sonata-cli
- ```
-
-### Installation Videos
-
--   Ubuntu installation: <https://youtu.be/Hk4j3NcnB4A>
--   CentOS 7 installation: <https://youtu.be/f14ure7YTSY>
--   Setuptools installation: <https://youtu.be/T73prkc7ONI>
-
-### Emulator
+### vim-emu
 
 SONATA's [emulation platform](https://github.com/sonata-nfv/son-emu) was created to support network service developers to locally prototype and test complete network service chains in realistic end-to-end multi-PoP scenarios. It allows the execution of real network functions, packaged as Docker containers, in emulated network topologies running locally on the network service developer's machine. The emulation platform is based on [Containernet](https://github.com/containernet/containernet).
 
-### Pre-requisites
+#### Pre-requisites
 
 The emulator requires a Ubuntu 16.04 LTS installation on a bare motel machine or a VM. The following packages need to be installed:
 
@@ -197,11 +137,11 @@ The emulator requires a Ubuntu 16.04 LTS installation on a bare motel machine or
 -   aptitude
 -   git
 
-### Installation options
+#### Installation options
 
 There are two ways to install and use son-emu. The simple one is to use [Vagrant] to create a VirtualBox-based VM on your machine that contains the pre-installed and configured emulator. The more complicated, but more flexible, installation is done using an [Ansible] playbook executed on a Ubuntu 16.04 LTS machine or VM as described in the following section.
 
-### Installation instructions
+#### Installation instructions
 
 -   Step 1: Install Ansible, etc,
 
@@ -229,7 +169,7 @@ sudo ansible-playbook -i "localhost," -c local install.yml
 
 More details about installation alternatives can be found in the son-emu [GitHub wiki].
 
-### Installation Videos
+#### Installation Videos
 
 -   Installation video: [here]
 -   Demo video of son-emu year 1 version: [here][1]
