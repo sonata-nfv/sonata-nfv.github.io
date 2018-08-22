@@ -112,7 +112,7 @@ The goal of the 5GTANGO SDK is to assist the developer in designing services and
 
 ### Pre-requisites
 
-The 5GTANGO SDK tools are all implemented in Python:
+The 5GTANGO SDK tools are all implemented in Python and bash:
 
 - Ubuntu 16.04 (or later)
 - Python 3 (vim-emu: Python 2.7)
@@ -138,7 +138,35 @@ tng-sdk-project -h
 User manual and documentation: [GitHub repository and wiki](https://github.com/sonata-nfv/tng-sdk-project.git)
 
 ### tng-sdk-img
-(Askhat)
+
+#### Additional pre-requisites
+
+* wget
+* curl
+* cloud-utils
+* kvm
+* shyaml
+
+```bash 
+sudo apt install curl wget qemu-kvm cloud-utils
+pip install shyaml
+```
+
+#### Installation:
+
+```bash
+git clone https://github.com/sonata-nfv/tng-sdk-img
+cd tng-sdk-img
+sudo ./install.sh
+```
+
+#### Usage:
+
+```bash
+tng-sdk-img -h
+```
+
+User manual and documentation: [GitHub repository and wiki](https://github.com/sonata-nfv/tng-sdk-img4)
 
 ### tng-sdk-sm
 (Thomas)
