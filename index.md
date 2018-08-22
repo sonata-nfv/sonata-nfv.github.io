@@ -21,22 +21,21 @@ This quick guide is organized in the following manner:
 * Section 3 gives information about the current 5GTANGO software release.
 * Section 4 explains the installation process for each of the 5GTANGO components that can be installed and used individually. These are the VnV, the SP, the SDK and the Emulator that, although part of the SDK, has its own autonomy.
 * In section 5, we describe briefly how to use 5GTANGO once installed, from the creation of a service, how to test it using the emulator, to its deployment with the Service Platform . 
-* Section 6 describes the support process provide by 5GTANGO Team.
-* Section 7 is a consolidation of all the acronyms used in this document.
 
-# Brief 5GTANGO introduction
+
+## 1. Brief 5GTANGO introduction
 
 5GTANGO is an agile service development and orchestration framework for 5G virtualized networks. It provides a programming model and a development tool chain for virtualized services, fully integrated with a DevOps-enabled service platform and orchestration system. 5GTANGO therefore targets both the flexible programmability of software networks as well as the optimization of their deployments. Its modular design makes the SONATA service platform effortlessly customizable to meet the needs of different service providers.
 
-*** What is 5GTANGO ? ***
+### What is 5GTANGO ? 
 
 5GTANGO provides a platform for supporting the lifecycle of virtualized networking services. In particular, network function chaining and orchestration are the target domains of SONATA.
 
-*** Who is it for ? ***
+### Who is it for ? 
 
 The 5GTANGO platform supports two main stakeholders in telecommunications service creation: service developers and service operators. 5GTANGO's Network Service Development Kit (SDK) facilitates network service development for service developers. Such services are then deployed and run on 5GTANGO's Service Platform. Through its extensive customization capabilities, the service platform allows communication service providers to adapt service provisioning to their specific environment and needs. 5GTANGO enables a DevOps workflow between the SDK tools and the service platform, which allows developers and operators to closely collaborate in providing an outstanding experience to customers. Also you have available the VnV for testing purposes.
 
-## General architecture
+## 2. General architecture
 
 The main architectural components of the 5GTANGO platform are shown in the figure below. In line with the support of service developers and service operators, SONATA distinguishes the two main components SDK and service platform. Services developed and deployed by this system run on top of the underlying infrastructure accessible to the SONATA system via Virtual Infrastructure Managers (VIMs), abstracting from the actual hardware and software.
 
@@ -83,7 +82,7 @@ The service development kit (SDK) consists of the following main modules:
 * ***[Emulator](https://github.com/sonata-nfv/son-emu)***: emulation platform to support network service developers in locally prototyping and testing complete network service chains in realistic end-to-end multi-PoP scenarios
 * ***[Analyzer](https://github.com/sonata-nfv/son-analyze)***: analysis framework to study a service's behaviour
 
-###
+### VnV
 
 The Validation and Verification (VnV) platform consist of the following modules:
 
@@ -92,7 +91,7 @@ The Validation and Verification (VnV) platform consist of the following modules:
 * ***[Test Execution Engine](https://github.com/sonata-nfv/tng-vnv-tee)***: This is a 5GTANGO component to execute the test suites for 5G Network Services.
 
 
-## About the latest major release v4.0
+## 3. About the latest major release v4.0
 
 * Added the Slice Manager to the SP
 * Added the integration with the VnV Platform
@@ -148,6 +147,6 @@ This is version 3.0 of the SONATA platform, the fifth release of the code. The m
   * improved installation process
   * many additional features, bug fixes, performance improvements
 
-# [Component Installation](/component_installation)
+# [4. Component Installation](/component_installation)
 
-# [Administration and User guide](/start_using)
+# [5. Administration and User guide](/start_using)
