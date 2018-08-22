@@ -338,7 +338,7 @@ Talking about the SLAs, here you can create new SLAs templates, view the existin
 
 When you are going to instantiate you can select the SLAs that you want to apply to taht Network Service
 
-<p align="center"><img src="4.INSTANTIATE_SERVICE_WITH_SLA.PNG" /></p>
+<p align="center"><img src="images/slas/4.INSTANTIATE_SERVICE_WITH_SLA.PNG" /></p>
 
 
 ### Service Management 
