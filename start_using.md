@@ -1,11 +1,4 @@
-# Start using SONATA
-
-## General workflow
-
-Using the SONATA System is quite straight forward, you only need to follow the main steps shown in the general workflow figure bellow and explained in detail the following sections. 
-
- - Process workflow figure: [How_to_use_sonata.pptx](figures/How_to_use_sonata.pptx)
- 
+# Start using 5GTANGO
 
 ## Creating a network service with the SDK
 
@@ -335,6 +328,19 @@ Also here you can create and configure the policies and SLAs, as we can see in t
 <p align="center"><img src="images/slas.jpg" /></p>
 
 
+#### SLAs
+
+Talking about the SLAs, here you can create new SLAs templates, view the existing ones and their details.
+
+<p align="center"><img src="images/slas/1.CREATE_SLA_TEMPLATE.PNG" /></p>
+
+<p align="center"><img src="images/slas/3.VIEW_SLA_DETAILS.PNG" /></p>
+
+When you are going to instantiate you can select the SLAs that you want to apply to taht Network Service
+
+<p align="center"><img src="4.INSTANTIATE_SERVICE_WITH_SLA.PNG" /></p>
+
+
 ### Service Management 
 
 <p align="center"><img src="images/sm.jpg" /></p>
@@ -354,3 +360,5 @@ Here is where you can work with your Network Services. You can deploy, check the
 -   Step 2: In the section is “Network Services Instances” inside the Service Management. Here you can see the red stop button. After pressing it the terminate process will begin.
 
 <p align="center"><img src="images/terminate.jpg" /></p>
+
+
