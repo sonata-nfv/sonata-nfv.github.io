@@ -8,7 +8,7 @@ The recommended workflow when developing a SONATA network service consists on us
 
 ```
 tng-workspace
-````
+
 tng-workspace --workspace path/to/workspace
 ````
 
@@ -20,10 +20,10 @@ tng-project -p path/to/project --add file1    # adds file1 to the project.yml
 tng-project -p path/to/project --add file1 --type text/plain  # adds file1 with explicit MIME type
 tng-project -p path/to/project --remove file1 # removes file1 from the project.yml
 tng-project -p path/to/project --status       # shows project overview/status
-```
+````
 
 NOTE: Since the structure of projects and descriptors changed from SONATA (v3.1) to 5GTANGO (v4.0), tng-project also provides a command to automatically translate old to new projects. For more information see the corresponding wiki page.
-````
+```
 tng-project -p path/to/old-project --translate   # translates the project to the new structure
 ````
 
@@ -36,9 +36,9 @@ The tng-sdk-package will create the .tgo package file after validating the struc
 
 ```
 tng-pkg -p misc/5gtango_ns_project_example1		# package a 5GTANGO SDK project
-```
+
 tng-pkg -u misc/5gtango-ns-package-example.tgo		# unpack a 5GTANGO package to a local 5GTANGO SDK project
-```
+````
 
 
 After this step, if everything is correct, a package file named `5gtango_ns_project_example1.tgo` will be created.
