@@ -1,5 +1,5 @@
-title: 5GTANGO Platform
-description: 5GTANGO Platform landpage hosted by GitHub.
+title: Cayman theme
+description: Cayman is a clean, responsive theme for GitHub Pages.
 show_downloads: true
 google_analytics:
-theme: jekyll-theme-time-machine
+theme: jekyll-theme-cayman
