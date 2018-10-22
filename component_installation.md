@@ -80,6 +80,15 @@ git clone https://github.com/sonata-nfv/tng-devops.git
 cd tng-devops
 ```
 ## Execute installation
+
+### Step 1
+* In the file /tng-devops/host_vars/localhost, replace the version values for the v4.0 installation:
+
+* Only for the VnV,you need to replace the lines pointing to the correct SP you want to use:
+
+
+
+### Step 2
 * For SP: `sudo ansible-playbook roles/sp.yml -i environments -e target=localhost --ask-vault-pass`
 * For VnV: `sudo ansible-playbook roles/vnv.yml -i environments -e target=localhost --ask-vault-pass`
 
