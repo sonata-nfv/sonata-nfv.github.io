@@ -82,9 +82,12 @@ cd tng-devops
 ## Execute installation
 
 ### Step 1
+
 * In the file /tng-devops/host_vars/localhost, replace the version values for the v4.0 installation:
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/raw/master/images/localhost_variables.jpg" /></p>
 
 * Only for the VnV,you need to replace the lines pointing to the correct SP you want to use:
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/raw/master/images/localhost_vnv.jpg" /></p>
 
 
 
