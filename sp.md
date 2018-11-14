@@ -19,11 +19,7 @@ Before executing it, you only need to open it and replace the values of your Ope
 
 ### Login to 5GTANGO Service Platform
 
--   Step 1: Fill the login form with your username and password and press the “Login” button:
-
-<p align="center"><img src="images/login.jpg" /></p>
-
--   Step 2: After the authorization check you will be redirected to GUI's main dashboard:
+Write the url (ip) of your service platform in any browser and you will be redirected to GUI's main dashboard:
 
 <p align="center"><img src="images/dashboard.jpg" /></p>
 
