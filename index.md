@@ -6,6 +6,7 @@ layout: default
 
 # Foreword
 
+
 ## Purpose of this tutorial
 
 The purpose of this tutorial is to provide the reader with a general view about 5GTANGO platform in the easiest and quickest way possible.
