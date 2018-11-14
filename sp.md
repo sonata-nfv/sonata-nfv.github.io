@@ -50,3 +50,11 @@ Here is where you can work with your Network Services. You can deploy, check the
 -   Step 2: In the section is “Network Services Instances” inside the Service Management. Here you can see the red stop button. After pressing it the terminate process will begin.
 
 <p align="center"><img src="images/terminate.jpg" /></p>
+
+
+
+# Service Check
+
+In the Dashboard, in the Network Service tab, you can check the status of the instantiated services.
+
+<p align="center"><img src="images/sp.jpg" /></p>
