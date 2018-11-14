@@ -18,7 +18,7 @@ This tutorial doesn´t pretend to be an extend document where to find all the in
 * Service Platform (/sp)
     - Prerequisites:
     - VNF Images available in Openstack -> Installation
-    - Configure VIM/WIM in Service Platform -> bash script (Luis)
+    - Configure VIM/WIM in Service Platform -> bash script
     - Service deployment (Felipe)
                 - List packages
                 - Select package
