@@ -349,3 +349,5 @@ This is version 3.0 of the SONATA platform, the fifth release of the code. The m
 # [4. Component Installation](/component_installation)
 
 # [5. Administration and User guide](/start_using)
+
+# [6. Quick guide](/quick_guide)
