@@ -1,5 +1,4 @@
-<p align="center"><img src="https://github.com/sonata-nfv/tng-api-gtw/wiki/images/sonata-5gtango-logo-500px.png" /></p>
-
+#QUICK GUIDE
 
 The purpose of this quick guide is to provide the reader with a general view about 5GTANGO/Sonata platform and in the easiest and quickest way possible.
 Here you will find a brief explanation about what 5GTANGO is, how to install it, how to use it and how to get technical support if required.
