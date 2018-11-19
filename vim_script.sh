@@ -1,13 +1,13 @@
 #!/bin/bash
-user="sonata.dem"					###### project user name
-password="s0nata.d3m"				###### project password
-tenant="sonata.dem"					###### project name
-vim_ip="10.100.32.200"				###### IP of the VIM
-router="e8cdd5c7-191f-4215-83f3-53ee1113db86"		###### sonata/tango router uuid in OpenStack
-ext_net="53d43a3e-8c86-48e6-b1cb-f1f2c48833de"		###### uuid of the external/provider network connected to the router
-city="city"						###### City Name
-country="country"					###### Country Name
-name="name"					###### Vim Name
+user="username"
+password="password"
+tenant="tenantname"
+vim_ip="000.000.000.000"
+router="tenant router uuid"
+ext_net="external net uuid"
+city="city"
+country="country"
+name="vimname"
 
 /usr/bin/docker exec -t son-postgres psql -h localhost -U sonatatest -d vimregistry -c \
 "INSERT INTO VIM (UUID, TYPE, VENDOR, ENDPOINT, USERNAME, CONFIGURATION, CITY, COUNTRY, PASS, AUTHKEY, NAME, DOMAIN) VALUES \
