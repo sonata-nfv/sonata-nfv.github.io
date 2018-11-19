@@ -16,11 +16,19 @@ This tutorial doesn´t pretend to be an extend document where to find all the in
     - Package on-boarding (Curl command)
   
 * [Service Platform](/sp)
-    - Prerequisites:
-    - VNF Images available in Openstack -> Installation
-    - Configure VIM/WIM in Service Platform -> bash script
-    - Service deployment
-                - List packages
-                - Select package
-                - Instantiate
-    - Service Check
+    - Platform Channels 
+        - Portal
+        - APIs
+    - Platform SETUP
+        - Configure VIMs/WIMs
+        - Upload Images
+    - Platform Operation
+        - Show Catalogue Artifacts
+            - Packages
+            - Services
+            - Functions
+        - Instantiate a Service
+        - Show Service Instance
+        - Terminate a Service Instance
+          
+   
