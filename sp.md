@@ -13,7 +13,6 @@ With the installation of the Service Platform ready and the Descriptors already 
    Check if the Package is available in the service plaform. It can be done with the command: `curl http://<service_platform_ip>/api/v3/packages`. If the Network Service is not avaible then you can on-board using this command: `curl -X POST http://<service_platform_ip>/api/v3/packages -F "package=@./eu.5gtango.ns-squid-haproxy.0.1.tgo" -H 'content-type:multipart/form-data`. The package is availabe in [here](files/eu.5gtango.ns-squid-haproxy.0.1.tgo)
 
 
-
 # Configure VIM/WIM in Service Platform -> bash script
 
 After the installation of the SP, you need to add a VIM to the it, you can use a simple bash script like this one. Just replace the variables at the beginning (marked in yellow) with the correct values for your VIM.

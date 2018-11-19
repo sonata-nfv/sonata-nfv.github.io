@@ -65,7 +65,7 @@ locale.Error: unsupported locale setting
 "
 ```
 
-Do the following:
+It can be fixed with:
 
 ```bash
 export LC_ALL="en_US.UTF-8"
