@@ -1,9 +1,16 @@
-# VNF Images available in Openstack
+# Service Platform
 
-Before starting deploying, it is recommended that the VNF Images are available in Openstack. If not, during the deploy time, sonata will download from the url link provided in the descriptor.
+With the installation of the Service Platform ready and the Descriptors already created is time to deploy our network service. To this end, you will need to fulfill a set of prerequisited described below.
 
+## Prerequisites
 
-If a valid image is not avaible in the Vim or for downloading, it will give you an error.
+1. VNF images available in Openstack:
+   Check that the images are available in openstack if not you can upload these two images:
+   a. [squid](http://bit.ly/5GTANGO_squid)
+   b. [haproxy](http://bit.ly/5GTANGO_HAproxy)
+
+2. Network service descriptor on-boarded to the Service Platform
+   Check if the Package is available in the service plaform. It can be done with the command: `curl http://<service_platform_ip>/api/v3/packages`. If the Network Service is not avaible then you can on-board using this command: `curl -X POST http://<service_platform_ip>/api/v3/packages -F "package=@./eu.5gtango.ns-squid-haproxy.0.1.tgo" -H 'content-type:multipart/form-data`. The package is availabe in [here](files/eu.5gtango.ns-squid-haproxy.0.1.tgo)
 
 
 # Configure VIM/WIM in Service Platform -> bash script
