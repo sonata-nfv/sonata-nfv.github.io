@@ -51,7 +51,7 @@ To get the external network uuid you can go to openstack horizon dashboard and o
 
 If not assign one at the end of the list in the menu.
 
-<p align="center"><img src="images/primary-project-selection.png" width="50%" /></p>
+<p align="center"><img src="images/primary-project-s.png" width="50%" /></p>
 
 After the configuration in the Openstack, you can run the script with the command: `bash vim_script.sh`
 
