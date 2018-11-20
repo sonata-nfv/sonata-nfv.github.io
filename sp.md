@@ -41,45 +41,40 @@ To get the tenant router uuid you can go to openstack horizon dashboard and open
 
 <p align="center"><img src="images/router-uuid.png" width="70%" /></p>
 
+To get the external network uuid you can go to openstack horizon dashboard and open the route: `project -> network -> network -> (select your external net) -> Overview -> ID`
 
+<p align="center"><img src="images/network-extnet-uuid.png" width="70%" /></p>
 
-# Service deployment
+4. Check if the user have primary project assigned.
 
+<p align="center"><img src="images/primary-project.png" width="70%" /></p>
 
-### Login to 5GTANGO Service Platform
+If not assign one at the end of the list in the menu.
 
-Write the url (ip) of your service platform in any browser and you will be redirected to GUI's main dashboard:
+<p align="center"><img src="images/primary-project-selection.png" width="50%" /></p>
 
-<p align="center"><img src="images/dashboard.jpg" /></p>
+After the configuration in the Openstack, you can run the script with the command: `bash vim_script.sh`
 
+## Instantiating and terminating a Network Service
 
-In the SP you can configure the Services, the Functions and the Network Slices
+- **Step 1:** Open the 5GTANGO portal in `http://<service_platform_ip>/` and go to `Service Management -> Available network services`. In this screen you can see the list of available network services and you could instantate it pushing the green play button.
+ 
+<p align="center"><img src="images/available-network-services.png" width="80%" /></p>
 
+- **Step 2:** Select the service you desire to instantiate and press the green play button. Next, you will get a window that you can skip for now about ingress and egress networks. You can clic on Next button.
 
-Here is where you can work with your Network Services. You can deploy, check the status and terminate them:
+<p align="center"><img src="images/ingress-egress.png" width="50%" /></p>
 
-<p align="center"><img src="images/sm.jpg" /></p>
-
-
-
-
-
-
-### Instantiating and terminating a Network Service 
-
--   Step 1: Login and verify that the selected section is “Available Network Services” inside the Service Management. Here you can see the green play button. After pressing it the instantiation process will begin.
-
-<p align="center"><img src="images/instantiate.jpg" /></p>
-
-
--   Step 2: In the section is “Network Services Instances” inside the Service Management. Here you can see the red stop button. After pressing it the terminate process will begin.
-
-<p align="center"><img src="images/terminate.jpg" /></p>
+- **Step 3:** Write a name for your network service and don't select any SLA for now, the SLA part will be covered in the further guides. To instantiate the NS just click on INSTANTIATE button and the service will be instantiated inmediately.
+- 
 
 
 
-# Service Check
+
+<p align="center"><img src="images/terminate.jpg" width="70%" /></p>
+
+## Service Check
 
 In the Dashboard, in the Network Service tab, you can check the status of the instantiated services.
 
-<p align="center"><img src="images/sp.jpg" /></p>
+<p align="center"><img src="images/sp.jpg" width="30%" /></p>
