@@ -23,7 +23,7 @@ This tutorial doesn´t pretend to be an extend document where to find all the in
         - Configure VIMs/WIMs
         - Upload Images
     - Platform Operation
-        - Show Catalogue Artifacts
+        - Catalogue Artifacts
             - Packages
             - Services
             - Functions
