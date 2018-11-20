@@ -58,7 +58,7 @@ After the configuration in the Openstack, you can run the script with the comman
 ## Instantiating and terminating a Network Service
 
 - **Step 1:** Open the 5GTANGO portal in `http://<service_platform_ip>/` and go to `Service Management -> Available network services`. In this screen you can see the list of available network services and you could instantate it pushing the green play button.
- 
+
 <p align="center"><img src="images/available-network-services.png" width="80%" /></p>
 
 - **Step 2:** Select the service you desire to instantiate and press the green play button. Next, you will get a window that you can skip for now about ingress and egress networks. You can clic on Next button.
@@ -66,12 +66,8 @@ After the configuration in the Openstack, you can run the script with the comman
 <p align="center"><img src="images/ingress-egress.png" width="50%" /></p>
 
 - **Step 3:** Write a name for your network service and don't select any SLA for now, the SLA part will be covered in the further guides. To instantiate the NS just click on INSTANTIATE button and the service will be instantiated inmediately.
-- 
-
-
-
-
-<p align="center"><img src="images/terminate.jpg" width="70%" /></p>
+  
+<p align="center"><img src="images/instance-name.png" width="70%" /></p>
 
 ## Service Check
 

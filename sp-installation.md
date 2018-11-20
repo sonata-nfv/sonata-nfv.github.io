@@ -180,5 +180,3 @@ clean: false
 platform: sp
 
 ```
-
-<img src="images/test.svg">
