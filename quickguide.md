@@ -22,3 +22,6 @@ This tutorial doesn´t pretend to be an extend document where to find all the in
   * [Prerequisites](/sp#prerequisites)
   * [Instantiating and terminating a Network Service](/sp#instantiating-and-terminating-a-network-service)
   * [Service Check](/sp#service-check)
+
+* **Examples:**
+    * [Slicing](/slicing)
