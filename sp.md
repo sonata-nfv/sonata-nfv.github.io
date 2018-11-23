@@ -71,6 +71,17 @@ After the configuration in the Openstack, you can run the script with the comman
 
 ## Service Check
 
-In the Dashboard, in the Network Service tab, you can check the status of the instantiated services.
+In the Dashboard, in the Service Management tab, you can check the status of the instantiated services.
 
-<p align="center"><img src="images/sp.jpg" width="30%" /></p>
+Here you can see and select a service to instantiate it:
+
+<p align="center"><img src="images/avalns.jpg" width="90%" /></p>
+
+
+Once launched, you can see the status of the instantiation operation in the requests tab:
+
+<p align="center"><img src="images/requests.jpg" width="90%" /></p>
+
+Finally, you can see you instances:
+
+<p align="center"><img src="images/instances.jpg" width="90%" /></p>
