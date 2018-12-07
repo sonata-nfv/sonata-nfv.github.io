@@ -26,17 +26,25 @@ tng-project -p path/to/old-project --translate   # translates the project to the
 ````
 
 
-# Validation and Package Creation
+# Validation 
 
-The tng-sdk-package will create the .tgo package file after validating the structure of the descriptors.
+To validate your project do:
+
+```sh
+tng-sdk-validate -t --project  <our_5gtango_project_path>
+```
+
+# Package Creation
+
+The tng-sdk-package will create the .tgo package file.
 
 ```
 tng-pkg -p misc/5gtango_ns_project_example1		# package a 5GTANGO SDK project
 
 tng-pkg -u misc/5gtango-ns-package-example.tgo		# unpack a 5GTANGO package to a local 5GTANGO SDK project
-````
+```
 
-# Package on-boarding (Curl command)
+# Package on-boarding
 
 For uploading a package to a Service platform you can use this curl command:
 
@@ -45,4 +53,4 @@ curl -v -i -X POST  -F "package=@./your_package.tgo" http://your_service_platfor
 02/api/v3/packages
 ````
 
-Once uploaded, you will have your package available in the dashboard deady to deploy
+Once uploaded, you will have your package available in the dashboard deady to deploy.
