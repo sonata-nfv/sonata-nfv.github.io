@@ -24,4 +24,4 @@ This tutorial doesn´t pretend to be an extend document where to find all the in
   * [Service Check](/sp#service-check)
 
 * **Examples:**
-    * [Slicing](/slicing)
+    * [Network Slicing](/slicing)
