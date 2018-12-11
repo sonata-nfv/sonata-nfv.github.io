@@ -7,16 +7,16 @@ Here you will find a brief explanation about what 5GTANGO is, how to install it,
 This tutorial doesn´t pretend to be an extend document where to find all the information related to 5GTANGO, but an "umbrella" document that will guide you to more extensive documentation if required.
 
 * Installation
-  * SDK
+  * [SDK](/sdk-installation)
   * [SP](/sp-installation)
   * Openstack -> RDO
   * Upload VNF images to Openstack
   
 * [SDK](/sdk)
-  * Descriptors creation
-  * Validation
-  * Package Creation
-  * Package on-boarding (Curl command)
+  * [Descriptors creation](/sdk#descriptors-creation)
+  * [Validation](/sdk#validation)
+  * [Package Creation](/sdk#package-creation)
+  * [Package on-boarding (Curl command)](/sdk#package-on-boarding)
   
 * [Service Platform](/sp)
   * [Prerequisites](/sp#prerequisites)
