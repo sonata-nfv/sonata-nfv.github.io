@@ -78,6 +78,7 @@ sudo docker network create tango
 ```bash
 git clone https://github.com/sonata-nfv/tng-devops.git
 cd tng-devops
+git checkout v4.0
 ```
 ## Execute installation
 
