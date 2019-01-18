@@ -108,11 +108,6 @@ After these steps, the installation of SP and VnV are finished are finished.
 ###
 ###
 ###
-
- 
- 
- 
- 
   
 
 ### Installation Videos
@@ -123,127 +118,15 @@ After these steps, the installation of SP and VnV are finished are finished.
 
 The goal of the 5GTANGO SDK is to assist the developer in designing services and/or functions. The SDK is mainly composed by a set of CLI tools, each with a specific purpose following the development workflow.
 
-### Pre-requisites
+The 5GTANGO SDK tools are supposed to be locally installed on the developer's machine. They are based on Python3 and can be installed using `pip`.
 
-The 5GTANGO SDK tools are all implemented in Python and bash:
+### Requirements
 
 - Ubuntu 16.04 (or later)
-- Python 3 (vim-emu: Python 2.7)
+- Python 3
 - Setuptools
 
-### tng-sdk-descriptorgen
-(Strefan)
+### Installation
 
-### tng-sdk-project
-
-Single command installation:
-
-```bash
-pip install git+https://github.com/sonata-nfv/tng-sdk-project.git
-```
-
-Usage:
-
-```bash
-tng-sdk-project -h
-```
-
-User manual and documentation: [GitHub repository and wiki](https://github.com/sonata-nfv/tng-sdk-project.git)
-
-### tng-sdk-img
-
-#### Additional pre-requisites
-
-* wget
-* curl
-* cloud-utils
-* kvm
-* shyaml
-
-```bash 
-sudo apt install curl wget qemu-kvm cloud-utils
-pip install shyaml
-```
-
-#### Installation:
-
-```bash
-git clone https://github.com/sonata-nfv/tng-sdk-img
-cd tng-sdk-img
-sudo ./install.sh
-```
-
-#### Usage:
-
-```bash
-tng-sdk-img -h
-```
-
-User manual and documentation: [GitHub repository and wiki](https://github.com/sonata-nfv/tng-sdk-img4)
-
-### tng-sdk-sm
-(Thomas)
-
-### tng-sdk-validate
-(Anton? Dani?)
-
-
-Single command installation:
-
-```bash
-pip install git+https://github.com/sonata-nfv/tng-sdk-validation
-```
-
-Usage:
-
-```bash
-tng-sdk-validate -h
-```
-
-User manual and documentation: [GitHub repository and wiki](https://github.com/sonata-nfv/tng-sdk-validation)
-
-### tng-sdk-package
-
-Single command installation:
-
-```bash
-pip install git+https://github.com/sonata-nfv/tng-sdk-package
-```
-
-Usage:
-
-```bash
-tng-sdk-package -h
-```
-
-User manual and documentation: [GitHub repository and wiki](https://github.com/sonata-nfv/tng-sdk-package)
-
-### vim-emu (former son-emu)
-
-This emulation platform was created to support network service developers to locally prototype and test their network services in realistic end-to-end multi-PoP scenarios. It allows the execution of real network functions, packaged as Docker containers, in emulated network topologies running locally on the developer's machine. The emulation platform also offers OpenStack-like APIs for each emulated PoP so that it can integrate with MANO solutions, like OSM. The core of the emulation platform is based on [Containernet](https://containernet.github.io).
-
-The original project was called `son-emu` and later renamed to `vim-emu` when the emulator was adopted by the OSM project. We keep the repository name `son-emu` to not break existing links in publications.
-
-The emulation platform `vim-emu` is developed as part of OSM's DevOps MDG.
-
-
-#### Pre-requisites
-
-The emulator requires a Ubuntu 16.04 LTS installation on a bare motel machine or a VM. The following packages need to be installed:
-
--   Docker
-
-#### Docker-based installation
-
-This steps deploy and start the emulator inside a Docker container. See the [GitHub repository](https://github.com/sonata-nfv/son-emu) for further installation options.
-
-```sh
-git clone https://github.com/sonata-nfv/son-emu
-cd ~/son-emu
-# build the container:
-docker build -t vim-emu-img .
-# run the (interactive) container:
-docker run --name vim-emu -it --rm --privileged --pid='host' -v /var/run/docker.sock:/var/run/docker.sock vim-emu-img /bin/bash
-```
-
-More details about and documentation can be found in the [GitHub wiki](https://github.com/sonata-nfv/son-emu/wiki).
+- [SDK CLI tools: project, validate, package](/sdk-installation)
+- [Emulator (vim-emu)](https://osm.etsi.org/wikipub/index.php/VIM_emulator)
