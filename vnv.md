@@ -1,7 +1,6 @@
 # Validation and Verification Platform
 
-V&V is the 5GTANGO component responsible for executing the test suites for 5G Network Services.
-As such, the V&V Platform provides a means of ensuring that these services can be tested on an appropriate target orchestration platform. 
+The V&V Platform is a mechanism of ensuring that the uploaded services can be tested on the appropriate target Service Platform to ensure that the service is considered fit for purpose. 
 
 The V&V Platform is responsible for the following workflow: 
 1. Identify appropriate tests (using tags) for the target service,
