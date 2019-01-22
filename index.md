@@ -11,32 +11,30 @@ layout: default
 
 The purpose of this tutorial is to provide the reader with a general view about 5GTANGO platform in the easiest and quickest way possible.
 Here you will find a brief explanation about what 5GTANGO is, how to install it, how to use it and how to get technical support if required.
-This tutorial doesn´t pretend to be an extend document where to find all the information related to 5GTANGO, but an "umbrella" document that will guide you to more extensive documentation if required.
+This tutorial is not an exhaustive guide document to all features of 5GTANGO, but rather an "umbrella" document that will guide you to the more extensive documentation if required.
 
 ## Document structure
 
 This quick guide is organized in the following manner:
 
 * Section 1 (this section) is an introduction to the guide.
-* Section 2 provides general presentation about 5GTANGO: what 5GTANGO is and for whom, its general architecture, and a brief description of its main modules, the Service Platform (SP) and the Service Development Kit(SDK) and the Validation and Verification(VnV).
+* Section 2 provides a general overview of 5GTANGO: what 5GTANGO is and for whom, its general architecture, and a brief description of its main modules, the Service Platform (SP) and the Service Development Kit (SDK) and the Validation and Verification (V&V).
 * Section 3 gives information about the current 5GTANGO software release.
 * Section 4 explains the installation process for each of the 5GTANGO components that can be installed and used individually. These are the VnV, the SP, the SDK and the Emulator that, although part of the SDK, has its own autonomy.
-* In section 5, we describe briefly how to use 5GTANGO once installed, from the creation of a service, how to test it using the emulator, to its deployment with the Service Platform . 
+* In Section 5, we briefly describe how to use 5GTANGO once installed, from the creation of a service, how to test it using the emulator, to its deployment with the Service Platform. 
 
 
-## 1. Brief 5GTANGO introduction
+## 1. What is 5GTANGO?
 
-5GTANGO is an agile service development and orchestration framework for 5G virtualized networks. It provides a programming model and a development tool chain for virtualized services, fully integrated with a DevOps-enabled service platform and orchestration system. 5GTANGO therefore targets both the flexible programmability of software networks as well as the optimization of their deployments. Its modular design makes the SONATA service platform effortlessly customizable to meet the needs of different service providers.
-
-### What is 5GTANGO ? 
+5GTANGO is an agile service development and orchestration framework for 5G virtualized networks. It provides a programming model and a development tool chain for virtualized services, fully integrated with a DevOps-enabled service platform and orchestration system. 5GTANGO aims to support the programmability of software networks as well as the optimization of their deployments. Its modular design makes the SONATA service platform effortlessly customizable to meet the needs of different service providers.
 
 5GTANGO provides a platform for supporting the lifecycle of virtualized networking services. In particular, network function chaining and orchestration are the target domains of SONATA.
 
-### Who is it for ? 
+### Who is it for? 
 
-The 5GTANGO platform supports two main stakeholders in telecommunications service creation: service developers and service operators. 5GTANGO's Network Service Development Kit (SDK) facilitates network service development for service developers. Such services are then deployed and run on 5GTANGO's Service Platform. Through its extensive customization capabilities, the service platform allows communication service providers to adapt service provisioning to their specific environment and needs. 5GTANGO enables a DevOps workflow between the SDK tools and the service platform, which allows developers and operators to closely collaborate in providing an outstanding experience to customers. Also you have available the VnV for testing purposes.
+The 5GTANGO platform supports two main stakeholders in telecommunications service creation: _service developers_ and _service operators_. 5GTANGO's Network Service Development Kit (SDK) facilitates network service development for service developers. Such services are then deployed and run on 5GTANGO's Service Platform. Through its extensive customization capabilities, the service platform allows communication service providers to adapt service provisioning to their specific environment and needs. 5GTANGO enables a DevOps workflow between the SDK tools and the service platform, which allows developers and operators to closely collaborate in providing an outstanding experience to customers. Also you have available the VnV for testing purposes.
 
-## 2. General architecture
+## 2. General Architecture
 
 The main architectural components of the 5GTANGO platform are shown in the figure below. In line with the support of service developers and service operators, SONATA distinguishes the two main components SDK and service platform. Services developed and deployed by this system run on top of the underlying infrastructure accessible to the SONATA system via Virtual Infrastructure Managers (VIMs), abstracting from the actual hardware and software.
 
@@ -44,7 +42,7 @@ Each of the three main components can be divided into a number of subcomponents,
 
 ![](https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/5GTANGOmaincomponents.png?raw=true)
 
-## 5GTANGO modules
+## 5GTANGO Modules
 
 The 5GTANGOplatform consists of a number of software modules which together provide the required functionality for network service creation, deployment, and management. Most modules can be attributed directly to either the service platform or to the service development (SDK), according to their use. Some modules are cross-cutting and are used in both major components.
 
@@ -122,7 +120,7 @@ The Validation and Verification (VnV) platform consist of the following modules:
 * The SSM mechanism was extended so that it can now make scaling and migration requests to the MANO Framework.
 * Improved ENV variable handling.
 * CI/CD done through Jenkins pipeline.
-* Minor bugfixes.
+* Minor bug fixes.
 
 #### tng-probes
 * moongen: The MoonGen probe based on the MoonGen packet generator
@@ -133,7 +131,7 @@ The Validation and Verification (VnV) platform consist of the following modules:
 #### son-sp-infrabstract
 * Cloud-init support for HEAT based stacks
 * Scaling out support for HEAT based stacks
-* Minor bugfixes
+* Minor bug fixes
 
 #### tng-sdk-img
 * functionality for converting Docker-based VNFs to QEMU-based VNFs 
@@ -157,7 +155,7 @@ The Validation and Verification (VnV) platform consist of the following modules:
 
 #### son-emu
 * Integrated vim-emu with OSM release FOUR
-* Re-deploy network services without emulator retart
+* Re-deploy network services without emulator restart
 * Made complete codebase PEP8 compatibles
 * Added automated code style checks to the CI pipeline
 * Made port deletion process more robust
