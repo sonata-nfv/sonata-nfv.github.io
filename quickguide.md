@@ -8,8 +8,9 @@ This tutorial doesn´t pretend to be an extend document where to find all the in
 
 * Installation
   * [SDK](/sdk-installation)
-  * [SP](/sp-installation)
-  * [V&V](/vnv-installation)
+  * [Common installation requirements for SP and VnV](/common-installation)
+    * [SP installation](/sp-installation)
+    * [V&V installation](/vnv-installation)
   * Openstack -> RDO
   * Upload VNF images to Openstack
   
@@ -27,6 +28,5 @@ This tutorial doesn´t pretend to be an extend document where to find all the in
 * [Validation and Verification](/vnv.md)
   * [Prerequisites](/vnv.md#prerequisites)
 
-
 * **Examples:**
-    * [Network Slicing](/slicing)
+  * [Network Slicing](/slicing)
