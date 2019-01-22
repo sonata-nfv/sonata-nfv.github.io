@@ -7,9 +7,10 @@ Here you will find a brief explanation about what 5GTANGO is, how to install it,
 This tutorial is not an exhaustive guide document to all features of 5GTANGO, but rather an "umbrella" document that will guide you to the more extensive documentation if required.
 
 * Installation
-  * Setup the [SDK](/sdk-installation)
-  * Setup the [SP](/sp-installation)
-  * Setup the [V&V](/vnv-installation)
+  * [SDK](/sdk-installation)
+  * [Common installation requirements for SP and VnV](/common-installation)
+    * [SP installation](/sp-installation)
+    * [V&V installation](/vnv-installation)
   * Openstack -> RDO
   * Upload VNF images to Openstack
   
@@ -29,4 +30,4 @@ This tutorial is not an exhaustive guide document to all features of 5GTANGO, bu
   * [Test example](/vnv.md#test)
 
 * **Examples:**
-    * [Network Slicing](/slicing)
+  * [Network Slicing](/slicing)
