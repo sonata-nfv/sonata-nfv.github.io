@@ -1,7 +1,6 @@
-#Validation and Verification
+# Validation and Verification Platform
 
-V&V is the 5GTANGO component responsible for executing the test suites for 5G Network Services.
-As such, the V&V Platform provides a means of ensuring that theseservices can be tested on an appropriate target orchestration platform. 
+The V&V Platform is a mechanism of ensuring that the uploaded services can be tested on the appropriate target Service Platform to ensure that the service is considered fit for purpose. 
 
 The V&V Platform is responsible for the following workflow: 
 1. Identify appropriate tests (using tags) for the target service,
@@ -19,11 +18,7 @@ The V&V manages the following _artifacts_ through the test lifecycle:
 
 The tests are executed from the V&V platform in a sandboxed environment operating under the V&V platform control, so that functional and non-functional metrics are obtained, thus leading to the verification and validation of the network service under test.
 
-
-
-
 ####Getting Started With V&V Tests
-...
 
 
 1. Upload a Network Service Package
@@ -38,11 +33,11 @@ The tests are executed from the V&V platform in a sandboxed environment operatin
 
 Before you can try out V&V functionality you will need the following:
 1. A valid Network Service Package created by the SDK:  
-1. A valid Test Packages created by SDK:
+1. A valid Test Package created by the SDK:
 1. A V&V instance that is configured and integrated with a running Service Platform instance:
 
 
-####Upload a Network Service Package
+#### Upload a Network Service Package
 
 The 5GTANGO schema that validates Network Service Descriptors  (NSDs) is  defined are the following github repo: 
 - https://github.com/sonata-nfv/tng-schema 
@@ -57,33 +52,66 @@ The 5GTANGO schema that validates Network Service Descriptors  (NSDs) is  define
 
 1. Upload package to Catalog:
 	* Using cURL:
-		*  curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.http-benchmarking-test-advanced.0.1.tgo" ; 
+		*  curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.ns-haproxy.0.1.tgo" ; 
 
+As a response you will get a message like the following:
+{"package_process_uuid":"c68e0108-ff06-4e58-89e9-573f0250dd08","status":"running","error_msg":null}
+
+Navigate to the V&V Portal to browse the newly added Package at https://pre-int-vnv-bcn.5gtango.eu/validation-and-verification/packages
+
+You can view the network services contained in package at https://pre-int-vnv-bcn.5gtango.eu/validation-and-verification/network-services
+
+
+```console
+curl -s http://sta-vnv-ath-v4-0.5gtango.eu:32002/api/v3/services/
+```
 
 #### Uploading the Test Package
 
-1. First, download the following test package (binary file) from Githuub: 
+1. First, download the following test package (binary file) from Github: 
 	* Example tests: 
-		* https://github.com/sonata-nfv/tng-y1-demo/tree/master/tango (e.g. eu.5gtango.http-benchmarking-test-advanced.0.1.tgo)
+		* https://github.com/sonata-nfv/tng-y1-demo/tree/master/tango (e.g. eu.5gtango.test-http-benchmarking-advanced.0.1.tgo)
+
+2. Upload the test package to Test Catalog:
+	* Upload test example:
+	
+
+```console
+        $ curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.test-http-benchmarking-advanced.0.1.tgo" ; 
+```
+We can list the tests using the  
+```console
+curl -s http://sta-vnv-ath-v4-0.5gtango.eu:32002/api/v3/tests/descriptors/
+```
+#### Tagging Tests for a given Network Service
+
+The test package "http-benchmarking-test-advanced.0.1.tgo" cobtains the test tag: "http-advanced". As there is no  Network Service on the server currently then this is no execution test for now.
+
+Navigate to the V&V Tests page https://pre-int-vnv-bcn.5gtango.eu/validation-and-verification/tests to view the list of tests onboarded.  Click 'test-http-benchmark-advanced' test instance to view details of the test and also details of test execution.
+
+#### Uploading a Test Package with a specific Test tag
+
+In this exercise we will upload a test package that will be relevant for the previous uploading network service. Specifically, a test with a _test tag_ of **'proxy-advanced'** will be executed the network service  ns-haproxy.0.1.tgo that we uploading in the first exercise.
+
+
+1. Download the following test package (binary file) from Github: 
+	* Example tests: 
+		* https://github.com/sonata-nfv/tng-y1-demo/tree/master/tango (e.g. eu.5gtango.test-http-benchmarking-advanced-proxy.0.1.tgo)
 
 2. Upload test package to Test Catalog:
 	* Upload test example:
-		*  curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.http-benchmarking-test-advanced.0.1.tgo" ; 
+		*  curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.test-http-benchmarking-advanced-proxy.0.1.tgo" ; 
 
 
-#### Tagging Tests for a given Network Service
 
-The test package "http-benchmarking-test-advanced.0.1.tgo" cobtains the test tag: "http-advanced". As there is no  NService on the server currently. so no testing for now.
+#### Uploading a Service matching a specific Test tag
 
-
-	* Upload Service<sup>*3</sup>::
-		* curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.ns-haproxy.0.1.tgo" ;
-
-3. Upload a service that could match testing_tag "http-advanced" of the previous uploaded test package.
+Upload a service that could match testing_tag "http-advanced" of the previous uploaded test package.
 
 4. ...
 
 #### Execute a Test Suite
+
 
 #### Checking Test Results
 
@@ -105,4 +133,41 @@ The test package "http-benchmarking-test-advanced.0.1.tgo" cobtains the test tag
 
 	```
 	curl -s http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/tests/descriptors | jq ;
+	```
+
+* List Test Plans:
+
+	```	
+	curl http://sta-vnv-ath-v4-0.5gtango.eu:4012/trr/test-plans
+    ```
+    returns the following JSON response payload.
+	```	
+    [
+      {
+        "created_at": "2019-01-22T15:13:16.744+00:00",
+        "network_service_instances": [
+          {
+            "instance_uuid": null,
+            "service_uuid": "02f33c78-d07b-45b6-97f7-823dfccc15f1",
+            "status": "ERROR",
+            "runtime": null
+          }
+        ],
+        "package_id": "cfecdc2e-cbcf-4431-8922-f7a8e54ae4cb",
+        "status": "NS_DEPLOY_FAILED",
+        "test_suite_results": [
+          {
+            "package_id": "cfecdc2e-cbcf-4431-8922-f7a8e54ae4cb",
+            "uuid": "e0c1cfb5-91c3-4457-8450-ad0c240f6bf6",
+            "test_plan_id": "135e6ef3-332f-4804-a645-c5da3dcb77f7",
+            "instance_uuid": null,
+            "service_uuid": "02f33c78-d07b-45b6-97f7-823dfccc15f1",
+            "test_uuid": "35a66966-7db4-4408-8e9d-f0c73a92490f",
+            "status": null
+          }
+        ],
+        "updated_at": "2019-01-22T15:13:16.744+00:00",
+        "uuid": "1b1adac6-d091-4479-a8e9-5fb744d5f2b4"
+      }
+    ]
 	```
