@@ -2,7 +2,7 @@
 
 # Openstack initial configuration
 
-Immediatly after the Openstack deployment you will only accees the default 'admin' project. NOTE: as a best practice, you should avoid be working on this project, because it gives access to global configuration with impact on all the remaining tenants that you create. So the first step, as 'admin' Role, will be:
+Immediatly after a fresh Openstack deployment, the default 'admin' project will the only tenant available - as a best practice, you should avoid working on this project, because it gives access to global configuration settings with impact on all the remaining tenants that you'll create. So the first step, as 'admin' Role, will be:
 
 * create a new Project (or Tenant) and define Quotas for this Project
 
