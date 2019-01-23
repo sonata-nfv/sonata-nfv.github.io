@@ -15,7 +15,7 @@ Assuming that you have a C-class IP address space then, instead of running the l
 ```
 as explained here: [how to use 'packstack –allinone' with an existing external network](http://rdoproject.org/networking/neutron-with-existing-external-network/)
 
-This will define an external network named 'extnet' attached to the OVS bridge called 'br-ex' connected to the 'eth0' physical interface. The tenant networks will be isolated via VxLAN tunneling. 
+This will define an external network named `extnet` attached to the OVS bridge called `br-ex` connected to the `eth0` physical interface. The tenant networks will be isolated via VxLAN tunneling. 
 
 The deployment process will end in less than 1 hour, depending on the server performance. at the end it will present the URL of the Openstack dashboard and the `admin` credentials to connect.
 
