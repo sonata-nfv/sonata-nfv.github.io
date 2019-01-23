@@ -11,7 +11,7 @@ This tutorial is not an exhaustive guide document to all features of 5GTANGO, bu
   * [Common installation requirements for SP and VnV](/common-installation)
     * [SP installation](/sp-installation)
     * [V&V installation](/vnv-installation)
-  * [Openstack RDO installation](/rdo-install)
+  * [Openstack RDO installation](/rdo-install.md)
     * [Openstack initial configuration steps](/openstack-basic-starting-guide.md)
   * Upload VNF images to Openstack
   
