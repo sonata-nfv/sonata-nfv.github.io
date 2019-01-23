@@ -2,7 +2,7 @@
 
 # Openstack initial configuration
 
-Immediatly after a fresh Openstack deployment, the default 'admin' project will the only tenant available - as a best practice, you should avoid working on this project, because it gives access to global configuration settings with impact on all the remaining tenants that you'll create. So the first step, as 'admin' Role, will be:
+Immediatly after a fresh Openstack deployment, the default `admin` project will the only tenant available - as a best practice, you should avoid working on this project, because it gives access to global configuration settings with impact on all the remaining tenants that you'll create. So the first step, as `admin` Role, will be:
 
 * create a new Project (or Tenant) and define Quotas for this Project
 
@@ -24,7 +24,7 @@ After the Public network configuration, you can now connect to other networks on
 
 ## Create a new Project, User and Group
 
-The creation of a new Project requires 'admin' priviledges, so logon as 'admin'.
+The creation of a new Project requires `admin` priviledges, so logon as `admin`.
 
 <p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/wiki/images/1st-steps-logon.png" /></p>
 

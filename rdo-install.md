@@ -17,6 +17,6 @@ as explained here: [how to use 'packstack –allinone' with an existing external
 
 This will define an external network named 'extnet' attached to the OVS bridge called 'br-ex' connected to the 'eth0' physical interface. The tenant networks will be isolated via VxLAN tunneling. 
 
-The deployment process will end in less than 1 hour, depending on the server performance. at the end it will present the URL of the Openstack dashboard and the 'admin' credentials to connect.
+The deployment process will end in less than 1 hour, depending on the server performance. at the end it will present the URL of the Openstack dashboard and the `admin` credentials to connect.
 
 NOTE: if you do not have a bare metal server available, you can deploy RDO to a single RHEL or CentOS virtual machine but you must be aware of the performance penalities of a scenario like this.
