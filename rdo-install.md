@@ -10,9 +10,9 @@ Before start running the 'packstack' tool, be sure to allocate a network segment
 
 Assuming that you have a C-class IP address space then, instead of running the last command `# packstack --allinone` you must run:
 
-`
+```bash
 # packstack --allinone --provision-demo=n --os-neutron-ovs-bridge-mappings=extnet:br-ex --os-neutron-ovs-bridge-interfaces=br-ex:eth0 --os-neutron-ml2-type-drivers=vxlan,flat
-`
+```
 as explained here: [how to use 'packstack –allinone' with an existing external network](http://rdoproject.org/networking/neutron-with-existing-external-network/)
 
 This will define an external network named 'extnet' attached to the OVS bridge called 'br-ex' connected to the 'eth0' physical interface. The tenant networks will be isolated via VxLAN tunneling. 
