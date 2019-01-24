@@ -18,8 +18,7 @@ The V&V manages the following _artifacts_ through the test lifecycle:
 
 The tests are executed from the V&V platform in a sandboxed environment operating under the V&V platform control, so that functional and non-functional metrics are obtained, thus leading to the verification and validation of the network service under test.
 
-####Getting Started With V&V Tests
-
+####Getting Started With V&V Testing
 
 1. Upload a Network Service Package
 1. Upload a Test Package
@@ -43,38 +42,38 @@ The 5GTANGO schema that validates Network Service Descriptors  (NSDs) is  define
 - https://github.com/sonata-nfv/tng-schema 
 - https://github.com/sonata-nfv/tng-schema/blob/master/service-descriptor/nsd-schema.yml
 
-#### Uploading the Service Package
+#### Uploading a Service Package
 
 1. Download the following service package (binary file) from Github: 
-	* Example Service: 
-		* https://github.com/sonata-nfv/tng-y1-demo/tree/master/tango (e.g. eu.5gtango.ns-haproxy.0.1.tgo)
+    * Example Service: 
+        * https://github.com/sonata-nfv/tng-y1-demo/tree/master/tango (e.g. eu.5gtango.ns-haproxy.0.1.tgo)
 
 
 1. Upload package to Catalog:
-	* Using cURL:
-		*  curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.ns-haproxy.0.1.tgo" ; 
+    * Using cURL:
+        *  curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.ns-haproxy.0.1.tgo" ; 
 
-As a response you will get a message like the following:
-{"package_process_uuid":"c68e0108-ff06-4e58-89e9-573f0250dd08","status":"running","error_msg":null}
+    As a response you will get a message like the following:
+    {"package_process_uuid":"c68e0108-ff06-4e58-89e9-573f0250dd08","status":"running","error_msg":null}
+    
+    Navigate to the V&V Portal to browse the newly added Package at https://pre-int-vnv-bcn.5gtango.eu/validation-and-verification/packages
+    
+    You can view the network services contained in package at https://pre-int-vnv-bcn.5gtango.eu/validation-and-verification/network-services
 
-Navigate to the V&V Portal to browse the newly added Package at https://pre-int-vnv-bcn.5gtango.eu/validation-and-verification/packages
 
-You can view the network services contained in package at https://pre-int-vnv-bcn.5gtango.eu/validation-and-verification/network-services
-
-
-```console
-curl -s http://sta-vnv-ath-v4-0.5gtango.eu:32002/api/v3/services/
+```
+$ curl -s http://sta-vnv-ath-v4-0.5gtango.eu:32002/api/v3/services/
 ```
 
-#### Uploading the Test Package
+#### Uploading a Test Package
 
 1. First, download the following test package (binary file) from Github: 
-	* Example tests: 
-		* https://github.com/sonata-nfv/tng-y1-demo/tree/master/tango (e.g. eu.5gtango.test-http-benchmarking-advanced.0.1.tgo)
+    * Example tests: 
+        * https://github.com/sonata-nfv/tng-y1-demo/tree/master/tango (e.g. eu.5gtango.test-http-benchmarking-advanced.0.1.tgo)
 
 2. Upload the test package to Test Catalog:
-	* Upload test example:
-	
+    * Upload test example:
+    
 
 ```console
         $ curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.test-http-benchmarking-advanced.0.1.tgo" ; 
@@ -89,18 +88,18 @@ The test package "http-benchmarking-test-advanced.0.1.tgo" cobtains the test tag
 
 Navigate to the V&V Tests page https://pre-int-vnv-bcn.5gtango.eu/validation-and-verification/tests to view the list of tests onboarded.  Click 'test-http-benchmark-advanced' test instance to view details of the test and also details of test execution.
 
-#### Uploading a Test Package with a specific Test tag
+#### Uploading a Test Package with a specific Test Tag
 
 In this exercise we will upload a test package that will be relevant for the previous uploading network service. Specifically, a test with a _test tag_ of **'proxy-advanced'** will be executed the network service  ns-haproxy.0.1.tgo that we uploading in the first exercise.
 
 
 1. Download the following test package (binary file) from Github: 
-	* Example tests: 
-		* https://github.com/sonata-nfv/tng-y1-demo/tree/master/tango (e.g. eu.5gtango.test-http-benchmarking-advanced-proxy.0.1.tgo)
+    * Example tests: 
+        * https://github.com/sonata-nfv/tng-y1-demo/tree/master/tango (e.g. eu.5gtango.test-http-benchmarking-advanced-proxy.0.1.tgo)
 
 2. Upload test package to Test Catalog:
-	* Upload test example:
-		*  curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.test-http-benchmarking-advanced-proxy.0.1.tgo" ; 
+    * Upload test example:
+        *  curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.test-http-benchmarking-advanced-proxy.0.1.tgo" ; 
 
 
 
@@ -120,28 +119,28 @@ Upload a service that could match testing_tag "http-advanced" of the previous up
 
 * List Packages:
 
-	```
-	curl -s http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages/ | jq ;
-	```
+    ```
+    curl -s http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages/ | jq ;
+    ```
 
 * List Services:
 
-	```
-	curl -s http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/services | jq ;
-	```
+    ```
+    curl -s http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/services | jq ;
+    ```
 * List Tests:
 
-	```
-	curl -s http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/tests/descriptors | jq ;
-	```
+    ```
+    curl -s http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/tests/descriptors | jq ;
+    ```
 
 * List Test Plans:
 
-	```	
-	curl http://sta-vnv-ath-v4-0.5gtango.eu:4012/trr/test-plans
+    ```	
+    curl http://sta-vnv-ath-v4-0.5gtango.eu:4012/trr/test-plans
     ```
     returns the following JSON response payload.
-	```	
+    ```	
     [
       {
         "created_at": "2019-01-22T15:13:16.744+00:00",
@@ -170,4 +169,4 @@ Upload a service that could match testing_tag "http-advanced" of the previous up
         "uuid": "1b1adac6-d091-4479-a8e9-5fb744d5f2b4"
       }
     ]
-	```
+    ```
