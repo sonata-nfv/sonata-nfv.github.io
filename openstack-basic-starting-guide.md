@@ -26,17 +26,17 @@ After the Public network configuration, you can now connect to other networks on
 
 The creation of a new Project requires `admin` priviledges, so logon as `admin`.
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-logon.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-logon.png" /></p>
 
 ### Create a Project
 
 `Identity --> Project --> + Create Project`
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-project-create.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-project-create.png" /></p>
 
 And set the quotas for this tenant:
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-project-quota.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-project-quota.png" /></p>
 
 Later you can change the quota limits by setting new values for the tenant's quota:
 
@@ -47,26 +47,26 @@ Later you can change the quota limits by setting new values for the tenant's quo
 
 `Identity --> User --> + Create User`
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-user-create.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-user-create.png" /></p>
 
 ### Create Group
 
 `Identity --> Group --> + Create Group`
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-group-create.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-group-create.png" /></p>
 
 #### Add a User to the Group
 
 `Identity --> Group --> + Add User`
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-group-adduser.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-group-adduser.png" /></p>
 
 
 ## Manage the tenant's resources
 
 The tenants resources like VM, Networks and Storage are managed by the tentant's User on a self-service basis. The initial logon will looks like:
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-user-initial-login.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-user-initial-login.png" /></p>
 
 ### Configure the connectivity to the External networks
  
@@ -76,27 +76,27 @@ The tenant resources are instantiated in an isolated environment. To get access 
 
 `Project --> Network --> Networks --> + Create Networks`
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-network-create.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-network-create.png" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-subnet-create.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-subnet-create.png" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-subnet-create-details.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-subnet-create-details.png" /></p>
 
 #### Create a Router
 
 `Project --> Network --> Networks --> + Create Router`
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-router-create.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-router-create.png" /></p>
 
 #### Create an Interface
 
 `Project --> Network --> Networks --> + Create Router --> select the new Router --> Interfaces --> + Add Interface`
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-router-addinterface.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-router-addinterface.png" /></p>
 
 That's it! You have now connectivity to the external networks has show in the next image. Note that you can create as many private networks as you like, depending on the topology of the Network Service.
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-network-topology.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-network-topology.png" /></p>
 
 
 ### Create a VM
@@ -105,7 +105,7 @@ Before the creation of your first guest machine be sure that you have the requir
 
 * load or create a public key to use on passwordless VMs
 
-* upload the Images to the Image Catalogue (Glance service) - official QCOW2 images with cloud-init already inside are available at [Get Images](https://docs.openstack.org/image-guide/obtain-images.html)
+* upload the Images to the Image Catalogue (Glance service) - official QCOW2 tree/master/images/opnstk with cloud-init already inside are available at [Get Images](https://docs.openstack.org/image-guide/obtain-tree/master/images/opnstk.html)
 
 + create Security Groups (something similar to an Openstack Firewall for youe VM's) to allow protocols and ports per VM
 
@@ -114,48 +114,48 @@ Before the creation of your first guest machine be sure that you have the requir
 
 `Project --> Compute --> Key Pairs --> Import Public Key`
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-importpublickey.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-importpublickey.png" /></p>
 
 
 #### Upload a new Image to the Catalogue
 
 `Project --> Compute --> Images --> + Create Image`
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-imagecreate.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-imagecreate.png" /></p>
 
 
 #### Create a Security Group
 
 `Project --> Network --> Security Group --> + Create Security Group`
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-securitygroup.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-securitygroup.png" /></p>
 
 Then, add rules to the Security Group:
 
 `Project --> Network --> Security Group --> select the new Security Group --> Manage Rules --> + Add Rule`
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-addrule.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-addrule.png" /></p>
 
 
 #### Create a VM
 
 `Project --> Compute --> Instances --> Launch Instance`
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-launchinstance.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-launchinstance.png" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-01details.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-01details.png" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-02source.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-02source.png" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-03flavor.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-03flavor.png" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-04networks.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-04networks.png" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-05networkports.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-05networkports.png" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io//images/1st-steps-06securitygroups.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io//tree/master/images/opnstk/1st-steps-06securitygroups.png" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-07keypair.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-07keypair.png" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/images/1st-steps-08config.png" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/tree/master/images/opnstk/1st-steps-08config.png" /></p>
 
