@@ -143,19 +143,19 @@ Then, add rules to the Security Group:
 
 <p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-launchinstance.png?raw=true" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-01details.png?raw=true" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-inst01details.png?raw=true" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-02source.png?raw=true" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-inst02source.png?raw=true" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-03flavor.png?raw=true" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-inst03flavor.png?raw=true" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-04networks.png?raw=true" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-inst04networks.png?raw=true" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-05networkports.png?raw=true" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-inst05networkports.png?raw=true" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io//blob/master/images/opnstk/1st-steps-06securitygroups.png?raw=true" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-inst06securitygroups.png?raw=true" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-07keypair.png?raw=true" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-inst07keypair.png?raw=true" /></p>
 
-<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-08config.png?raw=true" /></p>
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-inst08config.png?raw=true" /></p>
 
