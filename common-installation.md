@@ -1,24 +1,24 @@
 <p align="center"><img src="https://github.com/sonata-nfv/tng-api-gtw/wiki/images/sonata-5gtango-logo-500px.png" /></p>
 
-# 5GTANGO Service Platform installation guide
+# Common installation requirements for SP and V&V
 
-The 5GTANGO system consists of the Service Platform for deploying and orchestrating services and the Service Development Kit to create deployable service packages. Between the service development and Production, we have a tool for Validate and Verify the Network Service. This tool is called VnV and helps develpers to create a set of test to run it in an automatically way against network services. 
+The 5GTANGO system consists of the Service Platform for deploying and orchestrating services and the Service Development Kit to create deployable service packages. Between the service development and Production, we have a tool for Validate and Verify the Network Service. This tool is called V&V and helps developers to create a set of tests and execute them against network services. 
 
 ## Prerequisites
 
-* [Linux ubuntu = 16.04](http://releases.ubuntu.com/16.04/)
+* [Linux Ubuntu = 16.04](http://releases.ubuntu.com/16.04/)
 * [ansible > 2.4](https://docs.ansible.com/ansible/2.4/intro_installation.html#latest-releases-via-apt-ubuntu)
 * [docker > 17.12.0-ce](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce)
 * [docker-py = 1.9.0](https://pypi.org/project/docker/)
-* [Git](https://git-scm.com/download/linux)
+* [git](https://git-scm.com/download/linux)
 
 ### Recommended server specs to run SONATA Service Platform
 
-* **Cpu:** 4 cores
-* **Ram:** 8 GB
-* **Hdd:** 80 GB
+* **CPU:** 4 cores
+* **Memory:** 8 GB
+* **Disk:** 80 GB
 
-### Ansible installation
+### Installing Ansible
 
 ```bash
 sudo apt-get update
@@ -28,7 +28,7 @@ sudo apt-get update
 sudo apt-get install ansible
 ```
 
-### Docker installation
+### Installing Docker
 
 ```bash
 sudo apt-get update
@@ -46,7 +46,7 @@ sudo apt-get update
 sudo apt-get install docker-ce
 ```
 
-### Python-docker installation
+### Installing python, pip and docker using pip
 
 ```bash
 sudo apt-get install python3 python3-pip pip
