@@ -13,8 +13,9 @@ To setup 5GTANGO you must install the 3 major components of 5GTANGO  in the orde
     * [Installing the Service Platform (SP)](/sp-installation)
     * [Installing the V&V Platform](/vnv-installation)
     * [Troubleshooting the Installation](/troubleshooting.md)
-  * OpenStack -> RDO
-  * Upload VNF images to OpenStack
+  * [RDO installation](rdo-install.md)
+    * [Openstack initial configuration](openstack-basic-starting-guide.md)
+  * Upload VNF images to Openstack
   
 ### Using 5GTANGO
 
