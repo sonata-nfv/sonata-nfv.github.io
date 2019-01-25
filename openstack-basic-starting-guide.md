@@ -1,8 +1,8 @@
 <p align="center"><img src="https://github.com/sonata-nfv/tng-api-gtw/wiki/images/sonata-5gtango-logo-500px.png" /></p>
 
-# Openstack initial configuration
+# OpenStack Initial Configuration
 
-Immediatly after a fresh Openstack deployment, the default `admin` project will the only tenant available - as a best practice, you should avoid working on this project, because it gives access to global configuration settings with impact on all the remaining tenants that you'll create. So the first step, as `admin` Role, will be:
+Immediately after a fresh OpenStack deployment, the default `admin` project will the only tenant available - as a best practice, you should avoid working on this project, because it gives access to global configuration settings with impact on all the remaining tenants that you'll create. So the first step, as `admin` Role, will be:
 
 * create a new Project (or Tenant) and define Quotas for this Project
 
@@ -24,7 +24,7 @@ After the Public network configuration, you can now connect to other networks on
 
 ## Create a new Project, User and Group
 
-The creation of a new Project requires `admin` priviledges, so logon as `admin`.
+The creation of a new Project requires `admin` privileges, so logon as `admin`.
 
 <p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/blob/master/images/opnstk/1st-steps-logon.png?raw=true" /></p>
 

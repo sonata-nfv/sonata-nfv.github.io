@@ -1,8 +1,8 @@
 <p align="center"><img src="https://github.com/sonata-nfv/tng-api-gtw/wiki/images/sonata-5gtango-logo-500px.png" /></p>
 
-# 5GTANGO Validation & Verification Platform Installation Guide
+# Validation & Verification Platform Installation Guide
 
-The V&V Platform is the component  of 5GTANGO responsible for validation and the verification of services using the supplied service tests.
+The V&V Platform is the component of 5GTANGO responsible for validation and the verification of services using the supplied service tests.
 
 ## Install Steps
 
