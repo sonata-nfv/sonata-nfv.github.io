@@ -12,10 +12,10 @@ To setup 5GTANGO you must install the 3 major components of 5GTANGO  in the orde
   * [Common installation requirements for SP and V&V](/common-installation)
     * [Installing the Service Platform (SP)](/sp-installation)
     * [Installing the V&V Platform](/vnv-installation)
-    * [Troubleshooting the Installation](/troubleshooting.md)
-  * [RDO installation](rdo-install.md)
-    * [Openstack initial configuration](openstack-basic-starting-guide.md)
+  * [ÒpenStack installation (RDO distro)](rdo-install.md)
+    * [OpenStack initial configuration](openstack-basic-starting-guide.md)
   * Upload VNF images to Openstack
+  * [Troubleshooting the Installation](/troubleshooting.md)
   
 ### Using 5GTANGO
 
@@ -34,7 +34,13 @@ Once the 5GTANGO platform is installed, you can now create network service packa
 
 * [Using the V&V Platform](/vnv.md)
   * [Prerequisites](/vnv.md#prerequisites)
-  * [Test example](/vnv.md#test)
+  * [Uploading a Service Package](/vnv.md#upload-a-service-package)
+  * [Uploading a Test Package](/vnv.md#upload-a--service-package)
+  * [Tagging Tests for a given Network Service](/vnv.md#tagging-tests-for-a-given-network-service)
+  * [Uploading a Test Package with a specific Test Tag](/vnv.md#uploading-a-test-package-with-a-specific-test-tag)
+  * [Execute a Test Suite](/vnv.md#execute-a-test-suite) 
+  * [Checking Test Results](/vnv.md#checking-test-results) 
+  * [Working with the API](/vnv.md#working-with-the-API)  
 
 
 ### Examples

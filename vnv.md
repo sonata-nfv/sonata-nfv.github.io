@@ -20,7 +20,7 @@ The tests are executed from the V&V platform in a sandboxed environment operatin
 
 ####Getting Started With V&V Testing
 
-1. Upload a Network Service Package
+1. Upload a Service Package
 1. Upload a Test Package
 1. Tagging Tests for a given Network Service
 1. Execute a Test Suite
@@ -36,9 +36,9 @@ Before you can try out V&V functionality you will need the following:
 1. A V&V instance that is configured and integrated with a running Service Platform instance:
 
 
-#### Upload a Network Service Package
+#### Schemas for Network Service Descriptors
 
-The 5GTANGO schema that validates Network Service Descriptors  (NSDs) is  defined are the following github repo: 
+The 5GTANGO schema that validates Network Service Descriptors  (NSDs) is  defined at the following github repository: 
 - https://github.com/sonata-nfv/tng-schema 
 - https://github.com/sonata-nfv/tng-schema/blob/master/service-descriptor/nsd-schema.yml
 
@@ -51,14 +51,14 @@ The 5GTANGO schema that validates Network Service Descriptors  (NSDs) is  define
 
 1. Upload package to Catalog:
     * Using cURL:
-        *  curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.ns-haproxy.0.1.tgo" ; 
+        *  curl -X POST http://<vnv_platform_ip>:<server.port>/api/v3/packages  -F "package=@./eu.5gtango.ns-haproxy.0.1.tgo" ; 
 
     As a response you will get a message like the following:
     {"package_process_uuid":"c68e0108-ff06-4e58-89e9-573f0250dd08","status":"running","error_msg":null}
     
-    Navigate to the V&V Portal to browse the newly added Package at https://pre-int-vnv-bcn.5gtango.eu/validation-and-verification/packages
+    Navigate to the V&V Portal to browse the newly added Package at https://<vnv_platform_ip>:<server.port>/validation-and-verification/packages
     
-    You can view the network services contained in package at https://pre-int-vnv-bcn.5gtango.eu/validation-and-verification/network-services
+    You can view the network services contained in package at https://<vnv_platform_ip>:<server.port>/validation-and-verification/network-services
 
 
 ```
@@ -76,7 +76,7 @@ $ curl -s http://sta-vnv-ath-v4-0.5gtango.eu:32002/api/v3/services/
     
 
 ```console
-        $ curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.test-http-benchmarking-advanced.0.1.tgo" ; 
+        $ curl -X POST http://<vnv_platform_ip>:<server.port>:32002/api/v3/packages  -F "package=@./eu.5gtango.test-http-benchmarking-advanced.0.1.tgo" ; 
 ```
 We can list the tests using the  
 ```console
@@ -86,7 +86,7 @@ curl -s http://sta-vnv-ath-v4-0.5gtango.eu:32002/api/v3/tests/descriptors/
 
 The test package "http-benchmarking-test-advanced.0.1.tgo" cobtains the test tag: "http-advanced". As there is no  Network Service on the server currently then this is no execution test for now.
 
-Navigate to the V&V Tests page https://pre-int-vnv-bcn.5gtango.eu/validation-and-verification/tests to view the list of tests onboarded.  Click 'test-http-benchmark-advanced' test instance to view details of the test and also details of test execution.
+Navigate to the V&V Tests page https://<vnv_platform_ip>:<server.port>/validation-and-verification/tests to view the list of tests onboarded.  Click 'test-http-benchmark-advanced' test instance to view details of the test and also details of test execution.
 
 #### Uploading a Test Package with a specific Test Tag
 
@@ -99,7 +99,7 @@ In this exercise we will upload a test package that will be relevant for the pre
 
 2. Upload test package to Test Catalog:
     * Upload test example:
-        *  curl -X POST http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages  -F "package=@./eu.5gtango.test-http-benchmarking-advanced-proxy.0.1.tgo" ; 
+        *  curl -X POST http://<vnv_platform_ip>:<server.port>:32002/api/v3/packages  -F "package=@./eu.5gtango.test-http-benchmarking-advanced-proxy.0.1.tgo" ; 
 
 
 
@@ -111,27 +111,26 @@ Upload a service that could match testing_tag "http-advanced" of the previous up
 
 #### Execute a Test Suite
 
-
 #### Checking Test Results
 
-#### Working with the V&V API
+#### Working with the API
  
 
 * List Packages:
 
     ```
-    curl -s http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages/ | jq ;
+    curl -s http://<vnv_platform_ip>:<server.port>:32002/api/v3/packages/ | jq ;
     ```
 
 * List Services:
 
     ```
-    curl -s http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/services | jq ;
+    curl -s http://<vnv_platform_ip>:<server.port>:32002/api/v3/services | jq ;
     ```
 * List Tests:
 
     ```
-    curl -s http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/tests/descriptors | jq ;
+    curl -s http://<vnv_platform_ip>:<server.port>:32002/api/v3/tests/descriptors | jq ;
     ```
 
 * List Test Plans:
