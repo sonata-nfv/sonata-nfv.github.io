@@ -18,8 +18,9 @@ The V&V manages the following _artifacts_ through the test lifecycle:
 
 The tests are executed from the V&V platform in a sandboxed environment operating under the V&V platform control, so that functional and non-functional metrics are obtained, thus leading to the verification and validation of the network service under test.
 
-####Getting Started With V&V Testing
+#### Getting Started With V&V Testing
 
+The outline of the tasks to perform in V&V is as follows:
 1. Upload a Service Package
 1. Upload a Test Package
 1. Tagging Tests for a given Network Service
@@ -84,7 +85,7 @@ curl -s http://sta-vnv-ath-v4-0.5gtango.eu:32002/api/v3/tests/descriptors/
 ```
 #### Tagging Tests for a given Network Service
 
-The test package "http-benchmarking-test-advanced.0.1.tgo" cobtains the test tag: "http-advanced". As there is no  Network Service on the server currently then this is no execution test for now.
+The test package "http-benchmarking-test-advanced.0.1.tgo" contains the test tag: "http-advanced". As there is no  Network Service on the server currently then this is no execution test for now.
 
 Navigate to the V&V Tests page https://<vnv_platform_ip>:<server.port>/validation-and-verification/tests to view the list of tests onboarded.  Click 'test-http-benchmark-advanced' test instance to view details of the test and also details of test execution.
 

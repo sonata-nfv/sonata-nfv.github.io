@@ -4,10 +4,17 @@ The purpose of this quick start guide is to provide you with a brief overview of
 
 Here you will find a brief explanation about what 5GTANGO does, how to install it, how to use it and how to get technical support if required.
 
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/raw/master/images/5gtango-install.png" /></p>
+
 This tutorial is not an exhaustive guide to all features of 5GTANGO, but rather an "umbrella" document that will guide you to the more extensive documentation if required.
 
 ### Setup
-To setup 5GTANGO you must install the 3 major components of 5GTANGO  in the order shown is the following bulleted list.
+
+To setup 5GTANGO you must install the three major components of 5GTANGO and OpenStack in the order shown is the following bulleted list and as highlighted in the following diagram.
+
+<p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/raw/master/images/5gtango-install-1234.png" /></p>
+
+
   * [Installing the SDK](/sdk-installation)
   * [Common installation requirements for SP and V&V](/common-installation)
     * [Installing the Service Platform (SP)](/sp-installation)
@@ -34,14 +41,13 @@ Once the 5GTANGO platform is installed, you can now create network service packa
 
 * [Using the V&V Platform](/vnv.md)
   * [Prerequisites](/vnv.md#prerequisites)
-  * [Uploading a Service Package](/vnv.md#upload-a-service-package)
-  * [Uploading a Test Package](/vnv.md#upload-a--service-package)
+  * [Uploading a Service Package](/vnv.md#uploading-a-service-package)
+  * [Uploading a Test Package](/vnv.md#uploading-a-service-package)
   * [Tagging Tests for a given Network Service](/vnv.md#tagging-tests-for-a-given-network-service)
   * [Uploading a Test Package with a specific Test Tag](/vnv.md#uploading-a-test-package-with-a-specific-test-tag)
   * [Execute a Test Suite](/vnv.md#execute-a-test-suite) 
   * [Checking Test Results](/vnv.md#checking-test-results) 
   * [Working with the API](/vnv.md#working-with-the-API)  
-
 
 ### Examples
   * [Network Slicing](/slicing)
