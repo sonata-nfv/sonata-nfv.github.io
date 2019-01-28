@@ -63,7 +63,7 @@ The 5GTANGO schema that validates Network Service Descriptors  (NSDs) is  define
 
 
 ```
-$ curl -s http://sta-vnv-ath-v4-0.5gtango.eu:32002/api/v3/services/
+$ curl -s http://<vnv_platform_ip>:<server.port>:32002/api/v3/services/
 ```
 
 #### Uploading a Test Package
@@ -81,7 +81,7 @@ $ curl -s http://sta-vnv-ath-v4-0.5gtango.eu:32002/api/v3/services/
 ```
 We can list the tests using the  
 ```console
-curl -s http://sta-vnv-ath-v4-0.5gtango.eu:32002/api/v3/tests/descriptors/
+curl -s http://<vnv_platform_ip>:<server.port>/api/v3/tests/descriptors/
 ```
 #### Tagging Tests for a given Network Service
 
@@ -137,7 +137,7 @@ Upload a service that could match testing_tag "http-advanced" of the previous up
 * List Test Plans:
 
     ```	
-    curl http://sta-vnv-ath-v4-0.5gtango.eu:4012/trr/test-plans
+    curl http://<vnv_platform_ip>:<server.port>/trr/test-plans
     ```
     returns the following JSON response payload.
     ```	
