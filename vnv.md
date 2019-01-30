@@ -18,7 +18,7 @@ The V&V manages the following _artifacts_ through the test lifecycle:
 
 The tests are executed from the V&V platform in a sandboxed environment operating under the V&V platform control, so that functional and non-functional metrics are obtained, thus leading to the verification and validation of the network service under test.
 
-#### Getting Started With V&V Testing
+## Getting Started With V&V Testing
 
 The outline of the tasks to perform in V&V is as follows:
 1. Upload a Service Package
@@ -29,7 +29,7 @@ The outline of the tasks to perform in V&V is as follows:
 1. Working with the V&V API
 
 
-## Prerequisites
+#### Prerequisites
 
 Before you can try out V&V functionality you will need the following:
 1. A valid Network Service Package created by the SDK:  
