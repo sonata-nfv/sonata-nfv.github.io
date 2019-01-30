@@ -46,11 +46,11 @@ sudo apt-get update
 sudo apt-get install docker-ce
 ```
 
-### Installing python, pip and docker using pip
+### Installing python and docker using pip
 
 ```bash
-sudo apt-get install python3 python3-pip pip
-pip install docker
+sudo apt-get install python3 python3-pip -y
+pip3 install docker
 ```
 
 [In case of this error](https://stackoverflow.com/questions/14547631/python-locale-error-unsupported-locale-setting)
@@ -90,7 +90,7 @@ cd tng-devops/
 
 ## SONATA Installation
 
-To use the last stable version of SONATA you need to change the branch to v4.0. That can be performed being inside `tng-devops` folder, with the command:
+To use the latest stable version of SONATA you will need to change the branch to _v4.0_. This can be performed from inside the `tng-devops` folder, with the command:
 `git checkout v4.0`
 
 ### Creating docker network to allocate the containers
