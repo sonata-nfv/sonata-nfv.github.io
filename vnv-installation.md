@@ -62,7 +62,7 @@ internal_callback_url: http://tng-vnv-lcm:6100/api/v1/packages/on-change
 
 Please bear in mind you will need to replace ip-of-sp in the file with the IP address of the Service Platform to be used by the VnV
 
-```bash
+```
 
 TASK [vnv : Installation Starts] ***********************************************
 ok: [localhost]
