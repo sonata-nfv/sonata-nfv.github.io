@@ -16,7 +16,7 @@ Note: Please ensure you are in the 'tng-devops' folder that you created in the i
 In order to customize the installation you can modify the variables for the target destination. In the case described in the command below was localhost. The configuration file of sonata for localhost installation is located in `host_vars/localhost`.
 
 ```bash
----
+
 ## Containers configuration
 # Docker Network
 docker_network_name: tango
@@ -60,9 +60,9 @@ internal_callback_url: http://tng-vnv-lcm:6100/api/v1/packages/on-change
 
 ```
 
+Please bear in mind you will need to replace ip-of-sp in the file with the IP address of the Service Platform to be used by the VnV
 
 ```bash
-Please bear in mind you will need to replace ip-of-sp in the file with the IP address of the Service Platform to be used by the VnV
 
 TASK [vnv : Installation Starts] ***********************************************
 ok: [localhost]
