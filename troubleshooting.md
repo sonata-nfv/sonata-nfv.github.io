@@ -85,3 +85,17 @@ $ sudo docker exec -t son-postgres psql -h localhost -U postgres -d wimregistry 
 $ sudo docker restart son-sp-infrabstract
 $ sudo docker restart wim-adaptor
 ```
+
+## Cleaning the system
+
+In case you want to clean the system for any reason (re-install for example), you can use these commands, that will delete all the dockers, the images, the docker network and tne files where resides persistent storage of all DBs:
+
+```shell
+$ sudo docker stop $(sudo docker ps -aq)
+$ sudo docker rm $(sudo docker ps -aq)
+$ sudo docker rmi $(sudo docker images -a -q)
+$ docker network rm tango
+$ sudo rm -rf /etc/sonata
+```
+
+And for reinstalling we recommend to mark as 'true' the variable "clean· in the file /tng-devops/host_vars/localhost
