@@ -71,3 +71,17 @@ $ docker inspect -f '{{.State.Running}}' tng-gtk-vnv
 $ docker inspect -f '{{.State.Running}}' tng-vnv-lcm
 $ docker inspect -f '{{.State.Running}}' tng-vnv-tee
 $ docker inspect -f '{{.State.Running}}' tng-vnv-platform-adapter
+```
+
+## Reconfigure the VIM
+
+If you need to change the VIM info or reconfigure it, first you need to clear the previous info deom the DB, You can do it with these commands:
+
+```shell
+$ sudo docker exec -t son-postgres psql -h localhost -U sonatatest -d vimregistry -c "DELETE FROM VIM *"
+$ sudo docker exec -t son-postgres psql -h localhost -U sonatatest -d vimregistry -c "DELETE FROM LINK_VIM *"
+$ sudo docker exec -t son-postgres psql -h localhost -U postgres -d wimregistry -c "DELETE FROM ATTACHED_VIM *"
+$ sudo docker exec -t son-postgres psql -h localhost -U postgres -d wimregistry -c "DELETE FROM WIM *"
+$ sudo docker restart son-sp-infrabstract
+$ sudo docker restart wim-adaptor
+```
