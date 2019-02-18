@@ -35,6 +35,13 @@ pip3 install git+https://github.com/sonata-nfv/tng-sdk-benchmark
 
 **Optional:** If you want to use `tng-sdk-benchmark`, you need to [setup and configure an experiment execution platform](https://github.com/sonata-nfv/tng-sdk-benchmark/wiki/Setup-execution-platform-(vim-emu)) on a separate machine. 
 
+Configure the installation
+
+```sh
+# run tng-workspace to create a fresh workspace on your machine
+tng-workspace
+```
+
 Test the installation:
 
 ```sh
