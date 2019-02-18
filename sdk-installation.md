@@ -28,7 +28,12 @@ pip3 install git+https://github.com/sonata-nfv/tng-sdk-validation.git
 
 # install tng-sdk-package
 pip3 install git+https://github.com/sonata-nfv/tng-sdk-package
+
+# install tng-sdk-benchmark
+pip3 install git+https://github.com/sonata-nfv/tng-sdk-benchmark
 ```
+
+**Optional:** If you want to use `tng-sdk-benchmark`, you need to [setup and configure an experiment execution platform](https://github.com/sonata-nfv/tng-sdk-benchmark/wiki/Setup-execution-platform-(vim-emu)) on a separate machine. 
 
 Test the installation:
 
@@ -36,6 +41,7 @@ Test the installation:
 tng-project -h
 tng-validate -h
 tng-package -h
+tng-bench -h
 ```
 
 Continue with the [Quickguide](/quickguide).
