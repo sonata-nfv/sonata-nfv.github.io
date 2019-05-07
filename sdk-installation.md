@@ -17,7 +17,7 @@ virtualenv -p <path_to_python3> venv
 source venv/bin/activate
 ```
 
-Install all SDK tools:
+### Install all SDK tools:
 
 ```sh
 # install tng-sdk-project
@@ -39,20 +39,20 @@ And install it locally:
 pip3 install git+https://github.com/sonata-nfv/tng-sdk-benchmark
 ```
 
-Configure the installation
+### Configure the installation
 
 ```sh
 # run tng-workspace to create a fresh workspace on your machine
 tng-workspace
 ```
 
-Test the installation:
+### Test the installation:
 
 ```sh
 tng-project -h
 tng-validate -h
 tng-package -h
-tng-bench -h
+tng-bench -h  # (optional)
 ```
 
 Continue with the [Quickguide](/quickguide).
