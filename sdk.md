@@ -2,17 +2,19 @@
 
 The recommended workflow when developing a SONATA network service consists on using the CLI tools to create a workspace, create a project to hold the descriptors of the service, validate the components and finally, create a bundled service package. The required steps are as follows:
 
--   Step 1: Create Workspace
+-   Step 1: Create Workspace (only required once)
 
-```
+```bash
+# setup workspace at default location (~/.tng-workspace)
 tng-workspace
 
+# setup workspace at custom path
 tng-workspace --workspace path/to/workspace
 ````
 
 -   Step 2: Create Project
 
-```
+```bash
 tng-project -p path/to/project                # creates a new project at the specified path
 tng-project -p path/to/project --add file1    # adds file1 to the project.yml
 tng-project -p path/to/project --add file1 --type text/plain  # adds file1 with explicit MIME type
@@ -20,8 +22,17 @@ tng-project -p path/to/project --remove file1 # removes file1 from the project.y
 tng-project -p path/to/project --status       # shows project overview/status
 ````
 
-NOTE: Since the structure of projects and descriptors changed from SONATA (v3.1) to 5GTANGO (v4.0), tng-project also provides a command to automatically translate old to new projects. For more information see the corresponding wiki page.
+It's also possible to directly generate suitable VNFD and NSD descriptors when creating a new project:
+
+```bash
+# creates a new project with descriptors for 2 VNFs with the specified author and images
+tng-project -p path/to/project --author abc --vnfs 2 \  
+  --image_names img1 img2 --image_types docker docker     
 ```
+
+NOTE: Since the structure of projects and descriptors changed from SONATA (v3.1) to 5GTANGO (v4.0), tng-project also provides a command to automatically translate old to new projects. For more information see the corresponding wiki page.
+
+```bash
 tng-project -p path/to/old-project --translate   # translates the project to the new structure
 ````
 

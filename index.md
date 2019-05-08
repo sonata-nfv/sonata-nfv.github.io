@@ -74,10 +74,13 @@ These are the highest level modules. Further details on each one of them can be 
 
 The service development kit (SDK) consists of the following main modules:
 
-* ***[CLI](https://github.com/sonata-nfv/son-cli)***: SONATA SDK's command line interface tools to aid in developing network services and VNFs
-* ***[Editor](https://github.com/sonata-nfv/son-editor)***: SONATA's web-based editor for service and function descriptors. The [Editor frontend](https://github.com/sonata-nfv/son-editor-frontend) and [Editor backend](https://github.com/sonata-nfv/son-editor-backend) are the frontend and backend of SONATA's web-based service and function descriptor editor.
+* *[**Schemas**](https://github.com/sonata-nfv/tng-schema):* Schemas defining the structure and syntax of all descriptors within the project (e.g., for VNFs, network services, packages, SLAs, policies, ...)
+* *[**Descriptor generation and project management:**](https://github.com/sonata-nfv/tng-sdk-project)* Tool for generating VNFD and NSD descriptors based on high-level information and for managing created NFV projects.
+* *[**Validator**](https://github.com/sonata-nfv/tng-sdk-validation):* Tool for validating generated descriptors and projects based on syntax, integrity, topology, or custom rules.
+* *[**Packager**](https://github.com/sonata-nfv/tng-sdk-package)*: Tool to create and unpack 5GTANGO packages
+
 * ***[Emulator](https://github.com/sonata-nfv/son-emu)***: emulation platform to support network service developers in locally prototyping and testing complete network service chains in realistic end-to-end multi-PoP scenarios
-* ***[Analyzer](https://github.com/sonata-nfv/son-analyze)***: analysis framework to study a service's behaviour
+* *[**Benchmarker**](https://github.com/sonata-nfv/tng-sdk-benchmark):* Tool for fully automated VNF and network service benchmarking and profiling.
 
 ### VnV
 
