@@ -21,9 +21,8 @@ The tests are executed from the V&V platform in a sandboxed environment operatin
 ## Getting Started With V&V Testing
 
 The outline of the tasks to perform in V&V is as follows:
-1. Upload a Service Package
-1. Upload a Test Package
-1. Tagging Tests for a given Network Service
+1. Create 1 Service Package and 1 Test Package
+1. Upload a Service Package and a Test Package
 1. Execute a Test Suite
 1. Checking Test Results
 1. Working with the V&V API
@@ -43,79 +42,90 @@ The 5GTANGO schema that validates Network Service Descriptors  (NSDs) is  define
 - https://github.com/sonata-nfv/tng-schema 
 - https://github.com/sonata-nfv/tng-schema/blob/master/service-descriptor/nsd-schema.yml
 
-#### Uploading a Service Package
-
-1. Download the following service package (binary file) from Github: 
-    * Example Service: 
-        * https://github.com/sonata-nfv/tng-y1-demo/tree/master/tango (e.g. eu.5gtango.ns-haproxy.0.1.tgo)
 
 
-1. Upload package to Catalog:
-    * Using cURL:
-        *  curl -X POST http://<vnv_platform_ip>:<server.port>/api/v3/packages  -F "package=@./eu.5gtango.ns-haproxy.0.1.tgo" ; 
+#### Create a service package
+
+A project descriptor for a network service is available here 
+
+<https://github.com/sonata-nfv/tng-tests/tree/master/tests/VnV/vnv-onboarding-phase/tests/projects/industrial-pilot-ns1-test>
+
+note that in nsd_smpilot_ns1.yml is present the following tag:
+
+```
+testing_tags:
+  - "industrial-pilot-broker"
+```
+
+to create the package **tng-smpilot-ns1-k8s.tgo**: 
+
+`tng-pkg -p  /tests/projects/industrial-pilot-ns1-test`
+
+#### Create a test package
+
+A project descriptor for a test is available here 
+
+<https://github.com/sonata-nfv/tng-tests/tree/master/tests/VnV/vnv-onboarding-phase/tests/projects/tng-smpilot-ns1-k8s
+
+note that in test-descriptor.yml is present the following tag:
+
+```
+testing_tags:
+  - "industrial-pilot-broker"
+```
+
+to create the package **industrial-pilot-test.tgo**: 
+
+`tng-pkg -p  /tests/projects/tng-smpilot-ns1-k8s`
+
+#### Uploading a Service Package and a Test Package to Catalog
+
+
+1.  Using cURL:
+
+    - curl -X POST http://<vnv_platform_ip>:<server.port>/api/v3/packages  -F "package=@./eu.5gtango.industrial-pilot-test.0.1.tgo" ; 
+    - curl -X POST http://<vnv_platform_ip>:<server.port>/api/v3/packages  -F "package=@./eu.5gtango.tng-smpilot-ns1-k8s.0.1.tgo" ; 
 
     As a response you will get a message like the following:
     {"package_process_uuid":"c68e0108-ff06-4e58-89e9-573f0250dd08","status":"running","error_msg":null}
+
     
+
     Navigate to the V&V Portal to browse the newly added Package at https://<vnv_platform_ip>:<server.port>/validation-and-verification/packages
-    
+
     You can view the network services contained in package at https://<vnv_platform_ip>:<server.port>/validation-and-verification/network-services
 
+    You can view the network services contained in package at https://<vnv_platform_ip>:<server.port>/validation-and-verification/tests
 
-```
-$ curl -s http://<vnv_platform_ip>:<server.port>:32002/api/v3/services/
-```
+    ```
+    $ curl -s http://<vnv_platform_ip>:<server.port>:32002/api/v3/services/
+    $ curl -s http://<vnv_platform_ip>:<server.port>/api/v3/tests/descriptors/
+    ```
 
-#### Uploading a Test Package
-
-1. First, download the following test package (binary file) from Github: 
-    * Example tests: 
-        * https://github.com/sonata-nfv/tng-y1-demo/tree/master/tango (e.g. eu.5gtango.test-http-benchmarking-advanced.0.1.tgo)
-
-2. Upload the test package to Test Catalog:
-    * Upload test example:
     
 
-```console
-        $ curl -X POST http://<vnv_platform_ip>:<server.port>:32002/api/v3/packages  -F "package=@./eu.5gtango.test-http-benchmarking-advanced.0.1.tgo" ; 
-```
-We can list the tests using the  
-```console
-curl -s http://<vnv_platform_ip>:<server.port>/api/v3/tests/descriptors/
-```
 #### Tagging Tests for a given Network Service
 
-The test package "http-benchmarking-test-advanced.0.1.tgo" contains the test tag: "http-advanced". As there is no  Network Service on the server currently then this is no execution test for now.
+The test package "eu.5gtango.industrial-pilot-test.0.1.tgo" contains the test tag: "industrial-pilot-broker". 
 
-Navigate to the V&V Tests page https://<vnv_platform_ip>:<server.port>/validation-and-verification/tests to view the list of tests onboarded.  Click 'test-http-benchmark-advanced' test instance to view details of the test and also details of test execution.
-
-#### Uploading a Test Package with a specific Test Tag
-
-In this exercise we will upload a test package that will be relevant for the previous uploading network service. Specifically, a test with a _test tag_ of **'proxy-advanced'** will be executed the network service  ns-haproxy.0.1.tgo that we uploading in the first exercise.
-
-
-1. Download the following test package (binary file) from Github: 
-    * Example tests: 
-        * https://github.com/sonata-nfv/tng-y1-demo/tree/master/tango (e.g. eu.5gtango.test-http-benchmarking-advanced-proxy.0.1.tgo)
-
-2. Upload test package to Test Catalog:
-    * Upload test example:
-        *  curl -X POST http://<vnv_platform_ip>:<server.port>:32002/api/v3/packages  -F "package=@./eu.5gtango.test-http-benchmarking-advanced-proxy.0.1.tgo" ; 
+Navigate to the V&V Tests page https://<vnv_platform_ip>:<server.port>/validation-and-verification/tests to view the list of tests onboarded.  Click 'industrial-pilot-broker' test instance to view details of the test and also details of test execution.
 
 
 
-#### Uploading a Service matching a specific Test tag
+#### Check the package descriptor
 
-Upload a service that could match testing_tag "http-advanced" of the previous uploaded test package.
+Can check that the created package descriptor contains the required testing_tags.
 
-4. ...
+`curl -s http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages | jq .[] | jq` 
+`.pd.package_content.testing_tags,.pd.package_content.id.name,.pd.package_content`
+`.uuid`
 
 #### Execute a Test Suite
 
-#### Checking Test Results
+Note that the execution of the test is not triggered if the tags in NSD and TD doesn't match or the testing tag is not present in the package descriptor.  
 
 #### Working with the API
- 
+
 
 * List Packages:
 
@@ -137,36 +147,59 @@ Upload a service that could match testing_tag "http-advanced" of the previous up
 * List Test Plans:
 
     ```	
-    curl http://<vnv_platform_ip>:<server.port>/trr/test-plans
+    curl -X GET "http://pre-int-vnv-bcn.5gtango.eu:6100/api/v1/test-plans" | jq .[]
     ```
     returns the following JSON response payload.
     ```	
     [
       {
-        "created_at": "2019-01-22T15:13:16.744+00:00",
-        "network_service_instances": [
-          {
-            "instance_uuid": null,
-            "service_uuid": "02f33c78-d07b-45b6-97f7-823dfccc15f1",
-            "status": "ERROR",
-            "runtime": null
-          }
-        ],
-        "package_id": "cfecdc2e-cbcf-4431-8922-f7a8e54ae4cb",
-        "status": "NS_DEPLOY_FAILED",
-        "test_suite_results": [
-          {
-            "package_id": "cfecdc2e-cbcf-4431-8922-f7a8e54ae4cb",
-            "uuid": "e0c1cfb5-91c3-4457-8450-ad0c240f6bf6",
-            "test_plan_id": "135e6ef3-332f-4804-a645-c5da3dcb77f7",
-            "instance_uuid": null,
-            "service_uuid": "02f33c78-d07b-45b6-97f7-823dfccc15f1",
-            "test_uuid": "35a66966-7db4-4408-8e9d-f0c73a92490f",
-            "status": null
-          }
-        ],
-        "updated_at": "2019-01-22T15:13:16.744+00:00",
-        "uuid": "1b1adac6-d091-4479-a8e9-5fb744d5f2b4"
-      }
+      "created_at": "2019-05-30T07:37:46.046+0000",
+      "updated_at": "2019-05-30T07:39:40.193+0000",
+      "uuid": "efd18ab4-6000-4b72-ba0a-548a25d68da1",
+      "test_set_uuid": "57e01b58-937d-4c66-aa92-670636b88b52",
+      "service_uuid": "349f99a5-5aff-48c1-b34c-7d042b0befcb",
+      "test_uuid": "e06c092f-dd5a-4ee5-9a11-d845fdde04a0",
+      "test_result_uuid": "c070de74-99e9-4f29-b226-5c68cfcecd16",
+      "test_status": "COMPLETED",
+      "confirm_required": false,
+      "description": null
+    }
+    {
+      "created_at": "2019-05-30T08:05:36.448+0000",
+      "updated_at": "2019-05-30T08:08:24.853+0000",
+      "uuid": "97f761f7-9436-42d5-bf89-6722e2893839",
+      "test_set_uuid": "da5e1872-1195-4fa4-8208-2f9dfad4e622",
+      "service_uuid": "245f2992-e61e-4fae-a14f-5988d4ae3b98",
+      "test_uuid": "49dcf7d6-c84a-41c3-a814-9e83581b3dad",
+      "test_result_uuid": "e8c51a31-69e9-41a2-856d-6631e2d4773e",
+      "test_status": "COMPLETED",
+      "confirm_required": false,
+      "description": null
+    }
     ]
     ```
+
+#### Checking Test Results
+
+Using the **test_result_uuid** we can get the results.
+
+curl -i -H "Content-Type: application/json" -X GET http://pre-int-vnv-bcn.5gtango.eu:4012/trr/test-suite-results/test_result_uuid
+
+
+
+#### Automatize the onboarding process
+
+To automatize the onboarding process is available a robot script. 
+
+<https://github.com/sonata-nfv/tng-tests/tree/master/tests/VnV/vnv-onboarding-phase>
+
+`make build run`
+
+`docker exec -i docker-robot-container sh -c "robot /docker-robot/tests/onboard_to_sonata.robot"`
+
+It is composed by 3 parts: 1 clean the existing uploaded packages and the existing testplans, 1 upload the packages and check correspondence between test package and service package, 1 verify that packages and testplans are being created. Each part can be executed separatly specifying the testcase:
+
+docker exec -i docker-robot-container sh -c "robot -t testcase2 /docker-robot/tests/onboard_to_sonata.robot"
+
+This is a script to support and speed up the development phase so feel free to edit the /tests/environment/variables.txt  so the launch can fit the needs.
+
