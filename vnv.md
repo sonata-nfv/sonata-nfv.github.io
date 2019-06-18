@@ -134,6 +134,9 @@ to create the package **industrial-pilot-test.tgo**:
 
 The test package "eu.5gtango.industrial-pilot-test.0.1.tgo" contains the test tag: "industrial-pilot-broker". 
 
+`curl -s
+http://<vnv_platform_ip>:<server.port>:32002/api/v3/packages?package_content.testing_tags=industrial-pilot-broker `
+
 Navigate to the V&V Tests page https://<vnv_platform_ip>:<server.port>/validation-and-verification/tests to view the list of tests onboarded.  Click 'industrial-pilot-broker' test instance to view details of the test and also details of test execution.
 
 
