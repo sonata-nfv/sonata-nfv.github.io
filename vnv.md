@@ -48,9 +48,9 @@ The 5GTANGO schema that validates Network Service Descriptors  (NSDs) is  define
 
 A project descriptor for a network service is available here 
 
-<https://github.com/sonata-nfv/tng-tests/tree/master/tests/VnV/vnv-onboarding-phase/tests/projects/industrial-pilot-ns1-test>
+<https://github.com/sinaure/tng-tests/tree/feature/telnetonly/packages/NSINDP1C>
 
-note that in project.yml is present the following tag:
+ that in project.yml is present the following tag:
 
 ```
 testing_tags:
