@@ -210,22 +210,3 @@ Note that the execution of the test is triggered if the tags in NSD and TD match
 Using the **test_result_uuid** we can get the results.
 
 curl -i -H "Content-Type: application/json" -X GET https://<vnv_platform_ip>:<server.port>:4012/trr/test-suite-results/test_result_uuid
-
-
-
-#### Automatize the onboarding process
-
-To automatize the onboarding process is available a robot script. 
-
-<https://github.com/sonata-nfv/tng-tests/tree/master/tests/VnV/vnv-onboarding-phase>
-
-`make build run`
-
-`docker exec -i docker-robot-container sh -c "robot /docker-robot/tests/onboard_to_sonata.robot"`
-
-It is composed by 3 parts: 1 clean the existing uploaded packages and the existing testplans, 1 upload the packages and check correspondence between test package and service package, 1 verify that packages and testplans are being created. Each part can be executed separatly specifying the testcase:
-
-docker exec -i docker-robot-container sh -c "robot -t testcase2 /docker-robot/tests/onboard_to_sonata.robot"
-
-This is a script to support and speed up the development phase so feel free to edit the /tests/environment/variables.txt  so the launch can fit the needs.
-
