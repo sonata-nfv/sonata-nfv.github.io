@@ -50,7 +50,7 @@ A project descriptor for a network service is available here
 
 <https://github.com/sonata-nfv/tng-tests/tree/master/tests/VnV/vnv-onboarding-phase/tests/projects/industrial-pilot-ns1-test>
 
-note that in nsd_smpilot_ns1.yml is present the following tag:
+note that in project.yml is present the following tag:
 
 ```
 testing_tags:
@@ -61,18 +61,44 @@ to create the package **tng-smpilot-ns1-k8s.tgo**:
 
 `tng-pkg -p  /tests/projects/industrial-pilot-ns1-test`
 
+The vnf to be tested is a mqtt broker and the vnf name (**smpilot-cc**) will be needed in the next section
+
+```
+network_functions:
+  - vnf_id: "vnf_cc"
+    vnf_vendor: "eu.5gtango"
+    vnf_name: "smpilot-cc"
+    vnf_version: "0.1"
+```
+
+
 #### Create a test package
+
+The test-descriptor.yml contains the reference to the probe that will be executed and the dynamic parameters needed for the execution with reference to the vnf that will be tested.
+
+```
+probes:
+      - id: telnetprobe
+        description: "A service initial configuration container"
+        image: "sonatanfv/tng-vnv-probe-telnet:latest"
+        name: telnetprobe
+        parameters:
+        - key: EXTERNAL_IP
+          value: '$(smpilot-cc/endpoints/id:floating_ip/address)'
+        - key: PORT
+          value: '$(smpilot-cc/endpoints/id:floating_ip/ports/id:mqtt/port)'
+
+```
 
 A project descriptor for a test is available here 
 
-<https://github.com/sonata-nfv/tng-tests/tree/master/tests/VnV/vnv-onboarding-phase/tests/projects/tng-smpilot-ns1-k8s
+<<https://github.com/sinaure/tng-tests/tree/feature/telnetonly/packages/TSTINDP>
 
-note that in test-descriptor.yml is present the following tag:
+note that in project.yml is present the following tag:
 
-```
 testing_tags:
+
   - "industrial-pilot-broker"
-```
 
 to create the package **industrial-pilot-test.tgo**: 
 
@@ -116,13 +142,13 @@ Navigate to the V&V Tests page https://<vnv_platform_ip>:<server.port>/validatio
 
 Can check that the created package descriptor contains the required testing_tags.
 
-`curl -s http://pre-int-vnv-bcn.5gtango.eu:32002/api/v3/packages | jq .[] | jq` 
+`curl -s https://<vnv_platform_ip>:<server.port>:32002/api/v3/packages | jq .[] | jq` 
 `.pd.package_content.testing_tags,.pd.package_content.id.name,.pd.package_content`
 `.uuid`
 
-#### Execute a Test Suite
+#### Creation and execution of a Test Plan
 
-Note that the execution of the test is not triggered if the tags in NSD and TD doesn't match or the testing tag is not present in the package descriptor.  
+Note that the execution of the test is triggered if the tags in NSD and TD match and the testing tag is present in the package descriptor.   
 
 #### Working with the API
 
@@ -147,7 +173,7 @@ Note that the execution of the test is not triggered if the tags in NSD and TD d
 * List Test Plans:
 
     ```	
-    curl -X GET "http://pre-int-vnv-bcn.5gtango.eu:6100/api/v1/test-plans" | jq .[]
+    curl -X GET "https://<vnv_platform_ip>:<server.port>:6100/api/v1/test-plans" | jq .[]
     ```
     returns the following JSON response payload.
     ```	
@@ -183,7 +209,7 @@ Note that the execution of the test is not triggered if the tags in NSD and TD d
 
 Using the **test_result_uuid** we can get the results.
 
-curl -i -H "Content-Type: application/json" -X GET http://pre-int-vnv-bcn.5gtango.eu:4012/trr/test-suite-results/test_result_uuid
+curl -i -H "Content-Type: application/json" -X GET https://<vnv_platform_ip>:<server.port>:4012/trr/test-suite-results/test_result_uuid
 
 
 
