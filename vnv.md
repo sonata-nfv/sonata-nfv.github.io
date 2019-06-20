@@ -48,7 +48,7 @@ The 5GTANGO schema that validates Network Service Descriptors  (NSDs) is  define
 
 A project descriptor for a network service is available here 
 
-<https://github.com/sinaure/tng-tests/tree/feature/telnetonly/packages/NSINDP1C>
+<https://github.com/sinaure/tng-tests/tree/feature/mqttonly/packages/NSINDP1C>
 
  that in project.yml is present the following tag:
 
@@ -78,21 +78,27 @@ The test-descriptor.yml contains the reference to the probe that will be execute
 
 ```
 probes:
-      - id: telnetprobe
+      - id: mqttprobe
         description: "A service initial configuration container"
-        image: "sonatanfv/tng-vnv-probe-telnet:latest"
-        name: telnetprobe
+        image: "easyglobalmarket/mqtt-probe:latest"
+        name: mqttprobe
         parameters:
-        - key: EXTERNAL_IP
+        - key: IP
           value: '$(smpilot-cc/endpoints/id:floating_ip/address)'
         - key: PORT
           value: '$(smpilot-cc/endpoints/id:floating_ip/ports/id:mqtt/port)'
+        - key: CLIENTS
+          value: '100'
+        - key: COUNT
+          value: '100'
+        - key: SIZE
+          value: '100'  
 
 ```
 
 A project descriptor for a test is available here 
 
-<<https://github.com/sinaure/tng-tests/tree/feature/telnetonly/packages/TSTINDP>
+<<https://github.com/sinaure/tng-tests/tree/feature/mqttonly/packages/TSTINDP>
 
 note that in project.yml is present the following tag:
 
@@ -213,3 +219,4 @@ Note that the execution of the test is triggered if the tags in NSD and TD match
 Using the **test_result_uuid** we can get the results.
 
 curl -i -H "Content-Type: application/json" -X GET https://<vnv_platform_ip>:<server.port>:4012/trr/test-suite-results/test_result_uuid
+
