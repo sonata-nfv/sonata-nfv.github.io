@@ -6,7 +6,7 @@ After the initial preparation of the system described in the [common installatio
 
 ## Installing V&V Platform using Ansible
 
-A set of ansible scripts were developed in order to automate the installation. You will need a SONATA SP available previously VnV installation since the SP attaching is done during the installation of VnV. The command to install the SP is the following:
+A set of ansible scripts were developed in order to automate the installation. You will need a SONATA SP available previously VnV installation since the SP attaching is done during the installation of VnV. The command to install the VnV is the following:
 
 `sudo ansible-playbook roles/vnv.yml -i environments -e target=localhost --ask-vault-pass`
 
