@@ -48,7 +48,7 @@ The 5GTANGO schema that validates Network Service Descriptors  (NSDs) is  define
 
 A project descriptor for a network service is available here 
 
-<https://github.com/sinaure/tng-tests/tree/feature/mqttonly/packages/NSINDP1C>
+<https://github.com/sonata-nfv/tng-tests/tree/master/packages/NSINDP1C>
 
  that in project.yml is present the following tag:
 
@@ -98,7 +98,7 @@ probes:
 
 A project descriptor for a test is available here 
 
-<<https://github.com/sinaure/tng-tests/tree/feature/mqttonly/packages/TSTINDP>
+<<https://github.com/sonata-nfv/tng-tests/tree/master/packages/TSTINDP>
 
 note that in project.yml is present the following tag:
 
@@ -113,35 +113,42 @@ to create the package **industrial-pilot-test.tgo**:
 #### Uploading a Service Package and a Test Package to Catalog
 
 
-1.  Using cURL:
+1. Using CURL or tng-cli (check installation requirements):
 
-    - curl -X POST http://<vnv_platform_ip>:<server.port>/api/v3/packages  -F "package=@./eu.5gtango.industrial-pilot-test.0.1.tgo" ; 
-    - curl -X POST http://<vnv_platform_ip>:<server.port>/api/v3/packages  -F "package=@./eu.5gtango.tng-smpilot-ns1-k8s.0.1.tgo" ; 
+   - curl -X POST http://<vnv_platform_ip>:<server.port>/api/v3/packages  -F "package=@./eu.5gtango.industrial-pilot-test.0.9.tgo" ; 
+   - curl -X POST http://<vnv_platform_ip>:<server.port>/api/v3/packages  -F "package=@./eu.5gtango.tng-smpilot-ns1-k8s.0.9.tgo" ; 
 
-    As a response you will get a message like the following:
-    {"package_process_uuid":"c68e0108-ff06-4e58-89e9-573f0250dd08","status":"running","error_msg":null}
+   
 
-    
+   tng-cli -u http://pre-int-vnv-bcn.5gtango.eu package -u   eu.5gtango.industrial-pilot-test-egm.0.9.tgo
 
-    Navigate to the V&V Portal to browse the newly added Package at https://<vnv_platform_ip>:<server.port>/validation-and-verification/packages
+   tng-cli -u http://pre-int-vnv-bcn.5gtango.eu package -u   eu.5gtango.tng-smpilot-ns1-k8s-egm.0.9.tgo
 
-    You can view the network services contained in package at https://<vnv_platform_ip>:<server.port>/validation-and-verification/network-services
+   
 
-    You can view the network services contained in package at https://<vnv_platform_ip>:<server.port>/validation-and-verification/tests
+   As a response you will get a message like the following:
+   {"package_process_uuid":"c68e0108-ff06-4e58-89e9-573f0250dd08","status":"running","error_msg":null}
 
-    ```
-    $ curl -s http://<vnv_platform_ip>:<server.port>:32002/api/v3/services/
-    $ curl -s http://<vnv_platform_ip>:<server.port>/api/v3/tests/descriptors/
-    ```
+   
 
-    
+   Navigate to the V&V Portal to browse the newly added Package at https://<vnv_platform_ip>:<server.port>/validation-and-verification/packages
+
+   You can view the network services contained in package at https://<vnv_platform_ip>:<server.port>/validation-and-verification/network-services
+
+   You can view the network services contained in package at https://<vnv_platform_ip>:<server.port>/validation-and-verification/tests
+
+   ```
+   $ curl -s http://<vnv_platform_ip>:<server.port>:32002/api/v3/services/
+   $ curl -s http://<vnv_platform_ip>:<server.port>/api/v3/tests/descriptors/
+   ```
+
+   
 
 #### Tagging Tests for a given Network Service
 
 The test package "eu.5gtango.industrial-pilot-test.0.1.tgo" contains the test tag: "industrial-pilot-broker". 
 
-`curl -s
-http://<vnv_platform_ip>:<server.port>:32002/api/v3/packages?package_content.testing_tags=industrial-pilot-broker `
+`curl -s http://<vnv_platform_ip>:<server.port>:32002/api/v3/packages?package_content.testing_tags=industrial-pilot-broker `
 
 Navigate to the V&V Tests page https://<vnv_platform_ip>:<server.port>/validation-and-verification/tests to view the list of tests onboarded.  Click 'industrial-pilot-broker' test instance to view details of the test and also details of test execution.
 
@@ -166,9 +173,15 @@ Note that the execution of the test is triggered if the tags in NSD and TD match
 
     ```
     curl -s http://<vnv_platform_ip>:<server.port>:32002/api/v3/packages/ | jq ;
+    tng-cli -u http://pre-int-vnv-bcn.5gtango.eu package --list
+    ```
+* Remove Package by id:
+
+    ```
+    tng-cli -u http://pre-int-vnv-bcn.5gtango.eu package -r id676576654
     ```
 
-* List Services:
+* List Services: 
 
     ```
     curl -s http://<vnv_platform_ip>:<server.port>:32002/api/v3/services | jq ;
