@@ -75,6 +75,14 @@ export LC_CTYPE="en_US.UTF-8"
 sudo dpkg-reconfigure locales
 ```
 
+### Extra dependencies
+
+```bash
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+sudo apt-get install build-essential libssl-dev libffi-dev python-dev
+pip3 install ansible
+```
+
 ### Git installation
 
 ```bash
