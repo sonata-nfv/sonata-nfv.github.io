@@ -19,9 +19,8 @@ This quick guide is organized in the following manner:
 
 * Section 1 (this section) is an introduction to the guide.
 * Section 2 provides a general overview of 5GTANGO: what 5GTANGO is and for whom, its general architecture, and a brief description of its main modules, the Service Platform (SP) and the Service Development Kit (SDK) and the Validation and Verification (V&V).
-* Section 3 gives information about the current 5GTANGO software release.
-* Section 4 explains the installation process for each of the 5GTANGO components that can be installed and used individually. These are the VnV, the SP, the SDK and the Emulator that, although part of the SDK, has its own autonomy.
-* In Section 5, we briefly describe how to use 5GTANGO once installed, from the creation of a service, how to test it using the emulator, to its deployment with the Service Platform. 
+* [3. Release Notes](/release_notes) provides current 5GTANGO software release notes.
+* [4. Quick guide](/quickguide) provides a quickguide for installation and usage of SONATA components (SDK, V&V and Service Platform). 
 
 
 ## 2. What is 5GTANGO?
