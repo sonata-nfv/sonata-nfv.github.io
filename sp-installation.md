@@ -18,3 +18,6 @@ In order to customize the installation you need to modify the variables for the 
 
 
 ## Verifying the installation
+
+Check the availability of the SP portal at: [http://localhost/](https://localhost/)
+You can follow next guide about [Service Platform usage](sp.md).
