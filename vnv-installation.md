@@ -10,7 +10,7 @@ Note: Please ensure you are in the 'tng-devops' folder that you created in the i
 
 In order to customize the installation you can modify the variables for the target destination. In the case described in the command below was localhost. The configuration file of sonata for localhost installation is located in [host_vars/localhost](https://github.com/sonata-nfv/tng-devops/blob/master/host_vars/localhost).
 
-Please bear in mind you will need to **replace ip-of-sp** in the file [host_vars/localhost](https://github.com/sonata-nfv/tng-devops/blob/master/host_vars/localhost) with the IP address of the Service Platform to be used by the VnV.
+Please bear in mind you will need to **replace platform: sp** in the file [host_vars/localhost](https://github.com/sonata-nfv/tng-devops/blob/master/host_vars/localhost) and **write platform: vnv**.
 
 A set of ansible scripts were developed in order to automate the installation. You will need a SONATA SP available previously VnV installation since the SP attaching is done during the installation of VnV. The command to install the VnV is the following:
 
