@@ -19,6 +19,6 @@ In order to customize the installation you need to modify the variables for the 
 
 ## Verifying the installation
 
-Check the availability of the SP portal at: [http://localhost/](https://localhost/). You will need to create an account with login/password, before continuing.
+Check the availability of the SP portal at: [http://localhost/](https://localhost/). You will need to create an account with login/password, before continuing. You can use the default login/password: admin/tango
 
 You can follow next guide about [Service Platform usage](sp.md).
