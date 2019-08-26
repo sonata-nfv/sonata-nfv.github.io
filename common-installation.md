@@ -106,3 +106,8 @@ To use the latest stable version of SONATA you will need to change the branch to
 ```bash
 sudo docker network create tango
 ```
+### Follow-up installation
+You are NOW ready to install SONATA Service Platform OR V&V Platform:
+    * [Installing the Service Platform (SP)](/sp-installation)
+    * [Installing the V&V Platform](/vnv-installation)
+    
