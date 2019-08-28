@@ -40,7 +40,9 @@ Note that the execution of the test is triggered if the tags in NSD and TD match
 
 <p align="center"><img src="images/vnv-test.png" width="70%" /></p>
 
-<p align="center"><img src="images/vnv-test-auto.png" width="70%" /></p>
+You can accept test automatically run.
+
+<p align="center"><img src="images/vnv-test-auto.png" width="50%" /></p>
 
 
 ### Checking Test Results
