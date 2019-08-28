@@ -6,11 +6,7 @@ With the installation of the Service Platform ready and the Descriptors already 
 
 1. VNF images available in Openstack:
    
-   Check that the images are available in openstack if not you can upload these two images:
-
-   a. [squid](http://bit.ly/5GTANGO_squid)
-
-   b. [haproxy](http://bit.ly/5GTANGO_HAproxy)
+   Check that the CIRROS image is available in openstack, if not you can download from here: [http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img](http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img)
 
 2. VIM configured in the Service Platform:
 
