@@ -54,7 +54,7 @@ tng-cli package -u eu.5gtango.test-ns-nsid1v-sonata.0.2.tgo
 
 ## Instantiating and terminating a Network Service
 
-- **Step 1:** Open the 5GTANGO portal in `http://<service_platform_ip>/` and go to `Service Management -> Available network services`. In this screen you can see the list of available network services and you could instantate it pushing the green play button.
+- **Step 1:** Open the 5GTANGO portal in `http://<service_platform_ip>/` and go to `Service Management -> Network Services -> Services`. In this screen you can see the list of available network services and you could instantate it pushing the green play button.
 
 <p align="center"><img src="images/available-network-services.png" width="80%" /></p>
 
@@ -64,16 +64,11 @@ tng-cli package -u eu.5gtango.test-ns-nsid1v-sonata.0.2.tgo
 
 - **Step 3:** Write a name for your network service and don't select any SLA for now, the SLA part will be covered in the further guides. To instantiate the NS just click on INSTANTIATE button and the service will be instantiated inmediately.
   
-<p align="center"><img src="images/instance-name.png" width="70%" /></p>
+<p align="center"><img src="images/instance-name.png" width="50%" /></p>
 
 ## Service Check
 
 In the Dashboard, in the Service Management tab, you can check the status of the instantiated services.
-
-Here you can see and select a service to instantiate it:
-
-<p align="center"><img src="images/avalns.jpg" width="90%" /></p>
-
 
 Once launched, you can see the status of the instantiation operation in the requests tab:
 
