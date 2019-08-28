@@ -72,8 +72,8 @@ In the Dashboard, in the Service Management tab, you can check the status of the
 
 Once launched, you can see the status of the instantiation operation in the requests tab:
 
-<p align="center"><img src="images/requests.jpg" width="90%" /></p>
+<p align="center"><img src="images/requests.png" width="90%" /></p>
 
 Finally, you can see you instances:
 
-<p align="center"><img src="images/instances.jpg" width="90%" /></p>
+<p align="center"><img src="images/instances.png" width="90%" /></p>
