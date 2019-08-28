@@ -15,7 +15,7 @@ With the installation of the Service Platform ready and the Descriptors already 
 2. VIM configured in the Service Platform:
 
    After the installation of the SP, you need to attach a VIM. You need to login in the Service Platform and select Settings/VIM, as shown in the following figure.
-<p align="center"><img src="images/vim_setup.png" width="70%" /></p>
+<p align="center"><img src="images/vim_setup.PNG" width="70%" /></p>
 
 To get the tenant router uuid you can go to openstack horizon dashboard and open the route: `project -> network -> routers -> (select your router) -> Overview -> ID`
 
