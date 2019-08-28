@@ -34,12 +34,27 @@ If not assign one at the end of the list in the menu.
 <p align="center"><img src="images/primary-project-s.png" width="50%" /></p>
 
 4. Network service descriptor on-boarded to the Service Platform:
-   
-   Check if the Package is available in the service plaform. It can be done with the command: `curl http://<service_platform_ip>/api/v3/packages`. If the Network Service is not avaible then you can on-board using this command:
-  
-   `curl -X POST http://<service_platform_ip>/api/v3/packages -F "package=@./eu.5gtango.ns-squid-haproxy.0.1.tgo" -H 'content-type:multipart/form-data`.
 
-   The package used in this guide is availabe in [here](files/eu.5gtango.ns-squid-haproxy.0.1.tgo)
+   The package used in this guide is availabe in [here](files/eu.5gtango.ns-squid-haproxy.0.1.tgo)   
+  You need to download and install [tng-cli](https://github.com/sonata-nfv/tng-cli/).
+ 
+ To install manually, with permissions:
+
+```
+git clone https://github.com/sonata-nfv/tng-cli.git
+cd tng-cli
+python3 setup.py install
+``` 
+  Configure SP through the `SP_PATH` env parameter:
+
+```
+export SP_PATH=<URL_TO_SP>
+```
+  
+  Upload the package
+```
+tng-cli package -u eu.5gtango.ns-squid-haproxy.0.1.tgo
+```
 
 ## Instantiating and terminating a Network Service
 
