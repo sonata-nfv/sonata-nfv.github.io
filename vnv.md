@@ -14,6 +14,8 @@ The outline of theis quickguide for V&V is as follows:
 ### Link V&V to a Platform
 For this quickguide we will use the proviously deployed SONATA Service Platform.
 
+<p align="center"><img src="images/vnv-platform.png" width="70%" /></p>
+
 
 ### Upload a Service Package and a Test Package
 
@@ -35,6 +37,10 @@ You can check if the packages have been successfully loaded into the V&V
 ### Creation and execution of a Test Plan
 
 Note that the execution of the test is triggered if the tags in NSD and TD match and the testing tag is present in the package descriptor.   
+
+<p align="center"><img src="images/vnv-test.png" width="70%" /></p>
+
+<p align="center"><img src="images/vnv-test-auto.png" width="70%" /></p>
 
 
 ### Checking Test Results
