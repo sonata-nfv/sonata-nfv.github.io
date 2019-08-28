@@ -11,6 +11,8 @@ The outline of theis quickguide for V&V is as follows:
 1. Execute a Test Suite
 1. Checking Test Results
 
+### Link V&V to a Platform
+For this quickguide we will use the proviously deployed SONATA Service Platform.
 
 
 ### Upload a Service Package and a Test Package
@@ -26,6 +28,9 @@ tng-cli package -u eu.5gtango.test-ns-nsid1v-sonata.0.2.tgo
 tng-cli package -u eu.5gtango.generic-probes-test-pingonly.0.1.tgo
 '''
 
+You can check if the packages have been successfully loaded into the V&V
+
+<p align="center"><img src="images/vnv-packages.png" width="70%" /></p>
 
 ### Creation and execution of a Test Plan
 
