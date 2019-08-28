@@ -14,20 +14,8 @@ With the installation of the Service Platform ready and the Descriptors already 
 
 2. VIM configured in the Service Platform:
 
-   After the installation of the SP, you need to attach a VIM. You can use [this](https://raw.githubusercontent.com/sonata-nfv/sonata-nfv.github.io/master/vim_script.sh) bash script to perform this task. To customize the configuration you will need to edit the script and modify the variables.
-
-```bash
-#!/bin/bash
-user="username"
-password="password"
-tenant="tenantname"
-vim_ip="000.000.000.000"
-router="tenant router uuid"
-ext_net="external net uuid"
-city="city"
-country="country"
-name="vimname"
-```
+   After the installation of the SP, you need to attach a VIM. You need to login in the Service Platform and select Settings/VIM, as shown in the following figure.
+<p align="center"><img src="images/vim_setup.png" width="70%" /></p>
 
 To get the tenant router uuid you can go to openstack horizon dashboard and open the route: `project -> network -> routers -> (select your router) -> Overview -> ID`
 
