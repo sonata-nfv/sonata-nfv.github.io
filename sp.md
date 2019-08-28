@@ -33,8 +33,6 @@ If not assign one at the end of the list in the menu.
 
 <p align="center"><img src="images/primary-project-s.png" width="50%" /></p>
 
-After the configuration in the Openstack, you can run the script with the command: `bash vim_script.sh`
-
 4. Network service descriptor on-boarded to the Service Platform:
    
    Check if the Package is available in the service plaform. It can be done with the command: `curl http://<service_platform_ip>/api/v3/packages`. If the Network Service is not avaible then you can on-board using this command:
