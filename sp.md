@@ -12,15 +12,7 @@ With the installation of the Service Platform ready and the Descriptors already 
 
    b. [haproxy](http://bit.ly/5GTANGO_HAproxy)
 
-2. Network service descriptor on-boarded to the Service Platform:
-   
-   Check if the Package is available in the service plaform. It can be done with the command: `curl http://<service_platform_ip>/api/v3/packages`. If the Network Service is not avaible then you can on-board using this command:
-  
-   `curl -X POST http://<service_platform_ip>/api/v3/packages -F "package=@./eu.5gtango.ns-squid-haproxy.0.1.tgo" -H 'content-type:multipart/form-data`.
-
-   The package used in this guide is availabe in [here](files/eu.5gtango.ns-squid-haproxy.0.1.tgo)
-
-3. VIM configured in the Service Platform:
+2. VIM configured in the Service Platform:
 
    After the installation of the SP, you need to attach a VIM. You can use [this](https://raw.githubusercontent.com/sonata-nfv/sonata-nfv.github.io/master/vim_script.sh) bash script to perform this task. To customize the configuration you will need to edit the script and modify the variables.
 
@@ -45,7 +37,7 @@ To get the external network uuid you can go to openstack horizon dashboard and o
 
 <p align="center"><img src="images/network-extnet-uuid.png" width="70%" /></p>
 
-4. Check if the user have primary project assigned.
+3. Check if the user have primary project assigned.
 
 <p align="center"><img src="images/primary-project.png" width="70%" /></p>
 
@@ -54,6 +46,14 @@ If not assign one at the end of the list in the menu.
 <p align="center"><img src="images/primary-project-s.png" width="50%" /></p>
 
 After the configuration in the Openstack, you can run the script with the command: `bash vim_script.sh`
+
+4. Network service descriptor on-boarded to the Service Platform:
+   
+   Check if the Package is available in the service plaform. It can be done with the command: `curl http://<service_platform_ip>/api/v3/packages`. If the Network Service is not avaible then you can on-board using this command:
+  
+   `curl -X POST http://<service_platform_ip>/api/v3/packages -F "package=@./eu.5gtango.ns-squid-haproxy.0.1.tgo" -H 'content-type:multipart/form-data`.
+
+   The package used in this guide is availabe in [here](files/eu.5gtango.ns-squid-haproxy.0.1.tgo)
 
 ## Instantiating and terminating a Network Service
 
