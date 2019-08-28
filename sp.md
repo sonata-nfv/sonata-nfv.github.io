@@ -31,7 +31,7 @@ If not assign one at the end of the list in the menu.
 
 4. Network service descriptor on-boarded to the Service Platform:
 
-   The package used in this guide is availabe in [here](files/eu.5gtango.ns-squid-haproxy.0.1.tgo)   
+   The package used in this guide is availabe in [here](files/eu.5gtango.test-ns-nsid1v-sonata.0.2.tgo)   
   You need to download and install [tng-cli](https://github.com/sonata-nfv/tng-cli/).
  
  To install manually, with permissions:
@@ -49,7 +49,7 @@ export SP_PATH=<URL_TO_SP>
   
   Upload the package
 ```
-tng-cli package -u eu.5gtango.ns-squid-haproxy.0.1.tgo
+tng-cli package -u eu.5gtango.test-ns-nsid1v-sonata.0.2.tgo
 ```
 
 ## Instantiating and terminating a Network Service
