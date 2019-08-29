@@ -96,7 +96,9 @@ git clone https://github.com/sonata-nfv/tng-devops.git
 cd tng-devops/
 ```
 
-## SONATA Installation
+## SONATA Installation 
+
+(This step is only for trying different versions. For normal installation you dont need to change branch)
 
 To use the latest stable version of SONATA you will need to change the branch to _v4.0_. This can be performed from inside the `tng-devops` folder, with the command:
 `git checkout v4.0`
