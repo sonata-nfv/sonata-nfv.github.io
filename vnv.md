@@ -22,12 +22,12 @@ For this quickguide we will use the proviously deployed SONATA Service Platform.
 You will need to packages:
 
 - Network Service package [eu.5gtango.test-ns-nsid1v-sonata.0.2.tgo](files/eu.5gtango.test-ns-nsid1v-sonata.0.2.tgo)
-- Test package [eu.5gtango.generic-probes-test-pingonly.0.1.tgo](files/eu.5gtango.generic-probes-test-pingonly.0.1.tgo)
+- Test package [eu.5gtango.generic-probes-test-pingonly-sonata.0.1.tgo](files/eu.5gtango.generic-probes-test-pingonly-sonata.0.1.tgo)
 
 For installing them remember to point tng-cli to V&V platform, and type:
 '''
 tng-cli package -u eu.5gtango.test-ns-nsid1v-sonata.0.2.tgo
-tng-cli package -u eu.5gtango.generic-probes-test-pingonly.0.1.tgo
+tng-cli package -u eu.5gtango.generic-probes-test-pingonly-sonata.0.1.tgo
 '''
 
 You can check if the packages have been successfully loaded into the V&V
@@ -46,4 +46,11 @@ You can accept test automatically run.
 
 
 ### Checking Test Results
+Test start to run, and their status can be observed at V&V/Test plans.
+
+<p align="center"><img src="images/vnv-testplans.PNG" width="70%" /></p>
+
+Once test plan status is completed, all results can be observed.
+
+<p align="center"><img src="images/vnv-testplan-results.PNG" width="70%" /></p>
 
