@@ -43,6 +43,6 @@ Once the 5GTANGO platform is installed, you can now create network service packa
 * [Using the V&V Platform](/vnv)
   * [Link V&V to a Platform ](/vnv#link-vv-to-a-platform)
   * [Upload a Service Package and a Test Package](/vnv#upload-a-service-package-and-a-test-package)
-  * [Creation and execution of a Test Plan(/vnv#creation-and-execution-of-a-test-plan)
+  * [Creation and execution of a Test Plan](/vnv#creation-and-execution-of-a-test-plan)
   * [Checking Test Results](/vnv#checking-test-results)
 
