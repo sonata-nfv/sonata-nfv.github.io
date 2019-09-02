@@ -6,7 +6,7 @@ The outline of this quickguide for V&V is as follows:
 
 1. [Link V&V to a Platform ](#link-vv-to-a-platform)
 1. [Upload a Service Package and a Test Package](#upload-a-service-package-and-a-test-package)
-1. [Creation and execution of a Test Plan(#creation-and-execution-of-a-test-plan)
+1. [Creation and execution of a Test Plan](#creation-and-execution-of-a-test-plan)
 1. [Checking Test Results](#checking-test-results)
 
 ## Link V&V to a Platform
