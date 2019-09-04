@@ -11,9 +11,9 @@
 The following are some of the problems commonly encountered during installation:
 
 * [Python - virtualenv not found] (/troubleshooting#)
+* Installation in Ubuntu 18.04
 * [Installing the SDK](/sdk-installation)       
 * Ansible/Docker  - container deploy problem due to wrong python interpreter
-
 
 ### Virtualenv Issues ![Apple][apple] ![Linux][linux] ![Windows 10][windows10]
 
@@ -21,6 +21,14 @@ https://stackoverflow.com/questions/39964635/error-virtualenv-command-not-found-
 
 Alternative: try to install virtualenv with 'sudo pip3 install virtualenv'
 
+### Installation in Ubuntu 18.04
+ASCIINEMA of VNV deployment to Ubuntu 18.04
+
+'''
+$ sudo apt install asciinema
+$ wget https://cld.pt/dl/download/d8f17ed2-755d-4b09-a85b-3eeec2edc5dc/u18sp-deploy.cast
+$ asciinema play u18sp-deploy.cast
+'''
 
 ### Ansible Issues ![Linux][linux]
 
