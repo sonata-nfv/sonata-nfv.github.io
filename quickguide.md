@@ -40,15 +40,9 @@ Once the 5GTANGO platform is installed, you can now create network service packa
   * [Instantiating and terminating a Network Service](/sp#instantiating-and-terminating-a-network-service)
   * [Service Check](/sp#service-check)
 
-* [Using the V&V Platform](/vnv.md)
-  * [Prerequisites](/vnv.md#prerequisites)
-  * [Uploading a Service Package](/vnv.md#uploading-a-service-package)
-  * [Uploading a Test Package](/vnv.md#uploading-a-service-package)
-  * [Tagging Tests for a given Network Service](/vnv.md#tagging-tests-for-a-given-network-service)
-  * [Uploading a Test Package with a specific Test Tag](/vnv.md#uploading-a-test-package-with-a-specific-test-tag)
-  * [Execute a Test Suite](/vnv.md#execute-a-test-suite) 
-  * [Checking Test Results](/vnv.md#checking-test-results) 
-  * [Working with the API](/vnv.md#working-with-the-API)  
+* [Using the V&V Platform](/vnv)
+  * [Link V&V to a Platform ](/vnv#link-vv-to-a-platform)
+  * [Upload a Service Package and a Test Package](/vnv#upload-a-service-package-and-a-test-package)
+  * [Creation and execution of a Test Plan](/vnv#creation-and-execution-of-a-test-plan)
+  * [Checking Test Results](/vnv#checking-test-results)
 
-### Examples
-  * [Network Slicing](/slicing)
