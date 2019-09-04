@@ -8,6 +8,100 @@ With the installation of the Service Platform ready and the Descriptors already 
    
    Check that the CIRROS image is available in openstack, if not you can download from here: [http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img](http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img)
 
+ - Deploy monitoring probes
+	In order to gather monitoring metrics from the running VNFs it is necessary to deploy the appropriate monitoring probes for each VIM and then to configure the SP to collect data from the above probes. Currently, the Service Platform Monitoring framework is able to collect monitoring metrics from three sources Kubernetes, Openstack Ceilometer and directly from libvirt. 
+	
+	a. Deploy monitoring pods inside a Kubernetes cluster
+	  - Deployment 
+	```
+	git clone https://github.com/sonata-nfv/tng-monitor-infra.git
+	cd K8s_mon
+	kubectl apply -f /home/tango/k8s-monitoring.yaml
+	``` 
+	- Check status of the monitoring  pods  
+	```
+	kubectl get services -n sonata
+
+	NAME                                          READY   STATUS    RESTARTS   AGE
+	grafana-core-7b84f8fb56-x9rhh                 1/1     Running   0          12s
+	son-alertmanager-deployment-98c6c4548-6bfhm   1/1     Running   0          12s
+	son-prometheus-deployment-8558fc9444-bmfl9    1/1     Running   0          12s
+	son-pushgateway-deployment-794cd78755-qx7nl   1/1     Running   0          12s
+	``` 
+
+	b. Deploy monitoring probe for collecting metrics directly from vibvirt
+	In each compute node: 
+	 - Deployment  
+	```
+	git clone https://github.com/sonata-nfv/tng-monitor-infra.git
+	cd libvirtExporter
+    docker build -t son-monitor-libvirtexp .
+	docker run --privileged -d -p 9093:9091 -v /var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock --name son-monitor-virtExporter son-monitor-libvirtexp
+	```
+
+	c. Deploy monitoring probe for collecting metrics from Ceilomerer (Openstack)
+	In controller node: 
+	 - Deployment  
+	```
+	git clone https://github.com/sonata-nfv/tng-monitor-infra.git
+	cd mtrExporter
+	docker build -t son-monitor-ceilexp
+	docker run -d --name son-monitor-ceilExporter -p 10000:10000/udp -p 9092:9091 son-monitor-ceilexp
+	```
+	 - Ceilometer  configuration
+	 Monitoring data from Openstack is transmitted to metric exporter using the pipeline feature of the ceilometer. In order to enable the pipeline service and define the udp socket you must make the following configuration in ceilometer side.
+	  Set data collecting time interval and the metrics open the `polling.yaml`
+	```
+	---
+	sources:
+	    - name: some_pollsters
+	      interval: 10
+	      meters:
+	        - cpu
+	        - memory.usage
+	        - network.incoming.bytes
+	        - network.incoming.packets
+	        - network.outgoing.bytes
+	        - network.outgoing.packets
+	        - disk.read.bytes
+	        - disk.read.requests
+	        - disk.write.bytes
+	        - disk.write.requests
+	        - hardware.cpu.util
+	        - hardware.memory.used
+	        - hardware.memory.total
+	        - hardware.memory.buffer
+	        - hardware.memory.cached
+	        - hardware.memory.swap.avail
+	        - hardware.memory.swap.total
+	        - hardware.system_stats.io.outgoing.blocks
+	        - hardware.system_stats.io.incoming.blocks
+	        - hardware.network.ip.incoming.datagrams
+	        - hardware.network.ip.outgoing.datagrams
+	```
+	Add the udp publisher in `pipeline.yaml`
+	```
+	...
+      publishers:
+         ...
+          - udp://10.102.2.240:10000/
+    ...
+	```
+    Enable the pipeline feature by adding the following lines in `ceilometer.conf`
+	```
+	[DEFAULT]
+	pipeline_cfg_file = pipeline.yaml
+	[polling]
+	cfg_file = polling.yaml
+	```
+    Restart openstack ceilometer services
+    ```
+	service ceilometer-agent-central restart 
+	service ceilometer-agent-notification restart 
+	service ceilometer-api restart
+	service ceilometer-agent-compute
+	service ceilometer-collector restart
+
 2. VIM configured in the Service Platform:
 
    After the installation of the SP, you need to attach a VIM. You need to login in the Service Platform and select Settings/VIM, as shown in the following figure.
