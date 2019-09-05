@@ -33,7 +33,9 @@ With the installation of the Service Platform ready and the Descriptors already 
 	``` 
 
     - Configure SP to collect monitoring data from Kubernetes cluster by posting the appropriate configuration to the following REST api 
-    `https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`. 
+
+    `https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`
+
     For a Kubernetes cluster on ip `1.2.3.4` the configuration must be the following: 
 
     ```
@@ -71,7 +73,9 @@ With the installation of the Service Platform ready and the Descriptors already 
 	```
 
 	- Configure SP to collect monitoring data from the libvirt exporter by posting the appropriate configuration to the following REST api 
-	`https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`. 
+	
+	`https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`
+
 	For a libvirt exporter running on ip `1.2.3.4` the configuration must be the following: 
 
     ```
@@ -119,17 +123,6 @@ With the installation of the Service Platform ready and the Descriptors already 
 	        - disk.read.requests
 	        - disk.write.bytes
 	        - disk.write.requests
-	        - hardware.cpu.util
-	        - hardware.memory.used
-	        - hardware.memory.total
-	        - hardware.memory.buffer
-	        - hardware.memory.cached
-	        - hardware.memory.swap.avail
-	        - hardware.memory.swap.total
-	        - hardware.system_stats.io.outgoing.blocks
-	        - hardware.system_stats.io.incoming.blocks
-	        - hardware.network.ip.incoming.datagrams
-	        - hardware.network.ip.outgoing.datagrams
 	```
 
 	Add the udp publisher in `pipeline.yaml`
@@ -163,7 +156,9 @@ With the installation of the Service Platform ready and the Descriptors already 
     ```
 
      - Configure SP to collect monitoring data from the metric exporter by posting the appropriate configuration to the following REST api 
-     `https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`. 
+     
+     `https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`
+     
      For a libvirt exporter running on ip `1.2.3.4` the configuration must be the following: 
 
 
