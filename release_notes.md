@@ -19,6 +19,16 @@
 * Execution progress Notifications to Curator
 * Export results in the test results repository
 
+###tng-vnv-dsm
+
+* Design and Implementation of a Decision Support Mechanism for the V&V Platform
+* Implementation User's test recommendations retrieval 
+* Build test recommendations examples for 5GTANGO end-users with real data
+* User retrieval from the trained system via test executions history
+* Testing Tags retrieval from test executions history  
+* Implementation of user-item Pairing approach via the 5GTango Package Descriptor 
+* Integration of tng-vnv-dsm with tng-portal, tng-api-gtw and tng-gtk-vnv modules
+
 
 ### About the latest major release v4.0
 
