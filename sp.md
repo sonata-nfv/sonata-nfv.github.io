@@ -32,7 +32,9 @@ With the installation of the Service Platform ready and the Descriptors already 
 	son-pushgateway-deployment-794cd78755-qx7nl   1/1     Running   0          12s
 	``` 
 
-    - Configure SP to collect monitoring data from Kubernetes cluster by posting the appropiate configuration to the following REST api `https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`. For a Kubenetes cluster in ip `1.2.3.4` the configuration must be the following: 
+    - Configure SP to collect monitoring data from Kubernetes cluster by posting the appropriate configuration to the following REST api 
+    `https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`. 
+    For a Kubernetes cluster on ip `1.2.3.4` the configuration must be the following: 
 
     ```
     {"targets": [{
@@ -68,7 +70,9 @@ With the installation of the Service Platform ready and the Descriptors already 
 	docker run --privileged -d -p 9093:9091 -v /var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock --name son-monitor-virtExporter son-monitor-libvirtexp
 	```
 
-	- Configure SP to collect monitoring data from the libvirt exporter by posting the appropiate configuration to the following REST api `https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`. For a libvirt exporter running in ip `1.2.3.4` the configuration must be the following: 
+	- Configure SP to collect monitoring data from the libvirt exporter by posting the appropriate configuration to the following REST api 
+	`https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`. 
+	For a libvirt exporter running on ip `1.2.3.4` the configuration must be the following: 
 
     ```
     {"targets": [{
@@ -98,7 +102,7 @@ With the installation of the Service Platform ready and the Descriptors already 
 	 - Ceilometer  configuration
 	 Monitoring data from Openstack is transmitted to metric exporter using the pipeline feature of the ceilometer. In order to enable the pipeline service and define the udp socket you must make the following configuration in ceilometer side.
 	  Set data collecting time interval and the metrics open the `polling.yaml`
-	  
+
 
 	```
 	sources:
@@ -158,7 +162,9 @@ With the installation of the Service Platform ready and the Descriptors already 
 	service ceilometer-collector restart
     ```
 
-     - Configure SP to collect monitoring data from the metric exporter by posting the appropiate configuration to the following REST api `https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`. For a libvirt exporter running in ip `1.2.3.4` the configuration must be the following: 
+     - Configure SP to collect monitoring data from the metric exporter by posting the appropriate configuration to the following REST api 
+     `https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`. 
+     For a libvirt exporter running on ip `1.2.3.4` the configuration must be the following: 
 
 
     ```
@@ -171,7 +177,7 @@ With the installation of the Service Platform ready and the Descriptors already 
           "targets": ["localhost:9090"]}]},
     {"job_name": "VIM_1",
       "static_configs": [{
-          "targets": ["1.2.3.4:9091"]}]}
+          "targets": ["1.2.3.4:9092"]}]}
     ]}
     ```
 
