@@ -1,3 +1,35 @@
+### About the latest major release v5.0
+
+###tng-vnv-planner:
+* Acceptance of test plan requests according to Catalog's notifications for new packages
+* Test Descriptor (TD) Retrieval from incomming NSD's received by Catalog
+* Service Descriptor (NSD) Retrieval from incomming TD received by Catalog
+* Test Plan Creation for each (NSD,TD) pair
+* Delegation of the Test Plan Execution Request to Curator
+* Execution progress Notifications from Curator
+* Sortable Test Plans Execution
+* Acceptance of ad-hoc test plan requests
+* Deletion of existing test plans
+
+###tng-vnv-executor
+* Acceptance of test requests from Curator
+* Generation of a docker-compose file with the test descriptor received from Curator
+* Tests execution using test probes (docker images) against the deployed network services
+* Validation and Verification of the test conditions
+* Execution progress Notifications to Curator
+* Export results in the test results repository
+
+###tng-vnv-dsm
+
+* Design and Implementation of a Decision Support Mechanism for the V&V Platform
+* Implementation User's test recommendations retrieval 
+* Build test recommendations examples for 5GTANGO end-users with real data
+* User retrieval from the trained system via test executions history
+* Testing Tags retrieval from test executions history  
+* Implementation of user-item Pairing approach via the 5GTango Package Descriptor 
+* Integration of tng-vnv-dsm with tng-portal, tng-api-gtw and tng-gtk-vnv modules
+
+
 ### About the latest major release v4.0
 
 #### tng-vnv-lcm
