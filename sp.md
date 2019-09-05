@@ -9,19 +9,22 @@ With the installation of the Service Platform ready and the Descriptors already 
    Check that the CIRROS image is available in openstack, if not you can download from here: [http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img](http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img)
 
  - Deploy monitoring probes
+
 	In order to gather monitoring metrics from the running VNFs it is necessary to deploy the appropriate monitoring probes for each VIM and then to configure the SP to collect data from the above probes. Currently, the Service Platform Monitoring framework is able to collect monitoring metrics from three sources Kubernetes, Openstack Ceilometer and directly from libvirt. 
 	
 	a. Deploy monitoring pods inside a Kubernetes cluster
-	  - Deployment 
+	- Deployment
+
 	```
 	git clone https://github.com/sonata-nfv/tng-monitor-infra.git
 	cd K8s_mon
 	kubectl apply -f /home/tango/k8s-monitoring.yaml
-	``` 
-	- Check status of the monitoring  pods  
+	```
+
+	- Check status of the monitoring  pods
+
 	```
 	kubectl get services -n sonata
-
 	NAME                                          READY   STATUS    RESTARTS   AGE
 	grafana-core-7b84f8fb56-x9rhh                 1/1     Running   0          12s
 	son-alertmanager-deployment-98c6c4548-6bfhm   1/1     Running   0          12s
@@ -29,9 +32,35 @@ With the installation of the Service Platform ready and the Descriptors already 
 	son-pushgateway-deployment-794cd78755-qx7nl   1/1     Running   0          12s
 	``` 
 
+    - Configure SP to collect monitoring data from Kubernetes cluster by posting the appropiate configuration to the following REST api `https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`. For a Kubenetes cluster in ip `1.2.3.4` the configuration must be the following: 
+
+    ```
+    {"targets": [{
+      "honor_labels": true,
+      "job_name": "K8s_cluster_athens",
+      "metrics_path": "/federate",
+      "params": {
+        "match[]": [
+          "{job=\"kubernetes-cadvisor\"}",
+          "{job=\"kubernetes-nodes\"}",
+          "{job=\"kubernetes-pods\"}",
+          "{job=\"pushgateway\"}"]},
+      "scrape_interval": "10s",
+      "scrape_timeout": "10s",
+      "static_configs": [{"targets": ["1.2.3.4:30090"]}]},
+    {"job_name": "pushgateway",
+      "static_configs": [{
+          "targets": ["pushgateway:9091"]}]
+    },
+    {"job_name": "prometheus",
+      "static_configs": [{"targets": ["localhost:9090"]}]}
+    ]}
+    ``` 
+
 	b. Deploy monitoring probe for collecting metrics directly from vibvirt
 	In each compute node: 
 	 - Deployment  
+
 	```
 	git clone https://github.com/sonata-nfv/tng-monitor-infra.git
 	cd libvirtExporter
@@ -39,20 +68,39 @@ With the installation of the Service Platform ready and the Descriptors already 
 	docker run --privileged -d -p 9093:9091 -v /var/run/libvirt/libvirt-sock:/var/run/libvirt/libvirt-sock --name son-monitor-virtExporter son-monitor-libvirtexp
 	```
 
+	- Configure SP to collect monitoring data from the libvirt exporter by posting the appropiate configuration to the following REST api `https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`. For a libvirt exporter running in ip `1.2.3.4` the configuration must be the following: 
+
+    ```
+    {"targets": [{
+      "job_name": "pushgateway",
+      "static_configs": [{
+          "targets": ["pushgateway:9091"]}]},
+    {"job_name": "prometheus",
+      "static_configs": [{
+          "targets": ["localhost:9090"]}]},
+    {"job_name": "VIM_1",
+      "static_configs": [{
+          "targets": ["1.2.3.4:9093"]}]}
+    ]}
+    ```
+
 	c. Deploy monitoring probe for collecting metrics from Ceilomerer (Openstack)
 	In controller node: 
-	 - Deployment  
+	 - Deployment
+
 	```
 	git clone https://github.com/sonata-nfv/tng-monitor-infra.git
 	cd mtrExporter
 	docker build -t son-monitor-ceilexp
 	docker run -d --name son-monitor-ceilExporter -p 10000:10000/udp -p 9092:9091 son-monitor-ceilexp
 	```
+
 	 - Ceilometer  configuration
 	 Monitoring data from Openstack is transmitted to metric exporter using the pipeline feature of the ceilometer. In order to enable the pipeline service and define the udp socket you must make the following configuration in ceilometer side.
 	  Set data collecting time interval and the metrics open the `polling.yaml`
+	  
+
 	```
-	---
 	sources:
 	    - name: some_pollsters
 	      interval: 10
@@ -79,7 +127,10 @@ With the installation of the Service Platform ready and the Descriptors already 
 	        - hardware.network.ip.incoming.datagrams
 	        - hardware.network.ip.outgoing.datagrams
 	```
+
 	Add the udp publisher in `pipeline.yaml`
+
+
 	```
 	...
       publishers:
@@ -87,20 +138,42 @@ With the installation of the Service Platform ready and the Descriptors already 
           - udp://10.102.2.240:10000/
     ...
 	```
+
     Enable the pipeline feature by adding the following lines in `ceilometer.conf`
+
 	```
 	[DEFAULT]
 	pipeline_cfg_file = pipeline.yaml
 	[polling]
 	cfg_file = polling.yaml
 	```
+
     Restart openstack ceilometer services
+
     ```
 	service ceilometer-agent-central restart 
 	service ceilometer-agent-notification restart 
 	service ceilometer-api restart
 	service ceilometer-agent-compute
 	service ceilometer-collector restart
+    ```
+
+     - Configure SP to collect monitoring data from the metric exporter by posting the appropiate configuration to the following REST api `https://pre-int-sp-ath.5gtango.eu/api/v3/monitoring/data/prometheus/targets`. For a libvirt exporter running in ip `1.2.3.4` the configuration must be the following: 
+
+
+    ```
+    {"targets": [{
+      "job_name": "pushgateway",
+      "static_configs": [{
+          "targets": ["pushgateway:9091"]}]},
+    {"job_name": "prometheus",
+      "static_configs": [{
+          "targets": ["localhost:9090"]}]},
+    {"job_name": "VIM_1",
+      "static_configs": [{
+          "targets": ["1.2.3.4:9091"]}]}
+    ]}
+    ```
 
 2. VIM configured in the Service Platform:
 
