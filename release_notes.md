@@ -1,6 +1,6 @@
 ### About the latest major release v5.0
 
-###son-emu:
+#### son-emu
 * The 5GTANO lightweight life cycle manager (LLCM) is a new module. The 5GTANGO LLCM module is an improved version of SONATA's dummy gatekeeper and allows to directly on-board and instantiate [5GTANGO network service packages](https://github.com/sonata-nfv/tng-schema/wiki/PkgSpec_LATEST) in an emulated multi-PoP environment. [Example 2](https://github.com/sonata-nfv/son-emu/wiki/Example-2) shows how to use this new module.
 
 * Documentation
@@ -24,7 +24,7 @@
     * Fixed chaining support
     * Fixed glance fake API
 
-###son-mano-framework:
+#### son-mano-framework
 * Dynamic network creation based on service requirements, instead of static creation
 * Running services can now (partially) be migrated from one PoP to another
 * During a migration event, the state can be migrated between VNFs
@@ -40,7 +40,7 @@
 * Reduce size of the MANO Framework containers
 * bug fixes
 
-###son-monitor:
+#### son-monitor
 * Monitoring manager
 	* VnV Monitoring Manager
 	* remove API v1
@@ -59,19 +59,19 @@
 	* include Prometheus.io Alert Manager
 	* alert Manager publish alerts to rabbitMQ
 	
-###son-monitor-probe:
+#### son-monitor-probe
 * Collect custom metrics from containers (K8s) in CNF mon
 * Bug fixes in VM mon 
 * Bug fixes in SP mon
 
-###tng-analytics-engine: 
+#### tng-analytics-engine: 
 * Support analytics services upon the test results that are executed by the 5GTANGO V&V Platform
 * Support analytics services upon the benchmarking results that are executed by the 5GTANGO SDK benchmarking tool
 * Support possibility for registering new analytic services as R packages
 * Make available an endpoint to allow external entities to conclude about the availability of this micro-service
 * Make documentation on the supported API available from the root
 
-###tng-api-gtw:
+#### tng-api-gtw
 * a user role-based authorisation mechanism, defined for each one of the allowed routes
 * an existing user roles endpoint, providing client tools with the list of user roles that are defined
 * a rate limiting mechanism to protect the platform against DOS attacks
@@ -79,7 +79,7 @@
 * an improved instrumentation, capturing the total number of HTTP requests and the time each one of them took
 * a caching mechanism for read-only entities (mostly services and functions) to improve performance
 
-###tng-cat:
+#### tng-cat
 * bugs fix
 * Add cleaned up examples
 * Standardize logs
@@ -104,15 +104,15 @@
 * Enhancement of the reduction management techniques of data redundancy
 * Preventing the use case of duplicate documents
 
-###tng-cli:
+#### tng-cli
 * This is the first release of this component. This repository contains two python3 packages:
 	* tnglib is a library with functions that help a 5GTANGO user interface with the 5GTANGO Service Platform or V&V
 	* tngcli wraps the tnglib library in a CLI-tool
 	
-###tng-gtk-common:
+#### tng-gtk-common
 * package uploading [got additional (and optional) parameters](https://github.com/sonata-nfv/tng-gtk-common/wiki/Packages-management) to improve the work of other components, such as the [SLA Manager](https://github.com/sonata-nfv/tng-sla-mgmt).
 
-###tng-gtk-sp:
+#### tng-gtk-sp
 * [Network Slice lifecycle management requests](https://github.com/sonata-nfv/tng-gtk-sp/wiki/requests-management) (slice template instantiation and slice instance termination);
 * Infrastructure information retrieval and definition (available VIMs and WIMs, creation of networks, etc.);
 * [Network Service scaling request](https://github.com/sonata-nfv/tng-gtk-sp/wiki/requests-management) (scaling-out and scaling-in);
@@ -120,28 +120,28 @@
 * [Service Licensing validation](https://github.com/sonata-nfv/tng-gtk-sp/wiki/Service-licenses), for service instantiations having a defined SLA agreement;
 * new (optional) parameters on [Network Service instantiation](https://github.com/sonata-nfv/tng-gtk-sp/wiki/requests-management), like name and description, to facilitate usage of the API clients (e.g., the Portal);
 
-###tng-gtk-usr:
+#### tng-gtk-usr
 * First working version
 * The user "tango" with admin permissions is created when launching the container
 *  New users, permissions and endpoints can be created, modified and deleted
 
-###tng-gtk-utils:
+#### tng-gtk-utils
 * a unified way of writing logs
 * a unified way of getting data from a given URL
 * a unified way of caching results
 
-###tng-gtk-vnv:
+#### tng-gtk-vnv
 * retrieves [test descriptors](https://github.com/sonata-nfv/tng-gtk-vnv/wiki/test-descriptors-queries)
 * manages [test plans](https://github.com/sonata-nfv/tng-gtk-vnv/wiki/test-plans-queries)
 * retrieves [test results](https://github.com/sonata-nfv/tng-gtk-vnv/wiki/test-results-queries)
 
-###tng-monitor-infra:
+#### tng-monitor-infra
 * Libvirt exporter
 	* Add collection mechanism from hypervisor (libvirt)
 * Kubernetes monitoring
 	* Add monitoring pods for exposing metrics from Kubernetes cluster to Prometheus.io
 	
-###tng-policy-mngr:
+#### tng-policy-mngr
 * Runtime & Placement Policies
 	* Default enforcement / deactivation of runtime policies upon the deployment / termination of a Network Service;
 	* Support creation of policies via the platform user interface;
@@ -152,7 +152,7 @@
 	* Make available an endpoint to allow external entities to conclude about the availability of this micro-service;
 	* Make documentation on the supported API available from the root;
 
-###tng-portal:
+#### tng-portal
 * New authentication system providing security to all the operations performed from the web application. It includes a registration system that allows the users to create a new account.
 * New dashboard with all the relevant information to know the status of the platform and all the components inside.
 * New Platforms section to manage the existing platforms in the 5GTANGO project.
@@ -172,7 +172,7 @@
 	* the ability to create test plans from a test or a network service
 	* more information about the uploaded tests such as related services or previously generated test plans.
 
-###tng-schema: 
+#### tng-schema
 * Support for multiple VM flavors (eg, bronze to gold) in a VNFD, defining different resource requirements or QoS requirements. This allows the service platform to dynamically select the best flavor according to current SLAs
 * Support for new VNFD types:
 	* Support for cloud native deployment units within VNFDs: CNF (cloud native network functions) support
@@ -184,7 +184,7 @@
 * Updated slice schemas for multi-VIM deployments, for ingress and egress nodes
 * Several fixes and smaller adjustments in all schemas
 
-###tng-sdk-benchmark:
+#### tng-sdk-benchmark
 This is the initial release of the 5GTANGO benchmarking tool. This tools allows to automate NFV benchmarking experiments end-to-end. Further details about the use of this tool can be found here:
 
 M. Peuster, S. Schneider, H. Karl: [The Softwarised Network Data Zoo](https://sndzoo.github.io/). In IEEE/IFIP 15th International Conference on Network and Service Management (CNSM), Halifax, Canada. (2019)
@@ -207,7 +207,7 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
 	* Prometheus time series data collection
 	* automated parameter study expansion
 	
-###tng-sdk-package:
+#### tng-sdk-package:
 * This release adds a lot of new features to the 5GTANGO package. The highlights are:
 	* support to package native OSM as well as ONAP packages
 	* tight integration with the other SDK tools, such as tng-sdk-validate and tng-sdk-benchmark
@@ -237,7 +237,7 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
 	* fix be robust against empty tag lists
 	* refactoring (a lot!)
 	
-###tng-sdk-project:
+#### tng-sdk-project:
 * This release adds many new features to the 5GTANGO tng-sdk-project tool. The highlights are:
 	* Support for descriptor generation
 	* Service mode with REST API
@@ -263,14 +263,14 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
 		* Support for MIME type detection and handling of descriptors of tests, SLAs, policies, and slices (in addition to VNFs and NS)
 		* Support for adding (zip) files containing a large number of files (e.g., Charms) that need to be handled together
 
-###tng-sdk-sm:
+#### tng-sdk-sm:
 * Total refactoring towards a python-based tool
 * Refinement of the creation of new specific managers
 * Support for local service specific manager testing
 * Generation of service and vnf records, to serve as input for testing cases
 * Refinement of the specific manager template and base class
 
-###tng-sdk-test:
+#### tng-sdk-test:
 * Using packages to deploy a network service
 * Composing a network service in a test code by adding multiple VNF images and connecting them with links
 * Building VNF images using their source code and Dockerfile
@@ -278,7 +278,7 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
 * Validating test code against V&V platform requirements
 * Generating probe images and test descriptors
 
-###tng-sdk-validation:
+#### tng-sdk-validation:
 * Supports other descriptor files validation: tests, policies, slices and SLAs
 * Includes CNFs validation to give support to Kubernetes deployments
 * New custom rules validation: BW and PCI validation
@@ -287,7 +287,7 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
 * Clearer logs with more information relative to the errors
 * Bug fixing
 
-###tng-sla-mgmt:
+#### tng-sla-mgmt:
 * Update SLA Schema (YML, JSON)
 	* Simplify & Optimize the SLA Schema
 	* Update SLA schema to support Licensing information
@@ -333,7 +333,7 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
 	* tng-gtk-sp
 	* tng-schema
 	
-###tng-slice-mngr:
+#### tng-slice-mngr:
 * Network Slice Template/Instance Objects Updated in order to manage the newest features.
 * Network Slice manager REST API updated with new intra-components (non public) endpoints in order to have e better management of the objects created.
 * New features:
@@ -351,7 +351,7 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
   * tng-sp-ia
   * tng-sla-mngr
   
-###tng-sp-ia:
+#### tng-sp-ia
 * A new architecture plugin based, with multiple containers, one for NBI and one for each VIM/WAN type. This approach possibilite different developers with different programming languages work in separate repos, like explained in refactoring motivations.
 * The separation of the functions, features and data model between NBI and VIM/WAN Wrappers could be found in Introduction.
 * A new IA RabbitMQ Internal Interface for interconnect the NBI with the VIM/WAN Wrappers.
@@ -361,10 +361,10 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
 * Integration work for support new wrappers from others repos: k8s, tapi and emu.
 * New messages and others modified in RabbitMQ API Reference, according requirements from new wrappers and from mano.
 
-###tng-sp-ia-emu:
+#### tng-sp-ia-emu
 * This is the first release of this component. It manages communication between the MANO Framework and the Emulator VIM and WIM. The entire API required by the MANO Framework is supported.
 
-###tng-sp-ia-k8s:
+#### tng-sp-ia-k8s
 Cloud-native Network Functions Wrapper for Kubernetes. 
 This wrapper for kubernetes is able to generate kubernetes objects from SONATA VNF descriptors. The objects modelled for kubernetes are the following:
 * Deployments
@@ -379,12 +379,12 @@ And the wrapper is able to do:
 * Nvidia GPU selection
 * Scale PODs via request from MANO
 
-###tng-sp-ia-wtapi:
+#### tng-sp-ia-wtapi
 * Creation of virtual links outside VIM scope between external or internal endpoints
 * Multi-VIM connection support
 * T-API 2.0 compliant interface
 
-###tng-vnv-executor:
+#### tng-vnv-executor
 * Acceptance of test requests from Curator
 * Generation of a docker-compose file with the test descriptor received from Curator
 * Tests execution using test probes (docker images) against the deployed network services
@@ -392,13 +392,13 @@ And the wrapper is able to do:
 * Execution progress Notifications to Curator
 * Export results in the test results repository
 
-###tng-vnv-curator:
+#### tng-vnv-curator
 * Launch of Test Plans from tng-vnv-planner
 * Preload of probe images for the tng-vnv-executor to run them when time comes
 * Processing of post-instantiation parameters received from tng-vnv-platform-adapter and the corresponding test descriptor is updated with current values
 * Performs the clean up of the environment after test execution finishes
 
-###tng-vnv-dsm:
+#### tng-vnv-dsm
 * Design and Implementation of a Decision Support Mechanism for the V&V Platform
 * Implementation User's test recommendations retrieval 
 * Build test recommendations examples for 5GTANGO end-users with real data
@@ -407,7 +407,7 @@ And the wrapper is able to do:
 * Implementation of user-item Pairing approach via the 5GTango Package Descriptor 
 * Integration of tng-vnv-dsm with tng-portal, tng-api-gtw and tng-gtk-vnv modules
 
-###tng-vnv-planner:
+#### tng-vnv-planner
 * Acceptance of test plan requests according to Catalog's notifications for new packages
 * Test Descriptor (TD) Retrieval from incomming NSD's received by Catalog
 * Service Descriptor (NSD) Retrieval from incomming TD received by Catalog
@@ -418,7 +418,7 @@ And the wrapper is able to do:
 * Acceptance of ad-hoc test plan requests
 * Deletion of existing test plans
 
-###tng-vnv-platform-adapter:
+#### tng-vnv-platform-adapter
 * Sonata and OSM supported as Service Platforms
 * Can deploy in multiples SP of the same type
 * Retrieve the instances info to report to the Curator component
