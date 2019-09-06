@@ -1,5 +1,82 @@
 ### About the latest major release v5.0
 
+###tng-gtk-sp
+* Network Slice lifecycle management requests (slice template instantiation and slice instance termination);
+* Infrastructure information retrieval and definition (available VIMs and WIMs, creation of networks, etc.);
+* Network Service scaling request (scaling-out and scaling-in);
+* Virtual Network Function migration request;
+* Service Licensing validation, for service instantiations having a defined SLA agreement;
+* new (optional) parameters on Network Service instantiation, like name and description, to facilitate usage of the API clients (e.g., the Portal);
+
+###tng-portal
+* New authentication system providing security to all the operations performed from the web application. It includes a registration system that allows the users to create a new account.
+* New dashboard with all the relevant information to know the status of the platform and all the components inside.
+* New Platforms section to manage the existing platforms in the 5GTANGO project.
+* New Settings section to manage the endpoints, VIMs and WIMs in the platform.
+* Updated Service Management section with:
+	* the generation and management of the network slice instances
+	* the inclusion of more information relative to the created instances
+	* the possibility to list and purchase the existing licenses
+* Updated Service Platform section with:
+	* the list of SLA violations produced
+	* the ability to create licenses
+	* the display and management of the placement policy
+	* the ability to fully manage and operate with runtime policies
+	* the list of performed actions by the runtime policies
+* Updated Validation and Verification section with:
+	* the concept of test plans and all the operations required to manage them (execute, cancel, confirm execution, etc.)
+	* the ability to create test plans from a test or a network service
+	* more information about the uploaded tests such as related services or previously generated test plans.
+
+###tng-vnv-curator
+* Launch of Test Plans from tng-vnv-planner
+* Preload of probe images for the tng-vnv-executor to run them when time comes
+* Processing of post-instantiation parameters received from tng-vnv-platform-adapter and the corresponding test descriptor is updated with current values
+* Performs the clean up of the environment after test execution finishes
+
+###tng-sp-ia
+* A new architecture plugin based, with multiple containers, one for NBI and one for each VIM/WAN type. This approach possibilite different developers with different programming languages work in separate repos, like explained in refactoring motivations.
+* The separation of the functions, features and data model between NBI and VIM/WAN Wrappers could be found in Introduction.
+* A new IA RabbitMQ Internal Interface for interconnect the NBI with the VIM/WAN Wrappers.
+* A new Rest API Reference for manage (GET, POST, PATCH, DELETE) the VIMs/WIMs/Endpoints in the DB.
+* New supported dynamic networks (create/delete according info from mano/'slice manager'), QoS rule types for network, and some network Miscellaneous (flavor/mac/ip/security groups/CIDR specification) features for HEAT Wrapper.
+* New logging format in json for graylog.
+* Integration work for support new wrappers from others repos: k8s, tapi and emu.
+* New messages and others modified in RabbitMQ API Reference, according requirements from new wrappers and from mano.
+
+###tng-sp-ia-k8s
+Cloud-native Network Functions Wrapper for Kubernetes. 
+This wrapper for kubernetes is able to generate kubernetes objects from SONATA VNF descriptors. The objects modelled for kubernetes are the following:
+* Deployments
+* Services
+* Volumes
+* Configmaps
+And the wrapper is able to do:
+* Rolling updates of the service
+* Service reconfiguration from FSM
+* Adding environmental variables of service and functions for auto-discovery
+* Recovering monitoring data from k8s cluster for VIM selection in placement plugin
+* Nvidia GPU selection
+* Scale PODs via request from MANO
+
+###tng-slice-mngr
+* Network Slice Template/Instance Objects Updated in order to manage the newest features.
+* Network Slice manager REST API updated with new intra-components (non public) endpoints in order to have e better management of the objects created.
+* New features:
+  * Interconnection of Network Service composing the Network Slice.
+  * Network Slice Instances can share Network Services among them.
+  * SLA assignation to those Network Services composing the Network Slice.
+  * Single-VIM deployment
+  * Allows to provide connections from/to endpoints outside the NFVI using SDN.
+* Integrated with the following SONATA SP components:
+  * tng-rep
+  * tng-cat
+  * tng-gtk-sp
+  * tng-gtk-common
+  * tng-portal
+  * tng-sp-ia
+  * tng-sla-mngr
+  
 ###tng-vnv-planner:
 * Acceptance of test plan requests according to Catalog's notifications for new packages
 * Test Descriptor (TD) Retrieval from incomming NSD's received by Catalog
@@ -20,7 +97,6 @@
 * Export results in the test results repository
 
 ###tng-vnv-dsm
-
 * Design and Implementation of a Decision Support Mechanism for the V&V Platform
 * Implementation User's test recommendations retrieval 
 * Build test recommendations examples for 5GTANGO end-users with real data
