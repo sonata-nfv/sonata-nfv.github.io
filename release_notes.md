@@ -64,7 +64,7 @@
 * Bug fixes in VM mon 
 * Bug fixes in SP mon
 
-#### tng-analytics-engine: 
+#### tng-analytics-engine
 * Support analytics services upon the test results that are executed by the 5GTANGO V&V Platform
 * Support analytics services upon the benchmarking results that are executed by the 5GTANGO SDK benchmarking tool
 * Support possibility for registering new analytic services as R packages
@@ -207,7 +207,7 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
 	* Prometheus time series data collection
 	* automated parameter study expansion
 	
-#### tng-sdk-package:
+#### tng-sdk-package
 * This release adds a lot of new features to the 5GTANGO package. The highlights are:
 	* support to package native OSM as well as ONAP packages
 	* tight integration with the other SDK tools, such as tng-sdk-validate and tng-sdk-benchmark
@@ -237,7 +237,7 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
 	* fix be robust against empty tag lists
 	* refactoring (a lot!)
 	
-#### tng-sdk-project:
+#### tng-sdk-project
 * This release adds many new features to the 5GTANGO tng-sdk-project tool. The highlights are:
 	* Support for descriptor generation
 	* Service mode with REST API
@@ -263,14 +263,14 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
 		* Support for MIME type detection and handling of descriptors of tests, SLAs, policies, and slices (in addition to VNFs and NS)
 		* Support for adding (zip) files containing a large number of files (e.g., Charms) that need to be handled together
 
-#### tng-sdk-sm:
+#### tng-sdk-sm
 * Total refactoring towards a python-based tool
 * Refinement of the creation of new specific managers
 * Support for local service specific manager testing
 * Generation of service and vnf records, to serve as input for testing cases
 * Refinement of the specific manager template and base class
 
-#### tng-sdk-test:
+#### tng-sdk-test
 * Using packages to deploy a network service
 * Composing a network service in a test code by adding multiple VNF images and connecting them with links
 * Building VNF images using their source code and Dockerfile
@@ -278,7 +278,7 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
 * Validating test code against V&V platform requirements
 * Generating probe images and test descriptors
 
-#### tng-sdk-validation:
+#### tng-sdk-validation
 * Supports other descriptor files validation: tests, policies, slices and SLAs
 * Includes CNFs validation to give support to Kubernetes deployments
 * New custom rules validation: BW and PCI validation
@@ -287,7 +287,7 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
 * Clearer logs with more information relative to the errors
 * Bug fixing
 
-#### tng-sla-mgmt:
+#### tng-sla-mgmt
 * Update SLA Schema (YML, JSON)
 	* Simplify & Optimize the SLA Schema
 	* Update SLA schema to support Licensing information
@@ -333,7 +333,7 @@ This tool is one of the open-source reference implementations for the IETF BMWG 
 	* tng-gtk-sp
 	* tng-schema
 	
-#### tng-slice-mngr:
+#### tng-slice-mngr
 * Network Slice Template/Instance Objects Updated in order to manage the newest features.
 * Network Slice manager REST API updated with new intra-components (non public) endpoints in order to have e better management of the objects created.
 * New features:
