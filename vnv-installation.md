@@ -8,7 +8,7 @@ After the initial preparation of the system described in the [common installatio
 
 Note: Please ensure you are in the 'tng-devops' folder that you created in the in the [common installation](/common-installation.md) section.
 
-In order to customize the installation you can modify the variables for the target destination. In the case described in the command below was localhost. The configuration file of sonata for localhost installation is located in [host_vars/localhost](https://github.com/sonata-nfv/tng-devops/blob/master/host_vars/localhost).
+In order to customize the installation you can modify the variables for the target destination. In the case described in the command below was localhost. The configuration file of sonata for localhost installation is located in [host_vars/localhost](https://github.com/sonata-nfv/tng-devops/blob/v5.0/host_vars/localhost).
 
 Please bear in mind you will need to **replace platform: sp** in the file [host_vars/localhost](https://github.com/sonata-nfv/tng-devops/blob/master/host_vars/localhost) and **write platform: vnv**.
 
