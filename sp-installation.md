@@ -14,7 +14,7 @@ Password is: `sonata`
 
 Note: Please ensure you are in the 'tng-devops' folder that you created in the in the [common installation](/common-installation.md) section
 
-In order to customize the installation you need to modify the variables for the target destination. In the case described in the command below the target destination is set to 'localhost'. The configuration file of SP for localhost installation is located in [host_vars/localhost](https://github.com/sonata-nfv/tng-devops/blob/master/host_vars/localhost).
+In order to customize the installation you need to modify the variables for the target destination. In the case described in the command below the target destination is set to 'localhost'. The configuration file of SP for localhost installation is located in [host_vars/localhost](https://github.com/sonata-nfv/tng-devops/blob/v5.0/host_vars/localhost).
 
 
 ## Verifying the installation
