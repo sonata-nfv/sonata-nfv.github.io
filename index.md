@@ -77,8 +77,7 @@ The service development kit (SDK) consists of the following main modules:
 * *[**Descriptor generation and project management:**](https://github.com/sonata-nfv/tng-sdk-project)* Tool for generating VNFD and NSD descriptors based on high-level information and for managing created NFV projects.
 * *[**Validator**](https://github.com/sonata-nfv/tng-sdk-validation):* Tool for validating generated descriptors and projects based on syntax, integrity, topology, or custom rules.
 * *[**Packager**](https://github.com/sonata-nfv/tng-sdk-package)*: Tool to create and unpack 5GTANGO packages
-
-* ***[Emulator](https://github.com/sonata-nfv/son-emu)***: emulation platform to support network service developers in locally prototyping and testing complete network service chains in realistic end-to-end multi-PoP scenarios
+* *[**Emulator**](https://github.com/sonata-nfv/son-emu)*: emulation platform to support network service developers in locally prototyping and testing complete network service chains in realistic end-to-end multi-PoP scenarios
 * *[**Benchmarker**](https://github.com/sonata-nfv/tng-sdk-benchmark):* Tool for fully automated VNF and network service benchmarking and profiling.
 
 ### VnV
@@ -86,8 +85,11 @@ The service development kit (SDK) consists of the following main modules:
 The Validation and Verification (VnV) platform consist of the following modules:
 
 * ***[Gatekeeper](https://github.com/sonata-nfv/tng-gtk-vnv)***: This is the 5GTANGO Gatekeeper Verification and Validation platform specific components repository, which closely follows its SP Platform counterpart.
-* ***[Lifecycle Manager](https://github.com/sonata-nfv/tng-vnv-lcm)***: This is a 5GTANGO component to coordinate the verification and validation activities of 5G Network Services.
-* ***[Test Execution Engine](https://github.com/sonata-nfv/tng-vnv-tee)***: This is a 5GTANGO component to execute the test suites for 5G Network Services.
+* ***[Planner](https://github.com/sonata-nfv/tng-vnv-planner)***: component to coordinate the verification and validation activities of 5G Network Services. The Planner acts as the main manager for the V&V test requests. It is responsible for test plans management, sequencing, and triggering requests of the corresponding test requests. 
+* ***[Curator](https://github.com/sonata-nfv/tng-vnv-curator)***: The Curator acts as the intermediate module between the Planner and the Executor for all V&V tests activities. It is responsible for processing a Test Plan, preparing the SP environment for tests, processing instantiation parameters, triggering the execution and cleaning up the environment afterwards.
+* ***[Executor](https://github.com/sonata-nfv/tng-vnv-executor)***: This is a 5GTANGO component to execute the test suites for 5G Network Services.
+* ***[Platform Adapter](https://github.com/sonata-nfv/tng-vnv-platform-adapter)***: An Adapter for VnV to talk to various Service Platforms. Out of the box support is currently for the following service platforms: SONATA, OSM, ONAP.
+
 
 ## [3. Release Notes](/release_notes)
 
