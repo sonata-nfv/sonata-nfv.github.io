@@ -101,8 +101,10 @@ cd tng-devops/
 (This step is only for trying different versions. For normal installation you dont need to change branch)
 
 To use the latest stable version of SONATA you will need to change the branch to _v5.0_. This can be performed from inside the `tng-devops` folder, with the command:
-`git checkout v5.0`
 
+```bash
+git checkout v5.0
+```
 ### Creating docker network to allocate the containers
 
 ```bash
