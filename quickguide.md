@@ -1,16 +1,16 @@
-# Quick Start with 5GTANGO
+# Quick Start with SONATA
 
 The purpose of this quick start guide is to provide you with a brief overview of the 5GTANGO/SONATA platform and then get you up and running with with this platform in the quickest and easiest way possible.
 
-Here you will find a brief explanation about what 5GTANGO does, how to install it, how to use it and how to get technical support if required.
+Here you will find a brief explanation about what SONATA does, how to install it, how to use it and how to get technical support if required.
 
 <p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/raw/master/images/5gtango-install.png" /></p>
 
-This tutorial is not an exhaustive guide to all features of 5GTANGO, but rather an "umbrella" document that will guide you to the more extensive documentation if required.
+This tutorial is not an exhaustive guide to all features of SONATA, but rather an "umbrella" document that will guide you to the more extensive documentation if required.
 
 ### Setup
 
-To setup 5GTANGO you must install the three major components of 5GTANGO and OpenStack in the order shown is the following bulleted list and as highlighted in the following diagram.
+To setup SONATA you must install the three major components of SONATA and OpenStack in the order shown is the following bulleted list and as highlighted in the following diagram.
 
 <p align="center"><img src="https://github.com/sonata-nfv/sonata-nfv.github.io/raw/master/images/5gtango-install-1234.png" /></p>
 
@@ -25,9 +25,9 @@ To setup 5GTANGO you must install the three major components of 5GTANGO and Open
   * [MicroK8s](/Microk8s-guide-V2.pdf)      
   * [Troubleshooting the Installation](/troubleshooting.md)
   
-### Using 5GTANGO
+### Using SONATA
 
-Once the 5GTANGO platform is installed, you can now create network service packages, deploy them and run tests against them!
+Once the SONATA platform is installed, you can now create network service packages, deploy them and run tests against them!
  
 * [Using the SDK](/sdk)
   * [Defining a Network Service (using Descriptors)](/sdk#descriptors-creation)
@@ -45,4 +45,16 @@ Once the 5GTANGO platform is installed, you can now create network service packa
   * [Upload a Service Package and a Test Package](/vnv#upload-a-service-package-and-a-test-package)
   * [Creation and execution of a Test Plan](/vnv#creation-and-execution-of-a-test-plan)
   * [Checking Test Results](/vnv#checking-test-results)
+
+### Contributing to SONATA
+
+To contribute to the development of a SONATA component you have to fork the repository, commit new code and create pull requests.
+
+### Support
+
+You can find [troubleshooting documentation](https://sonata-nfv.github.io/troubleshooting.html).
+
+You may use the sonata-dev mailing list: sonata-dev(at)lists.atosresearch.eu
+
+You may use the GitHub issues to report bugs (per component). For example, tng-vnv-planner component can be found at: [https://github.com/sonata-nfv/tng-vnv-planner/issues](https://github.com/sonata-nfv/tng-vnv-planner/issues).
 
