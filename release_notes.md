@@ -7,6 +7,7 @@
 *  Bug fixing in Dashboard 
 *  Updated Platforms creation form to disable names with whitespaces 
 *  Updated Settings section with: 
+
   *  VIM monitoring configuration after VIM creation 
   *  YAML to JSON converter in VIM configuration input 
 
