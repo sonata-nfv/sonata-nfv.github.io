@@ -94,7 +94,7 @@ sudo apt-get install git
 ```bash
 git clone https://github.com/sonata-nfv/tng-devops.git
 cd tng-devops/
-git checkout v5.0
+git checkout v5.1
 ```
 
 ## SONATA Installation 
