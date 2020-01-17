@@ -1,4 +1,44 @@
-### About the latest major release v5.0
+### Release v5.1
+
+#### Portal(s)
+
+*  Removed pop up to warn the user to log in again when token expired 
+*  Included page not found component when no route is found 
+*  Bug fixing in Dashboard 
+*  Updated Platforms creation form to disable names with whitespaces 
+*  Updated Settings section with: 
+ *  VIM monitoring configuration after VIM creation 
+ *  YAML to JSON converter in VIM configuration input 
+
+*  Updated Service Management section with: 
+Slice instantiation updated with instantiation and custom parameters 
+Network services instantiation updated with custom parameters 
+Manual scaling 
+Policy manual activation/deactivation 
+Include requests duration for every operation 
+Include a list of related SLAs in each network service detailed view 
+Bug fixing 
+Updated Service Platform section with: 
+Updates over SLAs attributes displayed 
+Establish links between instances and their descriptors for a quick navigation 
+Policy actions update 
+Receive the policy monitoring parameters from Prometheus 
+Policy duplication leads to an edition view before saving the new 
+policy 
+Included further detail on policy rules listed in a runtime policy 
+Bug fixing 
+Updated Validation and Verification section with: 
+OSM packages list all its content 
+Included the analytics engine menu to list, generate and remove analytic results 
+Enable SP and host selection for test plan generation 
+Enable policy selection for test plan generation from a network service 
+Bug fixing 
+Created development execution mode to configure the Portal while developing 
+SDK Portal included
+
+
+
+### Release v5.0
 
 #### son-emu
 * The 5GTANO lightweight life cycle manager (LLCM) is a new module. The 5GTANGO LLCM module is an improved version of SONATA's dummy gatekeeper and allows to directly on-board and instantiate [5GTANGO network service packages](https://github.com/sonata-nfv/tng-schema/wiki/PkgSpec_LATEST) in an emulated multi-PoP environment. [Example 2](https://github.com/sonata-nfv/son-emu/wiki/Example-2) shows how to use this new module.
