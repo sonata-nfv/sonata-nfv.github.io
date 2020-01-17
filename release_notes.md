@@ -49,6 +49,41 @@
     *  test results are saved in planner database when test ends with KO.
     *  docker-compose exception messages are saved in planner database when docker-compose, in Executor, fails.
 
+#### V&V curator
+*  Support for remote execution host, requested from planner and performed by executor, but also image pull and removal is done by Curator
+*  Support a new parameter specifying a policy to be used by the service-to-be-tested
+*  Error handling is now more robust
+*  Ability to use a random behavior or a round robin behavior when using a Service Platform. User can override target Service Platform to be used by request
+*  Instantiation time from the point of view of the curator is now logged and used in results log
+
+#### VnV Analytics Engine
+*  Support of Python Analytics Services (until now we only supported R based analytics services)
+*  Registration of new R and Python packages
+*  Update of existing R and Python packages
+*  Central persisting storage of analytic results
+*  Analytic engine integration with the Portal:
+    *  Analytic process creation
+    *  Analytics results list
+    *  Analytics result view
+    *  Analytics result deletion
+
+#### VnV Monitoring
+*  Support of the latest k8s version
+*  Bug fixes
+
+#### SP Slice Manager
+*  Hybrid Network Slices to manage NSs which are composed either by VNFs or CNFs
+*  Multi-VIM management (including the call to the WIM for the VIM interconnection) for:
+*  Hybrid NetSlices --> CNFs deployed in K8s vim and VNFs deployed in VMs vim
+*  Based on the available resources in a VIM, NSs belonging to a NetSlice may be placed in VIM1 and another NS in VIM2 (all VNFs of a NS go together into the same VIM)
+*  Allows to pass Instantiation Parameters for each NSs within a NetSlice
+
+#### SP MANO
+*  reconfiguration workflow can be requested through northbound interface
+*  params can be linked to instantiation request
+*  cidr details in descriptors are forwarded to IA
+
+
 
 ### Release v5.0
 
