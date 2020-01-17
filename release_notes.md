@@ -7,36 +7,47 @@
 *  Bug fixing in Dashboard 
 *  Updated Platforms creation form to disable names with whitespaces 
 *  Updated Settings section with: 
-
-  *  VIM monitoring configuration after VIM creation 
-  *  YAML to JSON converter in VIM configuration input 
-
+    *  VIM monitoring configuration after VIM creation 
+    *  YAML to JSON converter in VIM configuration input 
 *  Updated Service Management section with: 
-Slice instantiation updated with instantiation and custom parameters 
-Network services instantiation updated with custom parameters 
-Manual scaling 
-Policy manual activation/deactivation 
-Include requests duration for every operation 
-Include a list of related SLAs in each network service detailed view 
-Bug fixing 
-Updated Service Platform section with: 
-Updates over SLAs attributes displayed 
-Establish links between instances and their descriptors for a quick navigation 
-Policy actions update 
-Receive the policy monitoring parameters from Prometheus 
-Policy duplication leads to an edition view before saving the new 
-policy 
-Included further detail on policy rules listed in a runtime policy 
-Bug fixing 
-Updated Validation and Verification section with: 
-OSM packages list all its content 
-Included the analytics engine menu to list, generate and remove analytic results 
-Enable SP and host selection for test plan generation 
-Enable policy selection for test plan generation from a network service 
-Bug fixing 
-Created development execution mode to configure the Portal while developing 
-SDK Portal included
+    *  Slice instantiation updated with instantiation and custom parameters 
+    *  Network services instantiation updated with custom parameters 
+    *  Manual scaling 
+    *  Policy manual activation/deactivation 
+    *  Include requests duration for every operation 
+    *  Include a list of related SLAs in each network service detailed view 
+    *  Bug fixing 
+*  Updated Service Platform section with: 
+    *  Updates over SLAs attributes displayed 
+    *  Establish links between instances and their descriptors for a quick navigation 
+    *  Policy actions update 
+    *  Receive the policy monitoring parameters from Prometheus 
+    *  Policy duplication leads to an edition view before saving the new policy 
+    *  Included further detail on policy rules listed in a runtime policy 
+    *  Bug fixing 
+*  Updated Validation and Verification section with: 
+    *  OSM packages list all its content 
+    *  Included the analytics engine menu to list, generate and remove analytic results 
+    *  Enable SP and host selection for test plan generation 
+    *  Enable policy selection for test plan generation from a network service 
+    *  Bug fixing 
+*  Created development execution mode to configure the Portal while developing 
+*  SDK Portal included
 
+#### V&V Executor
+*  Ability to deploy probe's containers in other machines than the V&V's.
+*  Files and results are shared between executor and execution hosts via NFS. There is a new environment variable to enable/disable the use of a configured NFS server if the execution probes are executed in other machines that the V&V component. The generated docker-compose is automatically adapted to enable its use.
+*  Error Information enrichment: 
+    *  test results are sent to Curator even when they don't end OK. If the test ends, the results are sent.
+    *  the docker-compose failure is caught and sent to the curator when the execution fails due to docker-compose errors.
+
+#### V&V Planner
+*  New optional parameter that allows the deployment of the execution probes containers in other machines than the V&V's.
+*  New optional parameter to choose on which Service Platform the service will be instantiated.
+*  New optional parameter to test the  service associated policies using de V&V.
+*  Error information enrichment:
+    *  test results are saved in planner database when test ends with KO.
+    *  docker-compose exception messages are saved in planner database when docker-compose, in Executor, fails.
 
 
 ### Release v5.0
