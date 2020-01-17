@@ -7,8 +7,8 @@
 *  Bug fixing in Dashboard 
 *  Updated Platforms creation form to disable names with whitespaces 
 *  Updated Settings section with: 
- *  VIM monitoring configuration after VIM creation 
- *  YAML to JSON converter in VIM configuration input 
+  *  VIM monitoring configuration after VIM creation 
+  *  YAML to JSON converter in VIM configuration input 
 
 *  Updated Service Management section with: 
 Slice instantiation updated with instantiation and custom parameters 
